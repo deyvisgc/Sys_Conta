@@ -39,13 +39,16 @@
                             <table id="dt_basic" class="table table-striped table-bordered table-hover" width="100%">
                                 <thead>
                                 <tr>
-                                    <th data-hide="phone">ID</th>
-                                    <th data-class="expand"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i> Name</th>
+                                    <th data-hide="phone">N°</th>
+                                    <th data-class="expand"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i>Nombre</th>
+                                    <th data-class="expand"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i>DNI</th>
+                                    <th data-class="expand"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i>CARNE EXTRANJERIA</th>
                                     <th data-hide="phone"><i class="fa fa-fw fa-phone text-muted hidden-md hidden-sm hidden-xs"></i> Phone</th>
-                                    <th>Company</th>
-                                    <th data-hide="phone,tablet"><i class="fa fa-fw fa-map-marker txt-color-blue hidden-md hidden-sm hidden-xs"></i> Zip</th>
+                                    <th data-hide="phone,tablet"><i class="fa fa-fw fa-map-marker txt-color-blue hidden-md hidden-sm hidden-xs"></i>DIRECCION</th>
                                     <th data-hide="phone,tablet">City</th>
-                                    <th data-hide="phone,tablet"><i class="fa fa-fw fa-calendar txt-color-blue hidden-md hidden-sm hidden-xs"></i> Date</th>
+                                    <th data-hide="phone,tablet"><i class="fa fa-fw fa-calendar txt-color-blue hidden-md hidden-sm hidden-xs"></i>FECHA NACIMIENTO</th>
+                                    <th data-hide="phone,tablet"><i class="fa fa-fw fa-calendar txt-color-blue hidden-md hidden-sm hidden-xs"></i>NUMERO DE CUENTA</th>
+
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -57,6 +60,13 @@
                                     <td>35728</td>
                                     <td>Fogo</td>
                                     <td>03/04/14</td>
+                                    <td>35728</td>
+
+
+                                    <td ><a  class="btn btn-success" href=""><i class="fa fa-remove text-danger"></i></a>
+                                        <a class="btn btn-info" href=""><i class="fa fa-edit text-warning"></i></a>
+                                    <a class="btn btn-warning" href=""><i class="fa fa-eye text-success"></i></a></td>
+
                                 </tr>
 
                                 </tr>
