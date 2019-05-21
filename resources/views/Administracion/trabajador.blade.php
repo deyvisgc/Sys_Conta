@@ -85,12 +85,19 @@
         </article>
     </div>
 
+
+
+
 @endsection
 @section('scripts')
     <script>
         $(document).ready( function () {
             $('#dt_basic').DataTable();
+            
+
         } );
+
+
     </script>
 
 @endsection
