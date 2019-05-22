@@ -44,9 +44,7 @@
                                     <th data-class="expand"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i>DNI</th>
                                     <th data-class="expand"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i>CARNE</th>
                                     <th data-hide="phone"><i class="fa fa-fw fa-phone text-muted hidden-md hidden-sm hidden-xs"></i> Phone</th>
-                                    <th data-hide="phone,tablet"><i class="fa fa-fw fa-map-marker txt-color-blue hidden-md hidden-sm hidden-xs"></i>DIRECCION</th>
                                     <th data-hide="phone,tablet"><i class="fa fa-fw fa-calendar txt-color-blue hidden-md hidden-sm hidden-xs"></i>FECHA</th>
-
                                     <th data-hide="phone,tablet">Seguros</th>
                                     <th data-hide="phone,tablet"><i class="fa fa-fw fa-calendar txt-color-blue hidden-md hidden-sm hidden-xs"></i>Tipo seguro</th>
                                     <th data-hide="phone,tablet"><i class="fa fa-fw fa-calendar txt-color-blue hidden-md hidden-sm hidden-xs"></i>Operacopmes</th>
@@ -70,23 +68,24 @@
     </div>
 
 
-    <!-- Button trigger modal -->
+
+
 
     <!-- Modal -->
     <div class="modal fade" id="ModalTrabajador" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                <center> <strong><h5 style="color: black ;font-family:'Arial Black' " class="modal-title" id="exampleModalLabel">Registrar Trabajador</h5></strong></center>
+                    <center> <strong><h5 style="color: black ;font-family:'Arial Black' " class="modal-title" id="exampleModalLabel">Registrar Trabajador</h5></strong></center>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <form id="regisTraba" class="smart-form" novalidate="novalidate">
-                    <!-- widget div-->
-                    <div>
-                        <div class="widget-body no-padding">
+                        <!-- widget div-->
+                        <div>
+                            <div class="widget-body no-padding">
                                 <fieldset>
                                     <div class="row">
                                         <section class="col col-6">
@@ -159,7 +158,7 @@
                                                     <option value="0" selected="" disabled="">Seguro</option>
                                                     @foreach($seguros as $segu)
                                                         <option value="{{$segu->idseguros}}">{{$segu->nombre_Seguro}}</option>
-                                                        @endforeach
+                                                    @endforeach
                                                 </select></label>
                                         </section>
                                         <section class="col col-6">
@@ -168,7 +167,7 @@
                                                 <select name="tipo_seguros" aria-required="true" aria-invalid="false" class="valid">
                                                     <option value="0" selected="" disabled="">tipo seguro</option>
 
-                                                @foreach($tipo_Seguro as $tipo)
+                                                    @foreach($tipo_Seguro as $tipo)
                                                         <option value="{{$tipo->idTipo_seguro}}">{{$tipo->nombre_tipo}}</option>
 
                                                     @endforeach
@@ -185,19 +184,137 @@
                                 </footer>
 
 
-                        </div>
-                        <!-- end widget content -->
+                            </div>
+                            <!-- end widget content -->
 
-                    </div>
-                    <!-- end widget div -->
+                        </div>
+                        <!-- end widget div -->
                     </form>
                 </div>
 
             </div>
 
-            </div>
         </div>
     </div>
+
+    <div class="modal fade" id="ModalTrabajador1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <center> <strong><h5 style="color: black ;font-family:'Arial Black' " class="modal-title" id="exampleModalLabel">ACTUALZIAR DATOS DEL TRABAJADOR</h5></strong></center>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="UPDATATRABAJADOR" class="smart-form" novalidate="novalidate">
+                        <!-- widget div-->
+                        <input type="hidden" data-chat-id="fecha_naci" name="id_persona" id="id_persona" placeholder="Expected finish date" class="hasDatepicker valid" aria-invalid="false">
+                        <input type="hidden" data-chat-id="fecha_naci" name="id_trabajador" id="id_trabajador" placeholder="Expected finish date" class="hasDatepicker valid" aria-invalid="false">
+
+                        <div>
+                            <div class="widget-body no-padding">
+                                <fieldset>
+                                    <div class="row">
+                                        <section class="col col-6">
+                                            <label class="input"> <i class="icon-prepend fa fa-user"></i>
+                                                <input type="text" id="nombre_Per" name="nombre_Per" placeholder="Nombre">
+                                            </label>
+                                        </section>
+                                        <section class="col col-6">
+                                            <label class="input"> <i class="icon-prepend fa fa-user"></i>
+                                                <input type="text" id="Apellido" name="Apellido" placeholder="Apellido">
+                                            </label>
+                                        </section>
+                                    </div>
+                                    <div class="row">
+                                        <section class="col col-6">
+                                            <label class="input"> <i class="icon-prepend fas fa-address-card"></i>
+                                                <input type="text" id="dni" name="dni" placeholder="DNI">
+                                            </label>
+                                        </section>
+                                        <section class="col col-6">
+                                            <label class="input"> <i class="icon-prepend fas fa-address-card"></i>
+                                                <input type="text" id="car_extran" name="car_extran" placeholder="CARNE EXTRANJERIA">
+                                            </label>
+                                        </section>
+                                    </div>
+                                    <div class="row">
+                                        <section class="col col-6">
+                                            <label class="input"> <i class="icon-prepend fa fa-share-square"></i>
+                                                <input type="text" id="direccion" name="direccion" placeholder="Direccion">
+                                            </label>
+                                        </section>
+                                        <section class="col col-6">
+                                            <label class="input"> <i class="icon-prepend far fa-credit-card	"></i>
+                                                <input type="number" id="n_cuenta" name="n_cuenta" placeholder="Numero de Cuenta">
+                                            </label>
+                                        </section>
+                                    </div>
+
+                                    <div class="row">
+                                        <section class="col col-6">
+                                            <label class="input"> <i class="icon-prepend fa fa-envelope-o"></i>
+                                                <input type="Correo" id="Correo" name="Correo" placeholder="E-mail">
+                                            </label>
+                                        </section>
+                                        <section class="col col-6">
+                                            <label class="input"> <i class="icon-prepend fa fa-phone"></i>
+                                                <input type="tel" id="phone" name="phone" placeholder="Celular" data-mask="(999) 999-9999">
+                                            </label>
+                                        </section>
+                                    </div>
+
+                                    <div class="row">
+                                        <section class="col col-6">
+                                            <label class="input"> <i class="icon-prepend fa fa-envelope-o"></i>
+                                                <input type="text" id="estado" name="estado"  readonly>
+                                            </label>
+                                        </section>
+                                        <section class="col col-6">
+                                            <label class="input"> <i class="icon-append fa fa-calendar"></i>
+                                                <input type="date"  name="fecha_nacimiento" id="fecha_nacimiento" placeholder="Expected finish date" class="hasDatepicker valid" aria-invalid="false">
+                                            </label>
+                                        </section>
+                                    </div>
+
+                                    <div class="row">
+                                        <section class="col col-6">
+                                            <label class="select">
+                                                <select name="seguro"  id="seguro" name="seguro">
+                                                </select> <i></i> </label>
+                                        </section>
+                                        <section class="col col-6">
+
+                                                <label class="select">
+                                                    <select name="tipo_Seguros"  id="tipo_Seguros">
+                                                    </select> <i></i> </label>
+
+                                        </section>
+                                    </div>
+                                </fieldset>
+
+
+
+                                <footer>
+                                    <button type="button" id="ActualizarTraba" class="btn btn-success">Registrar</button>
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                </footer>
+
+
+                            </div>
+                            <!-- end widget content -->
+
+                        </div>
+                        <!-- end widget div -->
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
 
 @endsection
 @section('scripts')
@@ -243,14 +360,13 @@
                     {data: 'Dni', name: 'Dni'},
                     {data: 'Care_extranjeria', name: 'Care_extranjeria'},
                     {data: 'Telefono', name: 'Telefono'},
-                    {data: 'Direccion',name:'Direccion'},
                     {data: 'Fecha_Nacimiento',name:'Fecha_Nacimiento'},
                     {data: 'nombre_Seguro',name:'nombre_Seguro'},
                     {data: 'nombre_tipo',name:'nombre_tipo'},
                     {"mRender": function ( data, type, row ) {
-                            return '<a class="btn btn-danger" href=""><i class="fa fa-remove text-warning"></i></a>' +
-                                '<a class="btn btn-info" href=""><i class="fa fa-edit text-warning"></i></a>' +
-                                '<a class="btn btn-warning" href=""><i class="fa fa-eye text-success"></i></a>';
+                            return '<a style="margin-left: 5px" class="btn btn-success btnEdit" data-edit="/Trabajador/'+row.idPersona+'/edit" ><i class="fa fa-edit text-warning"></i></a>' +
+                                '<a style="margin-left: 5px" class="btn btn-danger" href=""><i class="fa fa-remove text-warning"></i></a>' +
+                                '<a style="margin-left: 5px" class="btn btn-warning" href=""><i class="fa fa-eye text-success"></i></a>';
                     }
                     },
 
@@ -261,9 +377,99 @@
         });
 
 
+            $('#dt_basic').on('click','.btnEdit[data-edit]',function(e){
+                e.preventDefault();
+                var url = $(this).data('edit');
+                $.ajax({
+                    url : url,
+                    type : 'GET',
+                    datatype : 'json',
+                    success:function(response){
+
+                      $('#ModalTrabajador1').modal('show');
+                      $.each(response.trabaja,function (index,valor) {
+                          $('#nombre_Per').val(valor.nombre_personas);
+                          $('#Apellido').val(valor.apellidos_Per);
+                          $('#dni').val(valor.Dni);
+                          $('#car_extran').val(valor.Care_extranjeria);
+                          $('#direccion').val(valor.Direccion);
+                          $('#n_cuenta').val(valor.Numero_cuenta);
+                          $('#phone').val(valor.Telefono);
+                          $('#Correo').val(valor.correo);
+                          $('#estado').val(valor.estado);
+                          $('#fecha_nacimiento').val(valor.Fecha_Nacimiento);
+                           $('#id_persona').val(valor.idPersona);
+                           $('#id_trabajador').val(valor.Trabajador_idTrabajador);
+                          $.each(response.seguro,function (index,va) {
+
+                              if(va.idseguros===valor.idseguros){
+                                  $("#seguro").append('<option value='+va.idseguros+ '  selected >'+va.nombre_Seguro+ '</option>');
+                              }else {
+                                  $("#seguro").append('<option value='+va.idseguros+ '  >'+va.nombre_Seguro+ '</option>');
+                              }
 
 
 
+                          });
+                          $.each(response.tipo_seguro,function (index,val) {
+                              if(val.idTipo_seguro===valor.idTipo_seguro){
+
+                                  $("#tipo_Seguros").append('<option value='+val.idTipo_seguro+ '  selected >'+val.nombre_tipo+ '</option>');
+
+                              }else {
+                                  $("#tipo_Seguros").append('<option value='+val.idTipo_seguro+ '  >'+val.nombre_tipo+ '</option>');
+                              }
+                          });
+
+
+
+
+
+                      });
+
+                     
+
+                    }
+                    
+                });
+             
+            });
+           
+                  $('#ActualizarTraba').click(function (e) {
+                      e.preventDefault();
+                      $.ajaxSetup({
+                          headers: {
+                              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                          }
+                      });
+
+                      var frm=$('#UPDATATRABAJADOR');
+                      $.ajax({
+                          url:'{{url('Trabajador')}}/'+$('#id_persona').val(),
+                          type:'put',
+                          dataType:'json',
+                          data:frm.serialize(),
+                          success:function (response) {
+                              if (response.success===true){
+                                  frm.trigger('reset');
+                                  $('#ModalTrabajador1').modal('hide');
+                                  iziToast.success({
+                                      title: 'OK',
+                                      message: 'Successfully Actualizado Correctamente!',
+                                  });
+
+                                  tabla.ajax.reload();
+
+                              }
+
+
+                          }
+
+                      });
+                  });
+
+
+                  //registrar trabajador
               $('#RegisTrabajador').click(function (e) {
                   $('#ModalTrabajador').modal('show');
 
@@ -289,7 +495,7 @@
                                   $('#ModalTrabajador').modal('hide');
                                   iziToast.success({
                                       title: 'OK',
-                                      message: 'Successfully inserted record!',
+                                      message: 'Successfully Registro Exitoso!',
                                   });
 
                                   tabla.ajax.reload();
@@ -306,6 +512,10 @@
               });
         } );
 
+        $('body').on('hidden.bs.modal', '.modal', function () {
+            $("#seguro").empty();
+            $("#tipo_Seguros").empty();
+        });
 
     </script>
 
