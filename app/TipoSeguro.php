@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Trabajadores extends Model
+class TipoSeguro extends Model
 {
-    protected $table="trabajador";
-    protected $primaryKey="idTrabajador";
+    protected $table="tipo_seguro";
+    protected $primaryKey="idTipo_seguro";
     public $timestamps=false;
     /**
      * The attributes that are mass assignable.
@@ -15,7 +15,6 @@ class Trabajadores extends Model
      * @var array
      */
     protected $fillable = [
-        'estado', 'seguros_idseguros','idTipo_Seguro',
+        'nombre_tipo',
     ];
-
 }
