@@ -355,38 +355,32 @@ Use search to find needed section.
                 <a href="#" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i> <span class="menu-item-parent">Dashboard</span></a>
 
             </li>
-            <li class="top-menu-invisible">
-                <a href="#"><i class="fa fa-lg fa-fw fa-cube txt-color-blue"></i> <span class="menu-item-parent">EMPRESA</span></a>
 
-            </li>
             <li>
-                <a href="{{url('Trabajador')}}"><i class="fa fa-lg fa-fw fa-inbox"></i> <span class="menu-item-parent">TRABAJADOR</span> <span class="badge pull-right inbox-badge margin-right-13">14</span></a>
-            </li>
-            <li>
-                <a href="#"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span class="menu-item-parent">Rol</span></a>
-            </li>
-            <li>
-                <a href="#"><i class="fa fa-lg fa-fw fa-table"></i> <span class="menu-item-parent">Tables</span></a>
+                <a href="#"><i class="fa fa-lg fa-fw fa-table"></i> <span class="menu-item-parent">ADMINISTRACION</span></a>
                 <ul>
                     <li>
-                        <a href="table.html">Normal Tables</a>
+                        <a href="{{url('Trabajador')}}">TRABAJADOR</a>
                     </li>
                     <li>
-                        <a href="datatables.html">Data Tables <span class="badge inbox-badge bg-color-greenLight hidden-mobile">responsive</span></a>
+                        <a href="datatables.html">ROLES</a>
                     </li>
                     <li>
-                        <a href="jqgrid.html">Jquery Grid</a>
+                        <a href="jqgrid.html">EMPRESA</a>
+                    </li>
+                    <li>
+                        <a href="jqgrid.html">USUARIO</a>
                     </li>
                 </ul>
             </li>
             <li>
-                <a href="#"><i class="fa fa-lg fa-fw fa-pencil-square-o"></i> <span class="menu-item-parent">Forms</span></a>
+                <a href="#"><i class="fa fa-lg fa-fw fa-pencil-square-o"></i> <span class="menu-item-parent">Planilla</span></a>
                 <ul>
                     <li>
-                        <a href="form-elements.html">Smart Form Elements</a>
+                        <a href="{{url('Planilla')}}">Listar Planilla</a>
                     </li>
                     <li>
-                        <a href="form-templates.html">Smart Form Layouts</a>
+                        <a href="{{url('PlanillaRegistro')}}">RegistrarPlanilla</a>
                     </li>
                     <li>
                         <a href="validation.html">Smart Form Validation</a>

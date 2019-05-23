@@ -365,7 +365,7 @@
                     {data: 'nombre_tipo',name:'nombre_tipo'},
                     {"mRender": function ( data, type, row ) {
                             return '<a style="margin-left: 5px" class="btn btn-success btnEdit" data-edit="/Trabajador/'+row.idPersona+'/edit" ><i class="fa fa-edit text-warning"></i></a>' +
-                                '<a style="margin-left: 5px" class="btn btn-danger" href=""><i class="fa fa-remove text-warning"></i></a>' +
+                                '<a style="margin-left: 5px" class="btn btn-danger " onclick="eliminar('+row.idPersona+')"><i class="fa fa-remove text-warning"></i></a>' +
                                 '<a style="margin-left: 5px" class="btn btn-warning" href=""><i class="fa fa-eye text-success"></i></a>';
                     }
                     },
@@ -434,8 +434,10 @@
                 });
              
             });
-           
-                  $('#ActualizarTraba').click(function (e) {
+
+
+
+            $('#ActualizarTraba').click(function (e) {
                       e.preventDefault();
                       $.ajaxSetup({
                           headers: {
@@ -511,6 +513,60 @@
 
               });
         } );
+
+        function eliminar(id) {
+            iziToast.question({
+                timeout: 20000,
+                close: false,
+                overlay: true,
+                displayMode: 'once',
+                id: 'question',
+                zindex: 999,
+                title: 'Hey',
+                message: 'Are you sure about that?',
+                position: 'center',
+                buttons: [
+                    ['<button><b>YES</b></button>', function (instance, toast) {
+
+                        instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        $.ajax({
+                            url : '{{url('DeleTrabajador')}}/'+id,
+                            type : 'get',
+                            datatype : 'json',
+                            success:function(response){
+                                if (response.success===true){
+                                    tabla.ajax.reload();
+                                    iziToast.success({
+                                        title: 'OK',
+                                        message: 'Successfully Eliminado Correctamente!',
+                                    });
+                                }
+
+                            }
+
+                        });
+                    }, true],
+                    ['<button>NO</button>', function (instance, toast) {
+
+                        instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        iziToast.error({
+                            title: 'Error',
+                            message: 'confirme para eliminar',
+                        });
+                    }],
+                ],
+                onClosing: function(instance, toast, closedBy){
+                    console.info('Closing | closedBy: ' + closedBy);
+                },
+                onClosed: function(instance, toast, closedBy){
+                    console.info('Closed | closedBy: ' + closedBy);
+                }
+            });
+
+
+
+        }
+
 
         $('body').on('hidden.bs.modal', '.modal', function () {
             $("#seguro").empty();

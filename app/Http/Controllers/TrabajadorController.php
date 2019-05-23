@@ -31,7 +31,6 @@ class TrabajadorController extends Controller
             'nombre_Per'=>'required',
             'Apellido'=>'required',
             'dni'=>'required ',
-            'car_extran'=>'required',
             'direccion' =>'required ',
             'n_cuenta'=>'required |',
             'Correo'=>'required |',
@@ -87,7 +86,6 @@ class TrabajadorController extends Controller
             'nombre_Per'=>'required',
             'Apellido'=>'required',
             'dni'=>'required ',
-            'car_extran'=>'required',
             'direccion' =>'required ',
             'n_cuenta'=>'required |',
             'Correo'=>'required |',
@@ -125,5 +123,15 @@ class TrabajadorController extends Controller
         }
         return response()->json(array("success"=>true));
 
+    }
+    public function destroy($id){
+
+
+
+    }
+    public function DeleTrabajador($id){
+        $trabajador=Persona::find($id);
+        $trabajador->delete();
+        return response()->json(array("success"=>true));
     }
 }
