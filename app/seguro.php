@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Sys_Conta;
 
 use Illuminate\Database\Eloquent\Model;
 

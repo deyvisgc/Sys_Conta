@@ -1,4 +1,4 @@
-@extends('layaouts.prinsipal')
+﻿@extends('layaouts.prinsipal')
 
 @section('content')
     <style>
@@ -113,7 +113,7 @@
                                                         <div class="row">
                                                             <section class="col col-4">
                                                                 <label class="input"> <i class="icon-prepend fas fa-address-card"></i></i>
-                                                                    <input type="text" name="dni" placeholder="N° DNI" id="dni">
+                                                                    <input type="text"  name="dni" placeholder="N° DNI" id="dni">
                                                                 </label>
                                                             </section>
                                                             <section class="col col-4">
@@ -242,6 +242,39 @@
 
 @section('scripts')
 <script>
+    $(document).ready(function() {
+        $( "#dni" ).autocomplete({
+
+            source: function(request, response) {
+                $.ajax({
+                    url: "{{url('buscador')}}",
+                    data: {
+                        term : request.term
+                    },
+                    dataType: "json",
+                    success: function(data){
+
+
+                        response(data.list_persona);
+
+
+                    },
+
+
+                });
+            },
+
+            minLength: 1,
+            select:function (event,ui) {
+                $('#nombres').val(ui.item.nombre);
+
+                return false;
+            }
+
+
+        });
+
+    });
     function clularHoras() {
         var horasextrastipe=$('#horastrabajadas').val();
 

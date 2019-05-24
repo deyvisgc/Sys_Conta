@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Sys_Conta\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\TipoSeguro;
-use App\seguro;
-use App\Trabajadores;
-use App\Persona;
+use Sys_Conta\TipoSeguro;
+use Sys_Conta\seguro;
+use Sys_Conta\Trabajadores;
+use Sys_Conta\Persona;
 use Illuminate\Support\Facades\DB;
 USE Illuminate\Support\Facades\Input;
 use Yajra\Datatables\Datatables;
