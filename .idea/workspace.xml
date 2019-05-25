@@ -4,6 +4,7 @@
     <list default="true" id="17f02004-ef43-4d3d-a751-32c9390f5b35" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Planilla/Create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Planilla/Create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layaouts/prinsipal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layaouts/prinsipal.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,36 +26,18 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PlanillaController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="27" column="55" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="55" />
-              <folding>
-                <element signature="e#46#74#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Planilla.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="5" selection-start-column="5" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/Planilla/Create.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="326" column="15" lean-forward="true" selection-start-line="326" selection-start-column="15" selection-end-line="326" selection-end-column="15" />
+            <state relative-caret-position="429">
+              <caret line="332" column="44" lean-forward="true" selection-start-line="332" selection-start-column="44" selection-end-line="332" selection-end-column="44" />
               <folding>
-                <element signature="e#3125#3150#0#HTML" expanded="true" />
-                <element signature="e#10809#10829#0#HTML" expanded="true" />
-                <element signature="e#15602#15622#0#HTML" expanded="true" />
+                <element signature="e#3124#3149#0#HTML" expanded="true" />
+                <element signature="e#4284#4309#0#HTML" expanded="true" />
+                <element signature="e#11305#11325#0#HTML" expanded="true" />
+                <element signature="e#14005#14025#0#HTML" expanded="true" />
+                <element signature="e#18798#18818#0#HTML" expanded="true" />
+                <element signature="e#19439#20035#0#HTML" />
               </folding>
             </state>
           </provider>
@@ -63,17 +46,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/layaouts/prinsipal.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
-              <caret line="958" selection-start-line="958" selection-end-line="958" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TrabajadorController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="34" />
+            <state relative-caret-position="430">
+              <caret line="967" column="5" lean-forward="true" selection-start-line="967" selection-start-column="5" selection-end-line="967" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -105,14 +79,14 @@
         <option value="$PROJECT_DIR$/app/seguro.php" />
         <option value="$PROJECT_DIR$/app/TipoSeguro.php" />
         <option value="$PROJECT_DIR$/app/Persona.php" />
-        <option value="$PROJECT_DIR$/resources/views/Administracion/trabajador.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TrabajadorController.php" />
         <option value="$PROJECT_DIR$/app/Planilla.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/PlantillaController.php" />
         <option value="$PROJECT_DIR$/resources/views/Planilla/planilla.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/resources/views/layaouts/prinsipal.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/PlanillaController.php" />
+        <option value="$PROJECT_DIR$/resources/views/Administracion/trabajador.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layaouts/prinsipal.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/Planilla/Create.blade.php" />
       </list>
     </option>
@@ -199,7 +173,7 @@
       <path value="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="697" />
@@ -211,6 +185,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -257,6 +232,13 @@
               <item name="Sys_Conta" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="Administracion" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Sys_Conta" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sys_Conta" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="layaouts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -270,7 +252,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -319,18 +300,20 @@
       <workItem from="1558670433972" duration="9417000" />
       <workItem from="1558680148030" duration="6161000" />
       <workItem from="1558738114703" duration="1925000" />
-      <workItem from="1558754224872" duration="9211000" />
+      <workItem from="1558754224872" duration="15274000" />
+      <workItem from="1558801120853" duration="359000" />
+      <workItem from="1558802018722" duration="6220000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104466000" />
+    <option name="totallyTimeSpent" value="117108000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21406959" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22012103" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -345,7 +328,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3289689" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.3289689" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.40425533" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.40261865" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -507,27 +490,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Planilla/planilla.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="40" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Administracion/trabajador.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-15">
-          <caret line="404" column="45" selection-start-line="404" selection-start-column="36" selection-end-line="404" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="27" column="32" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PlanillaController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -552,21 +514,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Planilla/planilla.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="35" selection-start-line="34" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Administracion/trabajador.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="20" column="44" lean-forward="true" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#2;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="27" column="32" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layaouts/prinsipal.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="958" selection-start-line="958" selection-end-line="958" />
+        <state relative-caret-position="430">
+          <caret line="967" column="5" lean-forward="true" selection-start-line="967" selection-start-column="5" selection-end-line="967" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/Planilla/Create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="326" column="15" lean-forward="true" selection-start-line="326" selection-start-column="15" selection-end-line="326" selection-end-column="15" />
+        <state relative-caret-position="429">
+          <caret line="332" column="44" lean-forward="true" selection-start-line="332" selection-start-column="44" selection-end-line="332" selection-end-column="44" />
           <folding>
-            <element signature="e#3125#3150#0#HTML" expanded="true" />
-            <element signature="e#10809#10829#0#HTML" expanded="true" />
-            <element signature="e#15602#15622#0#HTML" expanded="true" />
+            <element signature="e#3124#3149#0#HTML" expanded="true" />
+            <element signature="e#4284#4309#0#HTML" expanded="true" />
+            <element signature="e#11305#11325#0#HTML" expanded="true" />
+            <element signature="e#14005#14025#0#HTML" expanded="true" />
+            <element signature="e#18798#18818#0#HTML" expanded="true" />
+            <element signature="e#19439#20035#0#HTML" />
           </folding>
         </state>
       </provider>

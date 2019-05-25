@@ -48,7 +48,6 @@
             transition:background 0.20s linear;
         }
     </style>
-
     <section id="widget-grid" class="">
 
         <!-- row -->
@@ -109,6 +108,7 @@
                                             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
 
 
+                                                <button type="button"   title="calcular Fechas"  style="margin-left: 10px" onclick="calcularfechas();" class="btn btn-outline-success"><i class="fa fa-calendar"> CALCULAR</i></button>
                                                     <fieldset>
                                                         <div class="row">
                                                             <section class="col col-3">
@@ -128,7 +128,13 @@
                                                             </section>
                                                             <section class="col col-3">
                                                                 <label class="input"><i class=" icon-prepend  fas fa-calendar-alt"></i>
-                                                                    <input type="date" name="fecha"  id="fecha" placeholder="FECHA INGRESO" >
+                                                                    <input type="date" name="fecha1"  id="fecha1" placeholder="FECHA INGRESO" >
+                                                                </label>
+                                                            </section>
+
+                                                            <section class="col col-3">
+                                                                <label class="input"><i class=" icon-prepend  fas fa-calendar-alt"></i>
+                                                                    <input type="date" name="fecha2" id="fecha2" placeholder="FECHA SALIDA" >
                                                                 </label>
                                                             </section>
                                                             <section class="col col-3">
@@ -174,7 +180,33 @@
 
 
                                                         </div>
+                                                        <strong><center><h2 style="color: black">LIQUIDACION DE BENEFICIOS SOCIALES</h2></center></strong><br>
+                                                        <div class="row">
+                                                            <section class="col col-3">
+                                                                <label class="input"> <i class="icon-prepend fas fa-address-card"></i></i>
+                                                                    <input type="number"  name="CTS" placeholder="CTS" id="cts">
+                                                                </label>
+                                                                <input type="hidden"  name="numero_fecha" placeholder="CTS" id="numero_fecha">
+                                                            </section>
+                                                            <section class="col col-3">
+                                                                <label class="input"> <i class="icon-prepend fas fa-code"></i>
+                                                                    <input type="text" name="cuspp" placeholder="CUSPP" id="cuspp">
+                                                                </label>
+                                                            </section>
+                                                            <section class="col col-3">
+                                                                <label class="input"> <i class="icon-prepend fa fa-user"></i>
+                                                                    <input type="text" name="nombres" id="nombres" placeholder="APELLIDOS Y NOMBRES">
+                                                                </label>
+                                                            </section>
+                                                            <section class="col col-3">
+                                                                <label class="input"><i class=" icon-prepend  fas fa-calendar-alt"></i>
+                                                                    <input type="date" name="fecha1"  id="fecha1" placeholder="FECHA INGRESO" >
+                                                                </label>
+                                                            </section>
 
+
+
+                                                        </div>
                                                     </fieldset>
 
                                             </div>
@@ -259,7 +291,12 @@
 
 @section('scripts')
 <script>
+    var fecha_Actual
     $(document).ready(function() {
+
+        fecha_Actual= get_fhoy();
+        $('#fecha1').val(fecha_Actual);
+        $('#fecha2').val(fecha_Actual);
         $( "#dni" ).autocomplete({
 
             source: function(request, response) {
@@ -292,6 +329,26 @@
         });
 
     });
+    function calcularfechas() {
+        var fecha=new Date($('#fecha1').val());
+        var fecha2=new Date($('#fecha2').val());
+
+      var  months = (fecha2.getFullYear() - fecha.getFullYear());
+
+        var fechafinal=months*12;
+        fechafinal -= fecha.getMonth();
+        fechafinal += fecha2.getMonth();
+            if (fechafinal===fechafinal){
+                iziToast.info({
+                    title: 'fechas',
+                    message: 'la cantidad de meses agarrados son:'+fechafinal,
+                });
+                $('#numero_fecha').val(fechafinal);
+
+
+            }
+
+    }
     function CalcularInasistencias() {
         var pago=$('#sueldo_basico').val();
         var inasistencias=$('#Faltas').val();
@@ -346,8 +403,8 @@
 
                 }else {
                     if (tipodehoras2==horasextrastipe){
-                        var total2=parseFloat(horaslaborales)*1.35;
-                        $('#horas_extras').val( Math.round(total2.toFixed(2)));
+                        var total2=parseFloat(cantidadhoraextras)*1.35;
+                        $('#horas_extrasx35').val( Math.round(total2.toFixed(2)));
 
 
                     }
@@ -355,6 +412,19 @@
 
             }
         }
+        calcularcts();
+
+
+    }
+    function calcularcts() {
+        var numero_fecha= $('#numero_fecha').val();
+        var pagobasico=$('#sueldo_basico').val();
+        var asisganacion_familair=$('#asigna_familiar').val();
+        var totalbasico=parseFloat(pagobasico)+parseFloat(asisganacion_familair);
+        var cts=parseFloat(totalbasico)/6;
+        var totalmonto=parseFloat(totalbasico)+parseFloat(cts);
+        var totalsuma=parseFloat(totalmonto)/12*numero_fecha;
+        $('#cts').val(totalsuma.toFixed(2));
 
 
     }

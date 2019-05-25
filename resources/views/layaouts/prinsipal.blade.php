@@ -956,7 +956,16 @@ you can add as many as you like
 
 
 <script>
-
+    function get_fhoy() {
+        // FORMATO DE HTML5 input[date] >> 'aaaa-mm-dd'
+        var texto = '';
+        var fecha = new Date();
+        var anho = fecha.getFullYear().toString();
+        var mes = ("0" + (fecha.getMonth() + 1)).slice(-2);
+        var dia = ("0" + fecha.getDate()).slice(-2);
+        texto = anho+'-'+mes+'-'+dia;
+        return texto;
+    }
 
 </script>
 
