@@ -26,3 +26,4 @@ Route::get('PlanillaRegistro', 'PlanillaController@getPlanilla');
 
 Route::get('DeleTrabajador/{idPersona}', 'TrabajadorController@DeleTrabajador');
 Route::get('buscador', 'PlanillaController@search');
+

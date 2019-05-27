@@ -16,7 +16,7 @@ use Validator;
 class TrabajadorController extends Controller
 {
     public function index(Request $request){
-        $trabaja=DB::select("SELECT persona.idPersona, trabajador.idTrabajador, CONCAT(persona.nombre_personas,' ',persona.apellidos_Per) as nombres,persona.Dni,persona.Care_extranjeria,persona.Telefono,persona.Direccion,persona.Fecha_Nacimiento,persona.Numero_cuenta,persona.correo,seguros.nombre_Seguro,tipo_seguro.nombre_tipo FROM persona ,trabajador,seguros ,tipo_seguro WHERE persona.Trabajador_idTrabajador=trabajador.idTrabajador and trabajador.seguros_idseguros=seguros.idseguros and trabajador.idTipo_Seguro=tipo_seguro.idTipo_seguro and trabajador.estado='Contratado'");
+        $trabaja=DB::select("SELECT persona.idPersona, trabajador.idTrabajador, CONCAT(persona.nombre_personas,' ',persona.apellidos_Per) as nombres,persona.Dni,persona.Care_extranjeria,persona.Telefono,persona.Direccion,persona.Fecha_Nacimiento,persona.Numero_cuenta,persona.correo,seguros.nombre_Seguro,tipo_seguro.nombre_tipo FROM persona ,trabajador,seguros ,tipo_seguro WHERE persona.Trabajador_idTrabajador=trabajador.idTrabajador and trabajador.seguros_idseguros=seguros.idseguros and trabajador.idTipo_Seguros=tipo_seguro.idTipo_seguro and trabajador.estado='Contratado'");
        if ($request->ajax()){
            return Datatables::of($trabaja)->make(true);
        }
@@ -50,7 +50,7 @@ class TrabajadorController extends Controller
             $trabajador1=new Trabajadores();
             $trabajador1->estado=$request->estado;
             $trabajador1->seguros_idseguros=$request->seguros;
-            $trabajador1->idTipo_Seguro=$request->tipo_seguros;
+            $trabajador1->idTipo_Seguros=$request->tipo_seguros;
             $trabajador1->save();
 
             $trabajador=new Persona();
@@ -73,7 +73,7 @@ class TrabajadorController extends Controller
     public function edit($id){
          $seguro=seguro::all();
          $tiposeguro=TipoSeguro::all();
-        $trabaja=DB::select("SELECT seguros.idseguros,tipo_seguro.idTipo_seguro, persona.idPersona,persona.Trabajador_idTrabajador, trabajador.idTrabajador,persona.nombre_personas,persona.apellidos_Per,persona.Dni,persona.Care_extranjeria,persona.Telefono,persona.Direccion,persona.Fecha_Nacimiento,persona.Numero_cuenta,persona.correo,seguros.nombre_Seguro,tipo_seguro.nombre_tipo,trabajador.estado FROM persona ,trabajador,seguros ,tipo_seguro WHERE persona.Trabajador_idTrabajador=trabajador.idTrabajador and trabajador.seguros_idseguros=seguros.idseguros and trabajador.idTipo_Seguro=tipo_seguro.idTipo_seguro and trabajador.estado='Contratado' 
+        $trabaja=DB::select("SELECT seguros.idseguros,tipo_seguro.idTipo_seguro, persona.idPersona,persona.Trabajador_idTrabajador, trabajador.idTrabajador,persona.nombre_personas,persona.apellidos_Per,persona.Dni,persona.Care_extranjeria,persona.Telefono,persona.Direccion,persona.Fecha_Nacimiento,persona.Numero_cuenta,persona.correo,seguros.nombre_Seguro,tipo_seguro.nombre_tipo,trabajador.estado FROM persona ,trabajador,seguros ,tipo_seguro WHERE persona.Trabajador_idTrabajador=trabajador.idTrabajador and trabajador.seguros_idseguros=seguros.idseguros and trabajador.idTipo_Seguros=tipo_seguro.idTipo_seguro and trabajador.estado='Contratado' 
 
                     and persona.idPersona=$id");
         $data=array('seguro'=>$seguro,'tipo_seguro'=>$tiposeguro,'trabaja'=>$trabaja);
@@ -115,7 +115,7 @@ class TrabajadorController extends Controller
             $trabajador=Trabajadores::find(Input::get('id_trabajador'));
             $trabajador->estado=$request->estado;
             $trabajador->seguros_idseguros=$request->seguro;
-            $trabajador->idTipo_Seguro=$request->tipo_Seguros;
+            $trabajador->idTipo_Seguros=$request->tipo_Seguros;
                 $trabajador->save();
 
             DB::commit();

@@ -15,7 +15,7 @@ class Trabajadores extends Model
      * @var array
      */
     protected $fillable = [
-        'estado', 'seguros_idseguros','idTipo_Seguro',
+        'estado', 'seguros_idseguros','idTipo_Seguros',
     ];
 
 }

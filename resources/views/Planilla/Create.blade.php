@@ -108,7 +108,7 @@
                                             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
 
 
-                                                <button type="button"   title="calcular Fechas"  style="margin-left: 10px" onclick="calcularfechas();" class="btn btn-outline-success"><i class="fa fa-calendar"> CALCULAR</i></button>
+                                                <button type="button"   title="calcular Fechas"  style="margin-left: 10px" onclick="calcularfechas();" class="btn btn-outline-success"><i class="fa fa-calendar"> CALCULAR TOTAL DE MESES</i></button>
                                                     <fieldset>
                                                         <div class="row">
                                                             <section class="col col-3">
@@ -213,7 +213,7 @@
                                                                 <label  style="color: black" > VACACIONES(*)</label>
 
                                                                 <label class="input"> <i class="icon-prepend fas fa-code"></i>
-                                                                    <input type="number" name="vacaciones_trun" placeholder="VACACIONES TRUNCADAS" id="vacaciones_trun">
+                                                                    <input type="number" value="0" name="vacaciones_trun" placeholder="VACACIONES TRUNCADAS" id="vacaciones_trun">
                                                                 </label>
                                                             </section>
                                                             <section class="col col-3">
@@ -237,9 +237,22 @@
 
                                             </div>
                                             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                                                <strong><center><h2 style="color: black">INGRESOS DEL TRABAJADOR Y RENUMERACION</h2></center></strong>
+                                                <strong><center><h2 style="color: black">INGRESOS DEL TRABAJADOR Y RENUMERACION  </h2> </center></strong>
+                                                <button type="button" style="margin-left: 10px"  title="calcular gratificaciones"   onclick="calculalarRenumeracion();" class="btn btn-outline-info"> <i class="fa fa-calculator"> RENUMERACION</i></button>
                                                 <fieldset>
                                                     <div class="row">
+                                                        <section class="col col-3">
+                                                            <label  style="color: black" > DESCUENTO POR FALTAS(*)</label>
+                                                            <label class="input"> <i class="icon-prepend fa fa-money"></i>
+                                                                <input type="number"  name="inasistencias"  id="inasistencias" placeholder="$.00">
+                                                            </label>
+                                                        </section>
+                                                        <section class="col col-3">
+                                                            <label  style="color: black" > PAGO DE CADA MES(*)</label>
+                                                            <label class="input"> <i class="icon-prepend fa fa-money"></i>
+                                                                <input type="number"  name="valorxmes"  id="valorxmes" placeholder="$.00">
+                                                            </label>
+                                                        </section>
                                                         <section class="col col-3">
                                                             <label  style="color: black" > HORAS EXTRAS AL 25%(*)</label>
                                                             <label class="input"> <i class="icon-prepend fa fa-money"></i>
@@ -253,48 +266,91 @@
                                                             </label>
                                                         </section>
                                                         <section class="col col-3">
-                                                            <label  style="color: black" > DESCUENTO POR FALTAS(*)</label>
-                                                            <label class="input"> <i class="icon-prepend fa fa-money"></i>
-                                                                <input type="number"  name="inasistencias"  id="inasistencias" placeholder="$.00">
+                                                            <label  style="color: black" > MOVILIDAD(*)</label>
+                                                            <label class="input"> <i class="icon-prepend fa fa-car"></i>
+                                                                <input type="number" id="movilidad" name="movilidad" placeholder="$.00">
                                                             </label>
                                                         </section>
                                                         <section class="col col-3">
-                                                            <label  style="color: black" > PAGO DE CADA MES(*)</label>
+                                                            <label  style="color: black" > ALIMENTACION(*)</label>
+                                                            <label class="input"> <i class="icon-prepend fas fa-utensils"></i>
+                                                                <input type="number" id="alimentacion" name="alimentacion" placeholder="$.00">
+                                                            </label>
+                                                        </section>
+                                                        <section class="col col-3">
+                                                            <label  style="color: black" > BONOS EXTRAS(*)</label>
                                                             <label class="input"> <i class="icon-prepend fa fa-money"></i>
-                                                                <input type="number"  name="valorxmes"  id="valorxmes" placeholder="$.00">
+                                                                <input type="number" id="bonox_Extras" name="bonox_Extras" placeholder="$.00">
+                                                            </label>
+                                                        </section>
+                                                        <section class="col col-3">
+                                                            <label  style="color: black" > OTROS(*)</label>
+                                                            <label class="input"> <i class="icon-prepend fa fa-money"></i>
+                                                                <input type="number" id="otros" name="otros" placeholder="$.00">
                                                             </label>
                                                         </section>
 
-                                                        <section class="col col-3">
-                                                            <label class="input"> <i class="icon-prepend fa fa-car"></i>
-                                                                <input type="number" id="movilidad" name="movilidad" placeholder="MOVILIDAD">
-                                                            </label>
-                                                        </section>
-                                                        <section class="col col-3">
-                                                            <label class="input"> <i class="icon-prepend fas fa-utensils"></i>
-                                                                <input type="number" id="alimentacion" name="alimentacion" placeholder="ALIMENTACION">
-                                                            </label>
-                                                        </section>
-                                                        <section class="col col-3">
-                                                            <label class="input"> <i class="icon-prepend fa fa-money"></i>
-                                                                <input type="number" id="bonox_Extras" name="bonox_Extras" placeholder="BONOS EXTRA">
-                                                            </label>
-                                                        </section>
-                                                        <section class="col col-3">
-                                                            <label class="input"> <i class="icon-prepend fa fa-money"></i>
-                                                                <input type="number" id="otros" name="otros" placeholder="OTROS">
-                                                            </label>
-                                                        </section>
-                                                        <section class="col col-3">
-                                                            <label class="input"> <i class="icon-prepend fa fa-money"></i>
-                                                                <input type="number" name="total_renumeracion" placeholder="TOTAL RENUMERACION">
-                                                            </label>
-                                                        </section>
                                                     </div>
 
-                                                    <strong><center><h2 style="color: black">CALCULOS CONTABLES</h2></center></strong>
+                                                    <strong><center><h2 style="color: black">CALCULOS FINALES</h2></center></strong>
+
+                                                    <button type="button" style="margin-left: 10px"  title="calcular Pensiones"   onclick="calculalarPensiones();" class="btn btn-outline-dark"> <i class="fa fa-calculator"> PENSIONES</i></button>
+                                                    <br><br>
+                                                     <div class="row">
+                                                         <section class="col col-3">
+                                                             <label  style="color: black" >RENUMRACION BRUTA(*)</label>
+                                                             <label class="input"> <i class="icon-prepend fa fa-money"></i>
+                                                                 <input type="number" name="total_renumeracion" id="total_renumeracion" placeholder="TOTAL RENUMERACION">
+                                                             </label>
+                                                         </section>
 
 
+                                                         <section class="col col-3">
+                                                             <label  style="color: black" >BASE CALCULOS  (ONP/AFP)</label>
+                                                             <label class="input"> <i class="icon-prepend fa fa-money"></i>
+                                                                 <input type="number" name="base_calculo" id="base_calculo" placeholder="$.00">
+                                                             </label>
+                                                         </section>
+                                                         <section class="col col-3">
+                                                             <label  style="color: black" >TIPO SEGUROS</label>
+                                                             <label class="input"> <i class="icon-prepend fa fa-money"></i>
+                                                                 <input type="text" name="tipo_seguro" id="tipe_Seguo" placeholder="$.00">
+                                                             </label>
+                                                         </section>
+
+                                                         <section class="col col-3">
+                                                             <label  style="color: black" >SEGUROS</label>
+                                                             <label class="input"> <i class="icon-prepend fa fa-money"></i>
+                                                                 <input type="text" name="seguros" id="seguro1" placeholder="$.00">
+                                                             </label>
+                                                         </section>
+
+                                                         <input type="number" hidden name="aporte_obligatorio" id="aporte_obligatorio" placeholder="$.00">
+
+                                                         <input type="number" hidden name="comision_renumeracion" id="comision_renumeracion" placeholder="$.00">
+
+                                                         <input type="number" hidden name="prima_Seguros" id="prima_Seguros" placeholder="$.00">
+
+                                                         <section class="col col-3">
+                                                             <label  style="color: black" >APORTE OBLIGATORIO</label>
+                                                             <label class="input"> <i class="icon-prepend fa fa-money"></i>
+                                                                 <input type="number" name="aporte_obligatorio1" id="aporte_obligatorio1" placeholder="$.00">
+                                                             </label>
+                                                         </section>
+                                                         <section class="col col-3">
+                                                             <label  style="color: black" >Comisión sobre la remuneración </label>
+                                                             <label class="input"> <i class="icon-prepend fa fa-money"></i>
+                                                                 <input type="number" name="comision_renumeracion1" id="comision_renumeracion1" placeholder="$.00">
+                                                             </label>
+                                                         </section>
+                                                         <section class="col col-3">
+                                                             <label  style="color: black" >PRIMA SEGUROS</label>
+                                                             <label class="input"> <i class="icon-prepend fa fa-money"></i>
+                                                                 <input type="number" name="prima_Seguros1" id="prima_Seguros1" placeholder="$.00">
+                                                             </label>
+                                                         </section>
+
+                                                     </div>
                                                 </fieldset>
                                             </div>
 
@@ -351,6 +407,11 @@
             minLength: 1,
             select:function (event,ui) {
                 $('#nombres').val(ui.item.nombre);
+                $('#tipe_Seguo').val(ui.item.nombre_tipo);
+                $('#seguro1').val(ui.item.seguro);
+                $('#aporte_obligatorio').val(ui.item.aporte_obligatorio);
+                $('#comision_renumeracion').val(ui.item.comision_renumeracion);
+                $('#prima_Seguros').val(ui.item.Prima_Seguro);
 
                 return false;
             }
@@ -359,6 +420,50 @@
         });
 
     });
+
+    function calculalarRenumeracion() {
+        var asisganacion_familair = $('#asigna_familiar').val();
+        var cts = $('#cts').val();
+        var vacaciones = $('#vacaciones_trun').val();
+        var bonificacion = $('#bonificacion').val();
+        var bonifi_extraor = $('#bonificacion_extraordinaria').val();
+        var pagoxcademes = $('#valorxmes').val();
+        var horas_extras25 = $('#horas_extrasx25').val();
+        var horasextras35 = $('#horas_extrasx35').val();
+        var movilidad = $('#movilidad').val();
+        var alimentacion = $('#alimentacion').val();
+        var bonosextras = $('#bonox_Extras').val();
+        var otros = $('#otros').val();
+
+        if (cts == '') {
+            $('#cts').val(0);
+        } else {
+            var subtotal = parseFloat(asisganacion_familair) + parseFloat(cts) + parseFloat(vacaciones) + parseFloat(bonificacion) + parseFloat(bonifi_extraor);
+            var subtotal1 = parseFloat(pagoxcademes) + parseFloat(horas_extras25) + parseFloat(horasextras35) + parseFloat(movilidad) + parseFloat(alimentacion) +
+                parseFloat(bonosextras) + parseFloat(otros);
+            var total = parseFloat(subtotal) + parseFloat(subtotal1);
+            $('#total_renumeracion').val(total.toFixed(2));
+            $('#base_calculo').val(total.toFixed(2));
+
+            if (vacaciones!=0){
+                var pagoxcademes=$('#valorxmes').val();
+                var asisganacion_familair=$('#asigna_familiar').val();
+                var vacaciones=$('#vacaciones_trun').val();
+                var liquidacion=parseFloat(pagoxcademes)+parseFloat(asisganacion_familair)+parseFloat(vacaciones);
+                $('#base_calculo').val(liquidacion.toFixed(2));
+                $('#total_renumeracion').val(total.toFixed(2));
+            }
+        }
+
+
+
+
+
+
+
+
+
+    }
     function calcularfechas() {
         var fecha=new Date($('#fecha1').val());
         var fecha2=new Date($('#fecha2').val());
@@ -386,6 +491,7 @@
                 });
                 $('#numero_fecha').val(fechafinal);
                 $('#numero_fecha1').val(fechafinal);
+
 
 
             }
@@ -417,11 +523,13 @@
         $('#valorxmes').val(pago1.toFixed(2));
     }
     function clularHoras() {
+
         var horasextrastipe=$('#horastrabajadas').val();
         var asisganacion_familair=$('#asigna_familiar').val();
         var pagobasico=$('#sueldo_basico').val();
         var cantidadhorasal25=$('#nume_horasextars').val();
         var cantidadhoraextras=$('#nume_horasal35').val();
+
         if(cantidadhorasal25>2){
             iziToast.error({
                 title: 'Error',
@@ -460,15 +568,45 @@
 
 
     }
+    function buscarseguros() {
+    var idseguros=$('#idbuscar').val();
+    $.ajax({
+        url:'{{url('buscarSeguro')}}/'+idseguros,
+        type:'get',
+        dataType: 'json',
+        success:function (data) {
+          alert(data);
+        }
+
+    });
+
+    }
+
     function calcularbeneficios() {
         var numero_fecha= $('#numero_fecha').val();
         var pagobasico=$('#sueldo_basico').val();
         var asisganacion_familair=$('#asigna_familiar').val();
-        var totalbasico=parseFloat(pagobasico)+parseFloat(asisganacion_familair);
-        var cts=parseFloat(totalbasico)/6;
-        var totalmonto=parseFloat(totalbasico)+parseFloat(cts);
-        var totalsuma=parseFloat(totalmonto)/12*numero_fecha;
-        $('#cts').val(totalsuma.toFixed(2));
+        if(pagobasico==''){
+            iziToast.warning({
+                title: 'Caution',
+                message: 'Registre el saldo basico',
+            });
+        }
+        else if(numero_fecha==''){
+            iziToast.warning({
+                title: 'Caution',
+                message: 'Registre el numero de mes a sacar calculo',
+            });
+        }
+
+        else {
+            var totalbasico=parseFloat(pagobasico)+parseFloat(asisganacion_familair);
+            var cts=parseFloat(totalbasico)/6;
+            var totalmonto=parseFloat(totalbasico)+parseFloat(cts);
+            var totalsuma=parseFloat(totalmonto)/12*numero_fecha;
+            $('#cts').val(totalsuma.toFixed(2));
+
+        }
 
 
     }
@@ -476,19 +614,52 @@
         var numero_fecha= $('#numero_fecha').val();
         var pagobasico=$('#sueldo_basico').val();
         var asisganacion_familair=$('#asigna_familiar').val();
-        var totalbasico=parseFloat(pagobasico)+parseFloat(asisganacion_familair);
-        var vacaciones=parseFloat(totalbasico)/12*parseFloat(numero_fecha);
-        $('#vacaciones_trun').val(vacaciones.toFixed(2));
+        if(pagobasico==''){
+            iziToast.warning({
+                title: 'Caution',
+                message: 'Registre el saldo basico',
+            });
+        }
+        else if(numero_fecha==''){
+            iziToast.warning({
+                title: 'Caution',
+                message: 'Registre el numero de mes a sacar calculo',
+            });
+        }else {
+            var totalbasico=parseFloat(pagobasico)+parseFloat(asisganacion_familair);
+            var vacaciones=parseFloat(totalbasico)/12*parseFloat(numero_fecha);
+            $('#vacaciones_trun').val(vacaciones.toFixed(2));
+        }
+
     }
     function calcularGratificacion() {
         var numero_fecha= $('#numero_fecha').val();
         var pagobasico=$('#sueldo_basico').val();
         var asisganacion_familair=$('#asigna_familiar').val();
-        var totalbasico=parseFloat(pagobasico)+parseFloat(asisganacion_familair);
-        var bonificacion=parseFloat(totalbasico)/6*parseFloat(numero_fecha);
-        var bonificacion_extraordinaria=parseFloat(bonificacion)*0.09;
-        $('#bonificacion').val(bonificacion.toFixed(2));
-        $('#bonificacion_extraordinaria').val(bonificacion_extraordinaria.toFixed(2));
+        if(pagobasico==''){
+            iziToast.warning({
+                title: 'Caution',
+                message: 'Registre el saldo basico',
+            });
+        }
+        else if(numero_fecha==''){
+            iziToast.warning({
+                title: 'Caution',
+                message: 'Registre el numero de mes a sacar calculo',
+            });
+        }else{
+            var totalbasico=parseFloat(pagobasico)+parseFloat(asisganacion_familair);
+            var bonificacion=parseFloat(totalbasico)/6*parseFloat(numero_fecha);
+            var bonificacion_extraordinaria=parseFloat(bonificacion)*0.09;
+            $('#bonificacion').val(bonificacion.toFixed(2));
+            $('#bonificacion_extraordinaria').val(bonificacion_extraordinaria.toFixed(2));
+        }
+
+
+
+
     }
+
+
 </script>
 @endsection
