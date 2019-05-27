@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="17f02004-ef43-4d3d-a751-32c9390f5b35" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PlanillaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PlanillaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TrabajadorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TrabajadorController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Trabajadores.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Trabajadores.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Planilla/Create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Planilla/Create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layaouts/prinsipal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layaouts/prinsipal.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,11 +28,21 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/Planilla/Create.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="295" column="52" selection-start-line="295" selection-start-column="52" selection-end-line="295" selection-end-column="52" />
+            <state relative-caret-position="319">
+              <caret line="329" column="84" selection-start-line="329" selection-start-column="84" selection-end-line="329" selection-end-column="84" />
               <folding>
                 <element signature="e#22275#22295#0#HTML" expanded="true" />
                 <element signature="e#22470#22495#0#HTML" expanded="true" />
+                <element signature="e#22868#22888#0#HTML" expanded="true" />
+                <element signature="e#24944#25699#0#HTML" />
+                <element signature="e#25741#27519#0#HTML" />
+                <element signature="e#27550#28539#0#HTML" />
+                <element signature="e#28577#29100#0#HTML" />
+                <element signature="e#29123#29335#0#HTML" />
+                <element signature="e#29363#30988#0#HTML" />
+                <element signature="e#31023#31908#0#HTML" />
+                <element signature="e#31943#32728#0#HTML" />
+                <element signature="e#32766#33719#0#HTML" />
               </folding>
             </state>
           </provider>
@@ -348,18 +353,18 @@
       <workItem from="1558906670115" duration="2465000" />
       <workItem from="1558918879976" duration="2844000" />
       <workItem from="1558922867541" duration="8745000" />
-      <workItem from="1558974121089" duration="12753000" />
+      <workItem from="1558974121089" duration="16874000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148172000" />
+    <option name="totallyTimeSpent" value="152293000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23298033" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23298033" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -598,11 +603,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/Planilla/Create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="295" column="52" selection-start-line="295" selection-start-column="52" selection-end-line="295" selection-end-column="52" />
+        <state relative-caret-position="319">
+          <caret line="329" column="84" selection-start-line="329" selection-start-column="84" selection-end-line="329" selection-end-column="84" />
           <folding>
             <element signature="e#22275#22295#0#HTML" expanded="true" />
             <element signature="e#22470#22495#0#HTML" expanded="true" />
+            <element signature="e#22868#22888#0#HTML" expanded="true" />
+            <element signature="e#24944#25699#0#HTML" />
+            <element signature="e#25741#27519#0#HTML" />
+            <element signature="e#27550#28539#0#HTML" />
+            <element signature="e#28577#29100#0#HTML" />
+            <element signature="e#29123#29335#0#HTML" />
+            <element signature="e#29363#30988#0#HTML" />
+            <element signature="e#31023#31908#0#HTML" />
+            <element signature="e#31943#32728#0#HTML" />
+            <element signature="e#32766#33719#0#HTML" />
           </folding>
         </state>
       </provider>

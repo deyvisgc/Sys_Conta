@@ -327,7 +327,7 @@
 
                                                          <input type="number" hidden name="aporte_obligatorio" id="aporte_obligatorio" placeholder="$.00">
 
-                                                         <input type="number" hidden name="comision_renumeracion" id="comision_renumeracion" placeholder="$.00">
+                                                         <input type="number" hidden  name="comision_renumeracion" id="comision_renumeracion" placeholder="$.00">
 
                                                          <input type="number" hidden name="prima_Seguros" id="prima_Seguros" placeholder="$.00">
 
@@ -568,20 +568,6 @@
 
 
     }
-    function buscarseguros() {
-    var idseguros=$('#idbuscar').val();
-    $.ajax({
-        url:'{{url('buscarSeguro')}}/'+idseguros,
-        type:'get',
-        dataType: 'json',
-        success:function (data) {
-          alert(data);
-        }
-
-    });
-
-    }
-
     function calcularbeneficios() {
         var numero_fecha= $('#numero_fecha').val();
         var pagobasico=$('#sueldo_basico').val();
@@ -656,6 +642,27 @@
         }
 
 
+
+
+    }
+    function calculalarPensiones() {
+        var base_Calculo=$('#base_calculo').val();
+        var aporte_obligatorio=$('#aporte_obligatorio').val();
+        var comision_sobre_renumeracion=$('#comision_renumeracion').val();
+        var prima_Seguros=$('#prima_Seguros').val();
+        //se divide entre 100% para sacar el porcentaje de cada valor que viene
+        var subtotalaporte=parseFloat(aporte_obligatorio)/100;
+        var subtotalcomicion=parseFloat(comision_sobre_renumeracion)/100;
+        var subtotalprima_Seguros=parseFloat(prima_Seguros)/100;
+        //calculo de las pensiones por cada tipo
+        var totalaporte=parseFloat(base_Calculo)*parseFloat(subtotalaporte);
+           $('#aporte_obligatorio1').val(totalaporte.toFixed(2));
+
+        var totalcomision=parseFloat(base_Calculo)*parseFloat(subtotalcomicion);
+        $('#comision_renumeracion1').val(totalcomision.toFixed(2));
+
+        var primaseguros=parseFloat(base_Calculo)*parseFloat(subtotalprima_Seguros);
+        $('#prima_Seguros1').val(primaseguros.toFixed(2));
 
 
     }
