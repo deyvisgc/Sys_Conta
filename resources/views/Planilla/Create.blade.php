@@ -112,32 +112,39 @@
                                                     <fieldset>
                                                         <div class="row">
                                                             <section class="col col-3">
+                                                               <strong><label style="color: black">DNI(*)</label></strong>
+
                                                                 <label class="input"> <i class="icon-prepend fas fa-address-card"></i></i>
-                                                                    <input type="text"  name="dni" placeholder="N° DNI" id="dni">
+                                                                    <input type="text"  name="dni" placeholder="DESCRIPCION....." id="dni">
                                                                 </label>
                                                             </section>
                                                             <section class="col col-3">
-                                                                <label class="input"> <i class="icon-prepend fas fa-code"></i>
-                                                                    <input type="text" name="cuspp" placeholder="CUSPP" id="cuspp">
-                                                                </label>
-                                                            </section>
-                                                            <section class="col col-3">
+                                                                <label style="color: black" >NOMBRES(*)</label>
                                                                 <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                                                                    <input type="text" name="nombres" id="nombres" placeholder="APELLIDOS Y NOMBRES">
+                                                                    <input type="text" name="" id="nombres" placeholder="APELLIDOS Y NOMBRES">
                                                                 </label>
                                                             </section>
                                                             <section class="col col-3">
+                                                                <label  style="color: black" >FECHA INGRESO(*)</label>
                                                                 <label class="input"><i class=" icon-prepend  fas fa-calendar-alt"></i>
                                                                     <input type="date" name="fecha1"  id="fecha1" placeholder="FECHA INGRESO" >
                                                                 </label>
                                                             </section>
 
                                                             <section class="col col-3">
+                                                                <label  style="color: black" >FECHA SALIDA(*)</label>
                                                                 <label class="input"><i class=" icon-prepend  fas fa-calendar-alt"></i>
                                                                     <input type="date" name="fecha2" id="fecha2" placeholder="FECHA SALIDA" >
                                                                 </label>
                                                             </section>
                                                             <section class="col col-3">
+                                                                <label style="color: black" >CUSPP(*)</label>
+                                                                <label class="input"> <i class="icon-prepend fas fa-code"></i>
+                                                                    <input type="text" name="cuspp" placeholder="CUSPP" id="cuspp">
+                                                                </label>
+                                                            </section>
+                                                            <section class="col col-3">
+                                                                <label  style="color: black" >OCUPACION(*)</label>
                                                                 <label class="input"> <i class="icon-prepend fa fa-user"></i>
                                                                     <input type="text" id="ocupasion" name="ocupasion" placeholder="CARGO U OCUPASION">
                                                                 </label>
@@ -145,6 +152,7 @@
                                                             <section class="col col-3">
 
                                                                 <label class="select">
+                                                                    <label  style="color: black" >TIPO HORAS EXTRAS(*)</label>
                                                                     <select  name="horastrabajadas" id="horastrabajadas" aria-required="true" aria-invalid="false" class="valid form-control">
                                                                         <option value="0" selected="" disabled="">Horas Extras</option>
                                                                         <option value="1" >Horas extras normales</option>
@@ -153,26 +161,31 @@
                                                                     </select></label>
                                                             </section>
                                                             <section class="col col-3">
+                                                                <label  style="color: black" > HORA EXTRA AL 25%(*)</label>
                                                                 <label class="input"> <i class="icon-prepend fa fa-times"></i>
                                                                     <input type="text" id="nume_horasextars" name="nume_horasextars" placeholder="Horas extras al 25%">
                                                                 </label>
                                                             </section>
                                                             <section class="col col-3">
+                                                                <label  style="color: black" > HORA EXTRA AL 35%(*)</label>
                                                                 <label class="input"> <i class="icon-prepend fa fa-times"></i>
                                                                     <input type="text" id="nume_horasal35" name="nume_horasal35" placeholder="Horas extras al 35%">
                                                                 </label>
                                                             </section>
                                                             <section class="col col-3">
+                                                                <label  style="color: black" >ASIGNACION FAMILIAR(*)</label>
                                                                 <label title="asignacion familiar" class="input"><i class="icon-prepend fa fa-user"></i>
-                                                                    <input type="number" name="asigna_familiar"  id="asigna_familiar" placeholder="ASIGNACION FAMILIAR">
+                                                                    <input type="number" readonly value="93" name="asigna_familiar"  id="asigna_familiar" placeholder="ASIGNACION FAMILIAR">
                                                                 </label>
                                                             </section>
                                                             <section class="col col-3">
+                                                                <label  style="color: black" > SUELDO BASICO(*)</label>
                                                                 <label class="input"> <i class="icon-prepend fa fa-money"></i>
                                                                     <input type="number" onkeyup="clularHoras();" name="sueldo_basico" id="sueldo_basico" placeholder="SUELDO BASICO">
                                                                 </label>
                                                             </section>
                                                             <section class="col col-3">
+                                                                <label  style="color: black" > DIAS DE FALTAS(*)</label>
                                                                 <label class="input"> <i class="icon-prepend fa fa-times"></i>
                                                                     <input type="text" onkeyup="CalcularInasistencias();" id="Faltas" name="Faltas" placeholder="Faltas">
                                                                 </label>
@@ -180,27 +193,40 @@
 
 
                                                         </div>
-                                                        <strong><center><h2 style="color: black">LIQUIDACION DE BENEFICIOS SOCIALES</h2></center></strong><br>
+                                                        <strong><center><h2 style="color: black">LIQUIDACION DE BENEFICIOS SOCIALES</h2></center></strong>
+                                                        <button type="button"   title="calcular cts"  style="margin-left: 10px" onclick="calcularbeneficios();" class="btn btn-outline-success"><i class="fa fa-calculator"> CALCULAR CTS</i></button>
+                                                        <button type="button"   title="calcular Vacaciones"  style="margin-left: 10px" onclick="calcularVacaciones();" class="btn btn-outline-danger"><i class="fa fa-calculator"> VACACIONES</i></button>
+                                                        <button type="button"   title="calcular gratificaciones"  style="margin-left: 10px" onclick="calcularGratificacion();" class="btn btn-outline-warning"><i class="fa fa-calculator"> GRATIFICACIONES</i></button>
+                                                        <br><br>
+
                                                         <div class="row">
                                                             <section class="col col-3">
+                                                                <label  style="color: black" > CTS(*)</label>
+
                                                                 <label class="input"> <i class="icon-prepend fas fa-address-card"></i></i>
-                                                                    <input type="number"  name="CTS" placeholder="CTS" id="cts">
+                                                                    <input type="number"  name="cts" placeholder="CTS" id="cts">
                                                                 </label>
                                                                 <input type="hidden"  name="numero_fecha" placeholder="CTS" id="numero_fecha">
+
                                                             </section>
                                                             <section class="col col-3">
+                                                                <label  style="color: black" > VACACIONES(*)</label>
+
                                                                 <label class="input"> <i class="icon-prepend fas fa-code"></i>
-                                                                    <input type="text" name="cuspp" placeholder="CUSPP" id="cuspp">
+                                                                    <input type="number" name="vacaciones_trun" placeholder="VACACIONES TRUNCADAS" id="vacaciones_trun">
                                                                 </label>
                                                             </section>
                                                             <section class="col col-3">
+                                                                <label  style="color: black" > BONIFICACION(*)</label>
+
                                                                 <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                                                                    <input type="text" name="nombres" id="nombres" placeholder="APELLIDOS Y NOMBRES">
+                                                                    <input type="number" name="bonificacion" id="bonificacion" placeholder="$.00">
                                                                 </label>
                                                             </section>
                                                             <section class="col col-3">
+                                                                <label  style="color: black" > BONIFICACION EXTRAORDINARIA(*)</label>
                                                                 <label class="input"><i class=" icon-prepend  fas fa-calendar-alt"></i>
-                                                                    <input type="date" name="fecha1"  id="fecha1" placeholder="FECHA INGRESO" >
+                                                                    <input type="number" name="bonificacion_extraordinaria"  id="bonificacion_extraordinaria" placeholder="$.00" >
                                                                 </label>
                                                             </section>
 
@@ -215,23 +241,27 @@
                                                 <fieldset>
                                                     <div class="row">
                                                         <section class="col col-3">
+                                                            <label  style="color: black" > HORAS EXTRAS AL 25%(*)</label>
                                                             <label class="input"> <i class="icon-prepend fa fa-money"></i>
-                                                                <input type="number" name="horas_extras"  id="horas_extrasx25" placeholder="horas extras al 25%">
+                                                                <input type="number" name="horas_extras"  id="horas_extrasx25" placeholder="$.00">
                                                             </label>
                                                         </section>
                                                         <section class="col col-3">
+                                                            <label  style="color: black" > HORAS EXTRAS AL 35%(*)</label>
                                                             <label class="input"> <i class="icon-prepend fa fa-money"></i>
-                                                                <input type="number" name="horas_extras"  id="horas_extrasx35" placeholder="horas extras al 35%">
+                                                                <input type="number" name="horas_extras"  id="horas_extrasx35" placeholder="$.00">
                                                             </label>
                                                         </section>
                                                         <section class="col col-3">
+                                                            <label  style="color: black" > DESCUENTO POR FALTAS(*)</label>
                                                             <label class="input"> <i class="icon-prepend fa fa-money"></i>
-                                                                <input type="number"  name="inasistencias"  id="inasistencias" placeholder="Descuento por Inasistencias">
+                                                                <input type="number"  name="inasistencias"  id="inasistencias" placeholder="$.00">
                                                             </label>
                                                         </section>
                                                         <section class="col col-3">
+                                                            <label  style="color: black" > PAGO DE CADA MES(*)</label>
                                                             <label class="input"> <i class="icon-prepend fa fa-money"></i>
-                                                                <input type="number"  name="valorxmes"  id="valorxmes" placeholder="Pago por mes">
+                                                                <input type="number"  name="valorxmes"  id="valorxmes" placeholder="$.00">
                                                             </label>
                                                         </section>
 
@@ -291,7 +321,7 @@
 
 @section('scripts')
 <script>
-    var fecha_Actual
+    var fecha_Actual;
     $(document).ready(function() {
 
         fecha_Actual= get_fhoy();
@@ -332,21 +362,36 @@
     function calcularfechas() {
         var fecha=new Date($('#fecha1').val());
         var fecha2=new Date($('#fecha2').val());
+        if(fecha==null){
+            iziToast.error({
+                title: 'Error',
+                message: 'Es necesario elegir las fechas',
+            });
+        }if(fecha2==null){
+            iziToast.error({
+                title: 'Error',
+                message: 'Es necesario elegir las fechas',
+            });
 
-      var  months = (fecha2.getFullYear() - fecha.getFullYear());
+        }else {
+            var  months = (fecha2.getFullYear() - fecha.getFullYear());
 
-        var fechafinal=months*12;
-        fechafinal -= fecha.getMonth();
-        fechafinal += fecha2.getMonth();
+            var fechafinal=months*12;
+            fechafinal -= fecha.getMonth();
+            fechafinal += fecha2.getMonth();
             if (fechafinal===fechafinal){
                 iziToast.info({
                     title: 'fechas',
                     message: 'la cantidad de meses agarrados son:'+fechafinal,
                 });
                 $('#numero_fecha').val(fechafinal);
+                $('#numero_fecha1').val(fechafinal);
 
 
             }
+        }
+
+
 
     }
     function CalcularInasistencias() {
@@ -412,11 +457,10 @@
 
             }
         }
-        calcularcts();
 
 
     }
-    function calcularcts() {
+    function calcularbeneficios() {
         var numero_fecha= $('#numero_fecha').val();
         var pagobasico=$('#sueldo_basico').val();
         var asisganacion_familair=$('#asigna_familiar').val();
@@ -427,6 +471,24 @@
         $('#cts').val(totalsuma.toFixed(2));
 
 
+    }
+    function calcularVacaciones() {
+        var numero_fecha= $('#numero_fecha').val();
+        var pagobasico=$('#sueldo_basico').val();
+        var asisganacion_familair=$('#asigna_familiar').val();
+        var totalbasico=parseFloat(pagobasico)+parseFloat(asisganacion_familair);
+        var vacaciones=parseFloat(totalbasico)/12*parseFloat(numero_fecha);
+        $('#vacaciones_trun').val(vacaciones.toFixed(2));
+    }
+    function calcularGratificacion() {
+        var numero_fecha= $('#numero_fecha').val();
+        var pagobasico=$('#sueldo_basico').val();
+        var asisganacion_familair=$('#asigna_familiar').val();
+        var totalbasico=parseFloat(pagobasico)+parseFloat(asisganacion_familair);
+        var bonificacion=parseFloat(totalbasico)/6*parseFloat(numero_fecha);
+        var bonificacion_extraordinaria=parseFloat(bonificacion)*0.09;
+        $('#bonificacion').val(bonificacion.toFixed(2));
+        $('#bonificacion_extraordinaria').val(bonificacion_extraordinaria.toFixed(2));
     }
 </script>
 @endsection
