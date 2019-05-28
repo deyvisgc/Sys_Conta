@@ -237,8 +237,11 @@
 
                                             </div>
                                             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                                                <strong><center><h2 style="color: black">INGRESOS DEL TRABAJADOR Y RENUMERACION  </h2> </center></strong>
+                                                <strong><center><h2 style="color: black">INGRESOS DEL TRABAJADOR Y RENUMERACION  </h2> </center></strong><br>
                                                 <button type="button" style="margin-left: 10px"  title="calcular gratificaciones"   onclick="calculalarRenumeracion();" class="btn btn-outline-info"> <i class="fa fa-calculator"> RENUMERACION</i></button>
+                                                <button type="button" style="margin-left: 10px"  id="informacion_categoria" title="calcular gratificaciones"   class="btn btn-outline-danger"> <i class="fa fa-calculator"></i> AYUDA SOBRE LA 5 CATEGORIA</button><br>
+
+
                                                 <fieldset>
                                                     <div class="row">
                                                         <section class="col col-3">
@@ -295,6 +298,7 @@
                                                     <strong><center><h2 style="color: black">CALCULOS FINALES</h2></center></strong>
 
                                                     <button type="button" style="margin-left: 10px"  title="calcular Pensiones"   onclick="calculalarPensiones();" class="btn btn-outline-dark"> <i class="fa fa-calculator"> PENSIONES</i></button>
+                                                    <button type="button" style="margin-left: 10px"  title="calcular 5 Categoria"   onclick="calculalar5CATEGORIA();" class="btn btn-outline-warning"> <i class="fa fa-calculator">CALCULO 5 CATEGORIA</i></button>
                                                     <br><br>
                                                      <div class="row">
                                                          <section class="col col-3">
@@ -349,6 +353,12 @@
                                                                  <input type="number" name="prima_Seguros1" id="prima_Seguros1" placeholder="$.00">
                                                              </label>
                                                          </section>
+                                                         <section class="col col-3">
+                                                             <label  style="color: black" >TOTAL DESCUENTO (AFP/ONP)</label>
+                                                             <label class="input"> <i class="icon-prepend fa fa-money"></i>
+                                                                 <input type="number" name="prima_Seguros1" id="total_Descuento_afp" placeholder="$.00">
+                                                             </label>
+                                                         </section>
 
                                                      </div>
                                                 </fieldset>
@@ -366,7 +376,228 @@
         </div>
     </section>
 
+    <div class="modal fade" id="calcular5categoria" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <center> <strong><h5 style="color: black ;font-family:'Arial Black' " class="modal-title" id="exampleModalLabel">CALCULO DE LA 5 CATEGORIA</h5></strong></center>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="UPDATATRABAJADOR" class="smart-form" novalidate="novalidate">
+                        <!-- widget div-->
+                        <input type="hidden" data-chat-id="fecha_naci" name="id_persona" id="id_persona" placeholder="Expected finish date" class="hasDatepicker valid" aria-invalid="false">
+                        <input type="hidden" data-chat-id="fecha_naci" name="id_trabajador" id="id_trabajador" placeholder="Expected finish date" class="hasDatepicker valid" aria-invalid="false">
 
+                        <div>
+                            <div class="widget-body no-padding">
+                                <fieldset>
+                                    <div class="row">
+                                        <section class="col col-6">
+                                            <label class="input"> <i class="icon-prepend fa fa-user"></i>
+                                                <input type="text" id="nombre_Per" name="nombre_Per" placeholder="Nombre">
+                                            </label>
+                                        </section>
+                                        <section class="col col-6">
+                                            <label class="input"> <i class="icon-prepend fa fa-user"></i>
+                                                <input type="text" id="Apellido" name="Apellido" placeholder="Apellido">
+                                            </label>
+                                        </section>
+                                    </div>
+                                    <div class="row">
+                                        <section class="col col-6">
+                                            <label class="input"> <i class="icon-prepend fas fa-address-card"></i>
+                                                <input type="text" id="dni" name="dni" placeholder="DNI">
+                                            </label>
+                                        </section>
+                                        <section class="col col-6">
+                                            <label class="input"> <i class="icon-prepend fas fa-address-card"></i>
+                                                <input type="text" id="car_extran" name="car_extran" placeholder="CARNE EXTRANJERIA">
+                                            </label>
+                                        </section>
+                                    </div>
+                                    <div class="row">
+                                        <section class="col col-6">
+                                            <label class="input"> <i class="icon-prepend fa fa-share-square"></i>
+                                                <input type="text" id="direccion" name="direccion" placeholder="Direccion">
+                                            </label>
+                                        </section>
+                                        <section class="col col-6">
+                                            <label class="input"> <i class="icon-prepend far fa-credit-card	"></i>
+                                                <input type="number" id="n_cuenta" name="n_cuenta" placeholder="Numero de Cuenta">
+                                            </label>
+                                        </section>
+                                    </div>
+
+                                    <div class="row">
+                                        <section class="col col-6">
+                                            <label class="input"> <i class="icon-prepend fa fa-envelope-o"></i>
+                                                <input type="Correo" id="Correo" name="Correo" placeholder="E-mail">
+                                            </label>
+                                        </section>
+                                        <section class="col col-6">
+                                            <label class="input"> <i class="icon-prepend fa fa-phone"></i>
+                                                <input type="tel" id="phone" name="phone" placeholder="Celular" data-mask="(999) 999-9999">
+                                            </label>
+                                        </section>
+                                    </div>
+
+                                    <div class="row">
+                                        <section class="col col-6">
+                                            <label class="input"> <i class="icon-prepend fa fa-envelope-o"></i>
+                                                <input type="text" id="estado" name="estado"  readonly>
+                                            </label>
+                                        </section>
+                                        <section class="col col-6">
+                                            <label class="input"> <i class="icon-append fa fa-calendar"></i>
+                                                <input type="date"  name="fecha_nacimiento" id="fecha_nacimiento" placeholder="Expected finish date" class="hasDatepicker valid" aria-invalid="false">
+                                            </label>
+                                        </section>
+                                    </div>
+
+                                    <div class="row">
+                                        <section class="col col-6">
+                                            <label class="select">
+                                                <select name="seguro"  id="seguro" name="seguro">
+                                                </select> <i></i> </label>
+                                        </section>
+                                        <section class="col col-6">
+
+                                            <label class="select">
+                                                <select name="tipo_Seguros"  id="tipo_Seguros">
+                                                </select> <i></i> </label>
+
+                                        </section>
+                                    </div>
+                                </fieldset>
+
+
+
+                                <footer>
+                                    <button type="button" id="CalcularCategoria" class="btn btn-success">CALCULAR CATEGORIA</button>
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+
+                                </footer>
+
+
+                            </div>
+                            <!-- end widget content -->
+
+                        </div>
+                        <!-- end widget div -->
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="ModalInformacion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <center> <strong><h5 style="color: black ;font-family:'Arial Black' " class="modal-title" id="exampleModalLabel">INFORMACION DE LA QUINTA CATE</h5></strong></center>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+
+                        <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                            <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-0" data-widget-editbutton="false">
+
+                                <header>
+                                    <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                                    <h2>RENTA NETA IMPONIBLE DE TRABAJO</h2>
+
+                                </header>
+
+                                <!-- widget div-->
+                                <div>
+
+                                    <!-- widget edit box -->
+                                    <div class="jarviswidget-editbox">
+                                        <!-- This area used as dropdown edit box -->
+
+                                    </div>
+                                    <!-- end widget edit box -->
+
+                                    <!-- widget content -->
+                                    <div class="widget-body">
+
+                                        <div class="table-responsive">
+
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                <tr>
+                                                    <th>DESCRIPCION RENTA POR UIT</th>
+                                                    <th>PORCENTAJE DE UIT</th>
+                                                    <th>TOPE MAXIMO DE CADA UIT</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td>HASTA 5 UIT 0 $21000</td>
+                                                    <td>8%</td>
+                                                    <td>21000</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td>POR EL EXCESO DE 5UIT $/21000 hasta 20UIT $/84000</td>
+                                                    <td>14%</td>
+                                                    <td>63000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>POR EL EXCESO DE 20UIT $/84000 hasta 35UIT $/147000</td>
+                                                    <td>17%</td>
+                                                    <td>63000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>POR EL EXCESO DE 35UIT $/147000 hasta 45UIT $/189000</td>
+                                                    <td>20%</td>
+                                                    <td>42000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>POR EL EXCESO DE 45UIT $/189000 </td>
+                                                    <td>30%</td>
+                                                    <td>NO TIENE TOPE</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                    </div>
+                                    <!-- end widget content -->
+
+                                </div>
+                                <!-- end widget div -->
+
+                            </div>
+
+                            <footer>
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                                <button type="button" id="informacionojo" class="btn btn-success">OJO</button>
+
+                            </footer>
+
+                        </article>
+                            </div>
+                            <!-- end widget content -->
+
+                        </div>
+                        <!-- end widget div -->
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
 
 @endsection
 
@@ -406,6 +637,7 @@
 
             minLength: 1,
             select:function (event,ui) {
+                $('#dni').val(ui.item.value);
                 $('#nombres').val(ui.item.nombre);
                 $('#tipe_Seguo').val(ui.item.nombre_tipo);
                 $('#seguro1').val(ui.item.seguro);
@@ -418,7 +650,13 @@
 
 
         });
+        $('#informacion_categoria').click(function () {
+            $('#ModalInformacion').modal('show');
 
+        });
+        $('#informacionojo').click(function () {
+            Swal.fire('los topes maximo se sacan restando el tope mayor de cada renta con el otro');
+        });
     });
 
     function calculalarRenumeracion() {
@@ -646,27 +884,43 @@
 
     }
     function calculalarPensiones() {
-        var base_Calculo=$('#base_calculo').val();
-        var aporte_obligatorio=$('#aporte_obligatorio').val();
-        var comision_sobre_renumeracion=$('#comision_renumeracion').val();
-        var prima_Seguros=$('#prima_Seguros').val();
-        //se divide entre 100% para sacar el porcentaje de cada valor que viene
-        var subtotalaporte=parseFloat(aporte_obligatorio)/100;
-        var subtotalcomicion=parseFloat(comision_sobre_renumeracion)/100;
-        var subtotalprima_Seguros=parseFloat(prima_Seguros)/100;
-        //calculo de las pensiones por cada tipo
-        var totalaporte=parseFloat(base_Calculo)*parseFloat(subtotalaporte);
-           $('#aporte_obligatorio1').val(totalaporte.toFixed(2));
+      var tipo_seguros=$('#tipe_Seguo').val();
+      if(tipo_seguros=='AFP'){
+          var base_Calculo=$('#base_calculo').val();
+          var aporte_obligatorio=$('#aporte_obligatorio').val();
+          var comision_sobre_renumeracion=$('#comision_renumeracion').val();
+          var prima_Seguros=$('#prima_Seguros').val();
+          //se divide entre 100% para sacar el porcentaje de cada valor que viene
+          var subtotalaporte=parseFloat(aporte_obligatorio)/100;
+          var subtotalcomicion=parseFloat(comision_sobre_renumeracion)/100;
+          var subtotalprima_Seguros=parseFloat(prima_Seguros)/100;
+          //calculo de las pensiones por cada tipo
+          var totalaporte=parseFloat(base_Calculo)*parseFloat(subtotalaporte);
+          $('#aporte_obligatorio1').val(totalaporte.toFixed(2));
 
-        var totalcomision=parseFloat(base_Calculo)*parseFloat(subtotalcomicion);
-        $('#comision_renumeracion1').val(totalcomision.toFixed(2));
+          var totalcomision=parseFloat(base_Calculo)*parseFloat(subtotalcomicion);
+          $('#comision_renumeracion1').val(totalcomision.toFixed(2));
 
-        var primaseguros=parseFloat(base_Calculo)*parseFloat(subtotalprima_Seguros);
-        $('#prima_Seguros1').val(primaseguros.toFixed(2));
+          var primaseguros=parseFloat(base_Calculo)*parseFloat(subtotalprima_Seguros);
+          $('#prima_Seguros1').val(primaseguros.toFixed(2));
+
+          var totalpensiones=parseFloat(totalaporte)+parseFloat(totalcomision)+parseFloat(primaseguros);
+          $('#total_Descuento_afp').val(totalpensiones.toFixed(2));
+      }else if(tipo_seguros=='ONP'){
+          var base_Calculo=$('#base_calculo').val();
+          var subtotalANP=parseFloat(base_Calculo)*0.13;
+
+          $('#total_Descuento_afp').val(subtotalANP.toFixed(2));
+      }
+
 
 
     }
+    function calculalar5CATEGORIA() {
+        $('#calcular5categoria').modal('show');
 
+
+    }
 
 </script>
 @endsection
