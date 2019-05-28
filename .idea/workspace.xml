@@ -4,7 +4,6 @@
     <list default="true" id="17f02004-ef43-4d3d-a751-32c9390f5b35" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Planilla/Create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Planilla/Create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layaouts/prinsipal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layaouts/prinsipal.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,13 +28,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/Planilla/Create.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="658" column="11" selection-start-line="658" selection-start-column="11" selection-end-line="658" selection-end-column="11" />
+            <state relative-caret-position="423">
+              <caret line="966" column="60" lean-forward="true" selection-start-line="966" selection-start-column="60" selection-end-line="966" selection-end-column="60" />
               <folding>
                 <element signature="e#17026#17051#0#HTML" expanded="true" />
                 <element signature="e#17283#17308#0#HTML" expanded="true" />
-                <element signature="e#17320#22211#0#HTML" />
-                <element signature="e#28903#36354#0#HTML" />
+                <element signature="e#36377#42961#0#HTML" />
                 <element signature="e#29921#31699#0#HTML" />
                 <element signature="e#31730#32720#0#HTML" />
                 <element signature="e#32758#33281#0#HTML" />
@@ -375,18 +373,18 @@
       <workItem from="1558922867541" duration="8745000" />
       <workItem from="1558974121089" duration="18544000" />
       <workItem from="1559013396445" duration="1290000" />
-      <workItem from="1559015870880" duration="4552000" />
+      <workItem from="1559015870880" duration="10981000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="159805000" />
+    <option name="totallyTimeSpent" value="166234000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25189108" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25189108" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -620,13 +618,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/Planilla/Create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="658" column="11" selection-start-line="658" selection-start-column="11" selection-end-line="658" selection-end-column="11" />
+        <state relative-caret-position="423">
+          <caret line="966" column="60" lean-forward="true" selection-start-line="966" selection-start-column="60" selection-end-line="966" selection-end-column="60" />
           <folding>
             <element signature="e#17026#17051#0#HTML" expanded="true" />
             <element signature="e#17283#17308#0#HTML" expanded="true" />
-            <element signature="e#17320#22211#0#HTML" />
-            <element signature="e#28903#36354#0#HTML" />
+            <element signature="e#36377#42961#0#HTML" />
             <element signature="e#29921#31699#0#HTML" />
             <element signature="e#31730#32720#0#HTML" />
             <element signature="e#32758#33281#0#HTML" />
