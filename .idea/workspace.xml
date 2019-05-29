@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17f02004-ef43-4d3d-a751-32c9390f5b35" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Planilla/Create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Planilla/Create.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,40 +27,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/Planilla/Create.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="864" column="8" lean-forward="true" selection-start-line="864" selection-start-column="8" selection-end-line="864" selection-end-column="8" />
-              <folding>
-                <element signature="e#31582#31602#0#HTML" expanded="true" />
-                <element signature="e#32133#32153#0#HTML" expanded="true" />
-                <element signature="e#32816#32836#0#HTML" expanded="true" />
-                <element signature="e#33394#33414#0#HTML" expanded="true" />
-                <element signature="e#34071#34091#0#HTML" expanded="true" />
-                <element signature="e#34644#34664#0#HTML" expanded="true" />
-                <element signature="e#35315#35335#0#HTML" expanded="true" />
-                <element signature="e#35872#35892#0#HTML" expanded="true" />
-                <element signature="e#37871#37891#0#HTML" expanded="true" />
-                <element signature="e#38433#38453#0#HTML" expanded="true" />
-                <element signature="e#39279#39299#0#HTML" expanded="true" />
-                <element signature="e#39926#39946#0#HTML" expanded="true" />
-                <element signature="e#40541#40561#0#HTML" expanded="true" />
-                <element signature="e#41097#41117#0#HTML" expanded="true" />
-                <element signature="e#41761#41781#0#HTML" expanded="true" />
-                <element signature="e#42310#42330#0#HTML" expanded="true" />
-                <element signature="e#43028#43048#0#HTML" expanded="true" />
-                <element signature="e#43568#43588#0#HTML" expanded="true" />
-                <element signature="e#41019#42427#0#HTML" />
-                <element signature="e#48491#52132#0#HTML" />
-                <element signature="e#42469#44247#0#HTML" />
-                <element signature="e#44278#45268#0#HTML" />
-                <element signature="e#45306#45829#0#HTML" />
-                <element signature="e#45852#46064#0#HTML" />
-                <element signature="e#46092#47717#0#HTML" />
-                <element signature="e#47752#48637#0#HTML" />
-                <element signature="e#48672#49457#0#HTML" />
-                <element signature="e#49495#50448#0#HTML" />
-                <element signature="e#50484#52005#0#HTML" />
-                <element signature="e#50562#51783#0#HTML" />
-              </folding>
+            <state relative-caret-position="336">
+              <caret line="880" column="9" lean-forward="true" selection-start-line="880" selection-start-column="9" selection-end-line="880" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -268,6 +235,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -334,7 +302,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -393,16 +360,18 @@
       <workItem from="1559013396445" duration="1290000" />
       <workItem from="1559015870880" duration="11106000" />
       <workItem from="1559104043395" duration="10524000" />
+      <workItem from="1559141855552" duration="6866000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="176883000" />
+    <option name="totallyTimeSpent" value="183749000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25567323" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25945538" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -636,40 +605,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/Planilla/Create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="864" column="8" lean-forward="true" selection-start-line="864" selection-start-column="8" selection-end-line="864" selection-end-column="8" />
-          <folding>
-            <element signature="e#31582#31602#0#HTML" expanded="true" />
-            <element signature="e#32133#32153#0#HTML" expanded="true" />
-            <element signature="e#32816#32836#0#HTML" expanded="true" />
-            <element signature="e#33394#33414#0#HTML" expanded="true" />
-            <element signature="e#34071#34091#0#HTML" expanded="true" />
-            <element signature="e#34644#34664#0#HTML" expanded="true" />
-            <element signature="e#35315#35335#0#HTML" expanded="true" />
-            <element signature="e#35872#35892#0#HTML" expanded="true" />
-            <element signature="e#37871#37891#0#HTML" expanded="true" />
-            <element signature="e#38433#38453#0#HTML" expanded="true" />
-            <element signature="e#39279#39299#0#HTML" expanded="true" />
-            <element signature="e#39926#39946#0#HTML" expanded="true" />
-            <element signature="e#40541#40561#0#HTML" expanded="true" />
-            <element signature="e#41097#41117#0#HTML" expanded="true" />
-            <element signature="e#41761#41781#0#HTML" expanded="true" />
-            <element signature="e#42310#42330#0#HTML" expanded="true" />
-            <element signature="e#43028#43048#0#HTML" expanded="true" />
-            <element signature="e#43568#43588#0#HTML" expanded="true" />
-            <element signature="e#41019#42427#0#HTML" />
-            <element signature="e#48491#52132#0#HTML" />
-            <element signature="e#42469#44247#0#HTML" />
-            <element signature="e#44278#45268#0#HTML" />
-            <element signature="e#45306#45829#0#HTML" />
-            <element signature="e#45852#46064#0#HTML" />
-            <element signature="e#46092#47717#0#HTML" />
-            <element signature="e#47752#48637#0#HTML" />
-            <element signature="e#48672#49457#0#HTML" />
-            <element signature="e#49495#50448#0#HTML" />
-            <element signature="e#50484#52005#0#HTML" />
-            <element signature="e#50562#51783#0#HTML" />
-          </folding>
+        <state relative-caret-position="336">
+          <caret line="880" column="9" lean-forward="true" selection-start-line="880" selection-start-column="9" selection-end-line="880" selection-end-column="9" />
         </state>
       </provider>
     </entry>

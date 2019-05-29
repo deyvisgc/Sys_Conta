@@ -850,27 +850,58 @@
        var  subtotal3;
        var subtotal4;
         var subtotal5;
+        var subtota7;
+        var subtotal8;
        var renta_neta= $('#renta_neta').val();
-       if(renta_neta>=primerauit){
-           //primera categoria
-           $('#5uit').val(renta_neta);
-           var primerauit1=$('#5uit').val();
-           var ochoporciento=parseFloat(primerauit1)*0.08;
-           $('#renta_5uit').val(ochoporciento.toFixed(2));
-           subtotal1=parseFloat(renta_neta)-primerauit;
-           var renta5uit=$('#renta_5uit').val();
-           var sumafinal1=parseFloat(renta5uit)+0;
-           alert(sumafinal1);
 
-       }
+           //primera categoria
+           if(renta_neta<=primerauit){
+               subtotal1=parseFloat(renta_neta)-0;
+               alert(subtotal1);
+           }else if(renta_neta>21000){
+               subtotal2=parseFloat(renta_neta)-primerauit;
+               alert(subtotal2);
+               //segunda categoria
+           }if(subtotal2<=segundauit){
+            subtotal3=parseFloat(subtotal2)-parseFloat(segundauit)*0;
+
+
+        }if(subtotal2>=segundauit){
+            subtotal4=parseFloat(subtotal2)-parseFloat(segundauit);
+            alert(subtotal4);
+            //tercera categoria
+
+        }if(subtotal4<=tercerauit){
+            subtotal5=parseFloat(subtotal4)-parseFloat(tercerauit);
+          var subtotal6=parseFloat(subtotal5)*0;
+            alert(subtotal6);
+        }if(subtotal4>=tercerauit){
+            subtota7=parseFloat(subtotal4)-parseFloat(tercerauit);
+            alert(subtota7);
+        }
+        //tercera categoria
+           if(subtota7<=cuartauit){
+            subtotal8=parseFloat(subtota7)-parseFloat(cuartauit);
+            var subtotal9=parseFloat(subtotal8)*0;
+            alert(subtotal9);
+        }
+
+
+
+
+       /*
         //segunda categoria
-       if(subtotal1>=segundauit){
-            $('#20uit').val(segundauit);
-            alert(segundauit);
-            var segundauit1=$('#20uit').val();
-            var catorceporciento=parseFloat(segundauit1)*0.14;
-            $('#renta_20uit').val(catorceporciento);
-            subtotal2=parseFloat(subtotal1)-segundauit;
+       if(renta_neta>primerauit){
+           if(renta_neta<=segundauit){
+               alert('sasa');
+               $('#20uit').val(segundauit);
+               var segundauit1=$('#20uit').val();
+               var catorceporciento=parseFloat(segundauit1)*0.14;
+               $('#renta_20uit').val(catorceporciento);
+               subtotal2=parseFloat(subtotal1)-segundauit;
+               alert(subtotal2);
+           }
+
         }
         //tercera categoria
 
