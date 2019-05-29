@@ -48,6 +48,7 @@
             transition:background 0.20s linear;
         }
     </style>
+
     <section id="widget-grid" class="">
 
         <!-- row -->
@@ -377,7 +378,7 @@
     </section>
 
     <div class="modal fade" id="calcular5categoria" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <center> <strong><h5 style="color: black ;font-family:'Arial Black' " class="modal-title" id="exampleModalLabel">CALCULO IMPUESTO A LA RENTA 5TA CATEGORIA</h5></strong></center>
@@ -386,89 +387,207 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form id="UPDATATRABAJADOR" class="smart-form" novalidate="novalidate">
-                        <!-- widget div-->
-                        <input type="hidden" data-chat-id="fecha_naci" name="id_persona" id="id_persona" placeholder="Expected finish date" class="hasDatepicker valid" aria-invalid="false">
-                        <input type="hidden" data-chat-id="fecha_naci" name="id_trabajador" id="id_trabajador" placeholder="Expected finish date" class="hasDatepicker valid" aria-invalid="false">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#home">CALCULAR RENTA NETA</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#menu1">CALCULAR 5 CATEGORIA</a>
+                        </li>
+                    </ul>
 
-                        <div>
-                            <div class="widget-body no-padding">
-                                <fieldset>
-                                    <div class="row">
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div class="tab-pane container active" id="home">
+                            <form id="UPDATATRABAJADOR" class="smart-form" novalidate="novalidate">
+                                <!-- widget div-->
+                                <input type="hidden" data-chat-id="fecha_naci" name="id_persona" id="id_persona" placeholder="Expected finish date" class="hasDatepicker valid" aria-invalid="false">
+                                <input type="hidden" data-chat-id="fecha_naci" name="id_trabajador" id="id_trabajador" placeholder="Expected finish date" class="hasDatepicker valid" aria-invalid="false">
 
-                                        <section class="col col-6">
-                                            <label  style="color: black" >SUELDO ANUAL(*)</label>
-                                            <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                                                <input type="number" id="sueldo_anual" name="sueldo_anual" placeholder="$.00">
-                                            </label>
-                                        </section>
-                                        <section class="col col-6">
-                                            <label  style="color: black" >GRATIFICACIONES(J/D)</label>
-                                            <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                                                <input type="number" id="gratificaciones_j_d" name="gratificaciones_j_d" placeholder="$.00">
-                                            </label>
-                                        </section>
+                                <div>
+                                    <div class="widget-body no-padding">
+                                        <fieldset>
+                                            <div class="row">
+
+                                                <section class="col col-6">
+                                                    <label  style="color: black" >SUELDO ANUAL(*)</label>
+                                                    <label class="input"> <i class="icon-prepend fa fa-user"></i>
+                                                        <input type="number" id="sueldo_anual" name="sueldo_anual" placeholder="$.00">
+                                                    </label>
+                                                </section>
+                                                <section class="col col-6">
+                                                    <label  style="color: black" >GRATIFICACIONES(J/D)</label>
+                                                    <label class="input"> <i class="icon-prepend fa fa-user"></i>
+                                                        <input type="number" id="gratificaciones_j_d" name="gratificaciones_j_d" placeholder="$.00">
+                                                    </label>
+                                                </section>
+                                            </div>
+                                            <div class="row">
+                                                <section class="col col-6">
+                                                    <label  style="color: black" >BONIFICACION EXTRA(*)</label>
+                                                    <label class="input"> <i class="icon-prepend fas fa-address-card"></i>
+                                                        <input type="number" id="bonificacion_extra" name="bonificacion_extra" placeholder="$.00">
+                                                    </label>
+                                                </section>
+                                                <section class="col col-6">
+                                                    <label  style="color: black" >TOTAL HORAS EXTRAS(*)</label>
+                                                    <label class="input"> <i class="icon-prepend fas fa-address-card"></i>
+                                                        <input type="number" id="total_horas" name="total_horas" placeholder="$.00">
+                                                    </label>
+                                                </section>
+                                            </div>
+                                            <div class="row">
+                                                <section class="col col-6">
+                                                    <label  style="color: black" >VACACIONES TRUNCADAS(*)</label>
+                                                    <label class="input"> <i class="icon-prepend fa fa-share-square"></i>
+                                                        <input type="number" value="0" id="vaca_trunc" name="vaca_trunc" placeholder="$.00">
+                                                    </label>
+                                                </section>
+                                                <section class="col col-6">
+                                                    <label  style="color: black" >RENTA BRUTA(*)</label>
+                                                    <label class="input"> <i class="icon-prepend far fa-credit-card	"></i>
+                                                        <input type="number" id="renta_bruta" name="renta_bruta" placeholder="$.00">
+                                                    </label>
+                                                </section>
+                                            </div>
+
+                                            <div class="row">
+                                                <section class="col col-6">
+                                                    <label  style="color: black" >TOTAL INGRESOS(*)</label>
+                                                    <label class="input"> <i class="icon-prepend fa fa-envelope-o"></i>
+                                                        <input type="number" id="total_ingre" name="total_ingre" placeholder="$.00">
+                                                    </label>
+                                                </section>
+                                                <section class="col col-6">
+                                                    <label  style="color: black" >RENTA NETA(*)</label>
+                                                    <label class="input"> <i class="icon-prepend fa fa-phone"></i>
+                                                        <input type="number" id="renta_neta" name="renta_neta" placeholder="$.00">
+                                                    </label>
+                                                </section>
+                                            </div>
+                                           <center><button type="button" onclick="renta5categoria();" id="CalcularCategoria" class="btn btn-dark">CALCULAR 5 CATEGORIA</button></center>
+
+                                        </fieldset><br>
+
+                                        <footer>    <br><br>
+                                            <button type="button" id="CalcularCategoria" class="btn btn-success">CALCULAR CATEGORIA</button>
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+
+                                        </footer>
+
+
                                     </div>
-                                    <div class="row">
-                                        <section class="col col-6">
-                                            <label  style="color: black" >BONIFICACION EXTRA(*)</label>
-                                            <label class="input"> <i class="icon-prepend fas fa-address-card"></i>
-                                                <input type="number" id="bonificacion_extra" name="bonificacion_extra" placeholder="$.00">
-                                            </label>
-                                        </section>
-                                        <section class="col col-6">
-                                            <label  style="color: black" >TOTAL HORAS EXTRAS(*)</label>
-                                            <label class="input"> <i class="icon-prepend fas fa-address-card"></i>
-                                                <input type="number" id="total_horas" name="total_horas" placeholder="$.00">
-                                            </label>
-                                        </section>
-                                    </div>
-                                    <div class="row">
-                                        <section class="col col-6">
-                                            <label  style="color: black" >VACACIONES TRUNCADAS(*)</label>
-                                            <label class="input"> <i class="icon-prepend fa fa-share-square"></i>
-                                                <input type="number" value="0" id="vaca_trunc" name="vaca_trunc" placeholder="$.00">
-                                            </label>
-                                        </section>
-                                        <section class="col col-6">
-                                            <label  style="color: black" >RENTA BRUTA(*)</label>
-                                            <label class="input"> <i class="icon-prepend far fa-credit-card	"></i>
-                                                <input type="number" id="renta_bruta" name="renta_bruta" placeholder="$.00">
-                                            </label>
-                                        </section>
-                                    </div>
+                                    <!-- end widget content -->
 
-                                    <div class="row">
-                                        <section class="col col-6">
-                                            <label  style="color: black" >TOTAL INGRESOS(*)</label>
-                                            <label class="input"> <i class="icon-prepend fa fa-envelope-o"></i>
-                                                <input type="number" id="total_ingre" name="total_ingre" placeholder="$.00">
-                                            </label>
-                                        </section>
-                                        <section class="col col-6">
-                                            <label  style="color: black" >RENTA NETA(*)</label>
-                                            <label class="input"> <i class="icon-prepend fa fa-phone"></i>
-                                                <input type="number" id="renta_neta" name="renta_neta" placeholder="$.00">
-                                            </label>
-                                        </section>
-                                    </div>
-                                </fieldset>
-
-
-
-                                <footer>
-                                    <button type="button" id="CalcularCategoria" class="btn btn-success">CALCULAR CATEGORIA</button>
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-
-                                </footer>
-
-
-                            </div>
-                            <!-- end widget content -->
+                                </div>
+                                <!-- end widget div -->
+                            </form>
 
                         </div>
-                        <!-- end widget div -->
-                    </form>
+                        <div class="tab-pane container fade" id="menu1">
+                            <form id="UPDATATRABAJADOR" class="smart-form" novalidate="novalidate">
+                                <!-- widget div-->
+                                <input type="hidden" data-chat-id="fecha_naci" name="id_persona" id="id_persona" placeholder="Expected finish date" class="hasDatepicker valid" aria-invalid="false">
+                                <input type="hidden" data-chat-id="fecha_naci" name="id_trabajador" id="id_trabajador" placeholder="Expected finish date" class="hasDatepicker valid" aria-invalid="false">
+
+                                <div>
+                                    <div class="widget-body no-padding">
+                                        <fieldset>
+                                            <div class="row">
+
+                                                <section class="col col-6">
+                                                    <label  style="color: black" >5UIT(8%)</label>
+                                                    <label class="input"> <i class="icon-prepend fa fa-user"></i>
+                                                        <input type="number" id="5uit" name="sueldo_anual" placeholder="$.00">
+                                                    </label>
+                                                </section>
+                                                <section class="col col-6">
+                                                    <label  style="color: black" >RENTA 5TA</label>
+                                                    <label class="input"> <i class="icon-prepend fa fa-user"></i>
+                                                        <input type="number" id="renta_5uit" name="gratificaciones_j_d" placeholder="$.00">
+                                                    </label>
+                                                </section>
+                                            </div>
+                                            <div class="row">
+                                                <section class="col col-6">
+                                                    <label  style="color: black" >20UIT(14%)</label>
+                                                    <label class="input"> <i class="icon-prepend fa fa-user"></i>
+                                                        <input type="number" id="20uit" name="gratificaciones_j_d" placeholder="$.00">
+                                                    </label>
+                                                </section>
+                                                <section class="col col-6">
+                                                    <label  style="color: black" >RENTA 5TA</label>
+                                                    <label class="input"> <i class="icon-prepend fa fa-user"></i>
+                                                        <input type="number" id="renta_20uit" name="gratificaciones_j_d" placeholder="$.00">
+                                                    </label>
+                                                </section>
+                                            </div>
+                                            <div class="row">
+
+                                                <section class="col col-6">
+                                                    <label  style="color: black" >35UIT(17%)</label>
+                                                    <label class="input"> <i class="icon-prepend fas fa-address-card"></i>
+                                                        <input type="number" id="35uit" name="bonificacion_extra" placeholder="$.00">
+                                                    </label>
+                                                </section>
+
+                                                <section class="col col-6">
+                                                    <label  style="color: black" >RENTA 5TA</label>
+                                                    <label class="input"> <i class="icon-prepend fa fa-user"></i>
+                                                        <input type="number" id="renta_35uit" name="gratificaciones_j_d" placeholder="$.00">
+                                                    </label>
+                                                </section>
+
+                                            </div>
+                                            <div class="row">
+                                                <section class="col col-6">
+                                                    <label  style="color: black" >45UIT(20%)</label>
+                                                    <label class="input"> <i class="icon-prepend fas fa-address-card"></i>
+                                                        <input type="number" id="45uit" name="total_horas" placeholder="$.00">
+                                                    </label>
+                                                </section>
+                                                <section class="col col-6">
+                                                    <label  style="color: black" >RENTA 5TA</label>
+                                                    <label class="input"> <i class="icon-prepend fa fa-user"></i>
+                                                        <input type="number" id="renta_45uit" name="gratificaciones_j_d" placeholder="$.00">
+                                                    </label>
+                                                </section>
+                                            </div>
+
+                                            <div class="row">
+                                                <section class="col col-6">
+                                                    <label  style="color: black" >45UIT(30%)</label>
+                                                    <label class="input"> <i class="icon-prepend fas fa-address-card"></i>
+                                                        <input type="number" id="45uit1" name="total_horas" placeholder="$.00">
+                                                    </label>
+                                                </section>
+
+                                                <section class="col col-6">
+                                                    <label  style="color: black" >RENTA 5TA</label>
+                                                    <label class="input"> <i class="icon-prepend fa fa-user"></i>
+                                                        <input type="number" id="renta_45uit1" name="gratificaciones_j_d" placeholder="$.00">
+                                                    </label>
+                                                </section>
+                                            </div>
+                                        </fieldset>
+                                        <footer>
+                                            <button type="button" id="CalcularCategoria" class="btn btn-success">CALCULAR CATEGORIA</button>
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+
+                                        </footer>
+
+
+                                    </div>
+                                    <!-- end widget content -->
+
+                                </div>
+                                <!-- end widget div -->
+                            </form>
+
+                        </div>
+
+                    </div>
+
                 </div>
 
             </div>
@@ -640,6 +759,166 @@
         });
     });
 
+
+    function calculalar5CATEGORIA() {
+        $('#calcular5categoria').modal('show');
+        var asisganacion_familair=$('#asigna_familiar').val();
+        var pagobasico=$('#sueldo_basico').val();
+        var inasistencias= $('#inasistencias').val();
+        var horasextrasx25=$('#horas_extrasx25').val();
+        var horasextrasx35=$('#horas_extrasx35').val();
+
+
+        if(inasistencias==''){
+            //calculo sueldo anual
+            var sueldo_anual=parseFloat(asisganacion_familair)+parseFloat(pagobasico)*12;
+            $('#sueldo_anual').val(sueldo_anual.toFixed(2));
+            //calculo de las bonificaciones anuales
+            var bonificacion=parseFloat(pagobasico)*2;
+            $('#gratificaciones_j_d').val(bonificacion.toFixed(2));
+
+            var bonificacionfinal=$('#gratificaciones_j_d').val();
+            //calculo de las bonificaciones extras
+            var bonificacionextra=parseFloat(bonificacionfinal)*0.09;
+            $('#bonificacion_extra').val(bonificacionextra.toFixed(2));
+
+            var bonificacionextrafinal=$('#bonificacion_extra').val();
+            var sueldo_final=$('#sueldo_anual').val();
+            //calculo de las horas extras
+            var sumar_horas=parseFloat(horasextrasx25)+parseFloat(horasextrasx35);
+            $('#total_horas').val(sumar_horas.toFixed(2));
+            var total_horas= $('#total_horas').val();
+
+            //calculo de suma de todos
+            var sumarrentas=parseFloat(sueldo_final)+parseFloat(bonificacionfinal)+parseFloat(bonificacionextrafinal)+parseFloat(total_horas);
+
+
+            $('#renta_bruta').val(sumarrentas.toFixed(2));
+            $('#total_ingre').val(sumarrentas.toFixed(2));
+            var total_ingreso=$('#total_ingre').val();
+            var totalrenta=parseFloat(total_ingreso)-29400.00;
+
+            $('#renta_neta').val(totalrenta.toFixed(2));
+
+        }else if(inasistencias==inasistencias){
+            //calculo sueldo anual
+            var subsueldo=parseFloat(pagobasico)+parseFloat(asisganacion_familair);
+            var sueldo_anual=parseFloat(subsueldo)*12-parseFloat(inasistencias);
+            $('#sueldo_anual').val(sueldo_anual.toFixed(2));
+            //calculo de las bonificaciones anuales
+            var bonificacion=parseFloat(pagobasico)*2;
+            $('#gratificaciones_j_d').val(bonificacion.toFixed(2));
+
+            var bonificacionfinal=$('#gratificaciones_j_d').val();
+            //calculo de las bonificaciones extras
+            var bonificacionextra=parseFloat(bonificacionfinal)*0.09;
+            $('#bonificacion_extra').val(bonificacionextra.toFixed(2));
+
+            var bonificacionextrafinal=$('#bonificacion_extra').val();
+            var sueldo_final=$('#sueldo_anual').val();
+            //calculo de las horas extras
+            var sumar_horas=parseFloat(horasextrasx25)+parseFloat(horasextrasx35);
+            $('#total_horas').val(sumar_horas.toFixed(2));
+            var total_horas= $('#total_horas').val();
+
+            //calculo de suma de todos
+            var sumarrentas=parseFloat(sueldo_final)+parseFloat(bonificacionfinal)+parseFloat(bonificacionextrafinal)+parseFloat(total_horas);
+
+
+            $('#renta_bruta').val(sumarrentas.toFixed(2));
+            $('#total_ingre').val(sumarrentas.toFixed(2));
+            var total_ingreso=$('#total_ingre').val();
+            var totalrenta=parseFloat(total_ingreso)-29400.00;
+            $('#renta_neta').val(totalrenta.toFixed(2));
+        }
+
+
+
+
+
+
+
+
+    }
+    function renta5categoria() {
+        var primerauit=21000;
+        var segundauit=63000;
+        var tercerauit=63000;
+        var cuartauit=42000;
+        var subtotal1;
+        var subtotal2;
+       var  subtotal3;
+       var subtotal4;
+        var subtotal5;
+       var renta_neta= $('#renta_neta').val();
+       if(renta_neta>=primerauit){
+           //primera categoria
+           $('#5uit').val(renta_neta);
+           var primerauit1=$('#5uit').val();
+           var ochoporciento=parseFloat(primerauit1)*0.08;
+           $('#renta_5uit').val(ochoporciento.toFixed(2));
+           subtotal1=parseFloat(renta_neta)-primerauit;
+           var renta5uit=$('#renta_5uit').val();
+           var sumafinal1=parseFloat(renta5uit)+0;
+           alert(sumafinal1);
+
+       }
+        //segunda categoria
+       if(subtotal1>=segundauit){
+            $('#20uit').val(segundauit);
+            alert(segundauit);
+            var segundauit1=$('#20uit').val();
+            var catorceporciento=parseFloat(segundauit1)*0.14;
+            $('#renta_20uit').val(catorceporciento);
+            subtotal2=parseFloat(subtotal1)-segundauit;
+        }
+        //tercera categoria
+
+       if(subtotal2>=tercerauit){
+            $('#35uit').val(tercerauit.toFixed(2));
+           var tercerauit1=$('#35uit').val();
+           var diecicieteporciento=parseFloat(tercerauit1)*0.17;
+           $('#renta_35uit').val(diecicieteporciento);
+            subtotal3=parseFloat(subtotal2)-tercerauit;
+
+        }
+        //cuarta categoria
+
+       if(subtotal3>=cuartauit){
+            $('#45uit').val(cuartauit.toFixed(2));
+            var cuartauit1= $('#45uit').val();
+           var veinteporciento=parseFloat(cuartauit1)*0.2;
+           $('#renta_45uit').val(veinteporciento);
+            subtotal4=parseFloat(subtotal3)-cuartauit;
+            alert(subtotal4);
+
+        }
+       /*
+        switch (true) {
+
+            case renta_neta>= 21000:
+                subtotal1=parseFloat(renta_neta)-2100;
+                break;
+            case subtotal1>= 63000:
+                subtotal2=parseFloat(subtotal1)-63000;
+                alert(subtotal2);
+                break;
+
+            case subtotal2<=63000:
+                subtotal3=parseFloat(renta_neta)-63000;
+                alert(subtotal3);
+                break;
+            case subtotal2<=42000:
+                subtotal4=parseFloat(renta_neta)-42000;
+                alert(subtotal4);
+                break;
+            default:
+                //Sentencias_def ejecutadas cuando no ocurre una coincidencia con los anteriores casos
+                break;
+        }
+        */
+
+    }
     function calculalarRenumeracion() {
         var asisganacion_familair = $('#asigna_familiar').val();
         var cts = $('#cts').val();
@@ -897,83 +1176,7 @@
 
 
     }
-    function calculalar5CATEGORIA() {
-        $('#calcular5categoria').modal('show');
-        var asisganacion_familair=$('#asigna_familiar').val();
-        var pagobasico=$('#sueldo_basico').val();
-        var inasistencias= $('#inasistencias').val();
-        var horasextrasx25=$('#horas_extrasx25').val();
-        var horasextrasx35=$('#horas_extrasx35').val();
 
-
-            if(inasistencias==''){
-                //calculo sueldo anual
-                var sueldo_anual=parseFloat(asisganacion_familair)+parseFloat(pagobasico)*12;
-                $('#sueldo_anual').val(sueldo_anual.toFixed(2));
-                //calculo de las bonificaciones anuales
-                var bonificacion=parseFloat(pagobasico)*2;
-                $('#gratificaciones_j_d').val(bonificacion.toFixed(2));
-
-                var bonificacionfinal=$('#gratificaciones_j_d').val();
-                //calculo de las bonificaciones extras
-                var bonificacionextra=parseFloat(bonificacionfinal)*0.09;
-                $('#bonificacion_extra').val(bonificacionextra.toFixed(2));
-
-                var bonificacionextrafinal=$('#bonificacion_extra').val();
-                var sueldo_final=$('#sueldo_anual').val();
-                //calculo de las horas extras
-                var sumar_horas=parseFloat(horasextrasx25)+parseFloat(horasextrasx35);
-                $('#total_horas').val(sumar_horas.toFixed(2));
-                var total_horas= $('#total_horas').val();
-
-                //calculo de suma de todos
-                var sumarrentas=parseFloat(sueldo_final)+parseFloat(bonificacionfinal)+parseFloat(bonificacionextrafinal)+parseFloat(total_horas);
-
-
-                $('#renta_bruta').val(sumarrentas.toFixed(2));
-                var total_ingreso=$('#total_ingre').val(sumarrentas.toFixed(2));
-                var totalrenta=parseFloat(total_ingreso)-29400.00;
-                $('#renta_neta').val(totalrenta.toFixed(2));
-
-            }else if(inasistencias==inasistencias){
-                //calculo sueldo anual
-                var subsueldo=parseFloat(pagobasico)+parseFloat(asisganacion_familair);
-                var sueldo_anual=parseFloat(subsueldo)*12-parseFloat(inasistencias);
-                $('#sueldo_anual').val(sueldo_anual.toFixed(2));
-                //calculo de las bonificaciones anuales
-                var bonificacion=parseFloat(pagobasico)*2;
-                $('#gratificaciones_j_d').val(bonificacion.toFixed(2));
-
-                var bonificacionfinal=$('#gratificaciones_j_d').val();
-                //calculo de las bonificaciones extras
-                var bonificacionextra=parseFloat(bonificacionfinal)*0.09;
-                $('#bonificacion_extra').val(bonificacionextra.toFixed(2));
-
-                var bonificacionextrafinal=$('#bonificacion_extra').val();
-                var sueldo_final=$('#sueldo_anual').val();
-                //calculo de las horas extras
-                var sumar_horas=parseFloat(horasextrasx25)+parseFloat(horasextrasx35);
-                $('#total_horas').val(sumar_horas.toFixed(2));
-                var total_horas= $('#total_horas').val();
-
-                //calculo de suma de todos
-                var sumarrentas=parseFloat(sueldo_final)+parseFloat(bonificacionfinal)+parseFloat(bonificacionextrafinal)+parseFloat(total_horas);
-
-
-                $('#renta_bruta').val(sumarrentas.toFixed(2));
-              $('#total_ingre').val(sumarrentas.toFixed(2));
-                   var total_ingreso=$('#total_ingre').val();
-                var totalrenta=parseFloat(total_ingreso)-29400.00;
-                $('#renta_neta').val(totalrenta.toFixed(2));
-            }
-
-
-
-
-
-
-
-    }
 
 </script>
 @endsection
