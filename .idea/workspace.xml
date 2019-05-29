@@ -27,8 +27,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/Planilla/Create.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="553">
-              <caret line="586" column="30" lean-forward="true" selection-start-line="586" selection-start-column="30" selection-end-line="586" selection-end-column="30" />
+            <state relative-caret-position="385">
+              <caret line="861" column="52" lean-forward="true" selection-start-line="861" selection-start-column="15" selection-end-line="861" selection-end-column="52" />
               <folding>
                 <element signature="e#51460#54900#0#HTML" />
               </folding>
@@ -363,12 +363,12 @@
       <workItem from="1559013396445" duration="1290000" />
       <workItem from="1559015870880" duration="11106000" />
       <workItem from="1559104043395" duration="10524000" />
-      <workItem from="1559141855552" duration="15090000" />
+      <workItem from="1559141855552" duration="16125000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="191973000" />
+    <option name="totallyTimeSpent" value="193008000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -608,8 +608,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/Planilla/Create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
-          <caret line="586" column="30" lean-forward="true" selection-start-line="586" selection-start-column="30" selection-end-line="586" selection-end-column="30" />
+        <state relative-caret-position="385">
+          <caret line="861" column="52" lean-forward="true" selection-start-line="861" selection-start-column="15" selection-end-line="861" selection-end-column="52" />
           <folding>
             <element signature="e#51460#54900#0#HTML" />
           </folding>

@@ -504,7 +504,7 @@
                                                 <section class="col col-6">
                                                     <label  style="color: black" >RENTA 5TA</label>
                                                     <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                                                        <input type="number" id="renta_5uit" name="gratificaciones_j_d" placeholder="$.00">
+                                                        <input type="number" id="renta_5uit" value="0.00" name="gratificaciones_j_d" placeholder="$.00">
                                                     </label>
                                                 </section>
                                             </div>
@@ -512,13 +512,13 @@
                                                 <section class="col col-6">
                                                     <label  style="color: black" >20UIT(14%)</label>
                                                     <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                                                        <input type="number" id="20uit" name="gratificaciones_j_d" placeholder="$.00">
+                                                        <input type="number" id="20uit" value="0.00" name="gratificaciones_j_d" placeholder="$.00">
                                                     </label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label  style="color: black" >RENTA 5TA</label>
                                                     <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                                                        <input type="number" id="renta_20uit" name="gratificaciones_j_d" placeholder="$.00">
+                                                        <input type="number" id="renta_20uit" value="0.00"  name="gratificaciones_j_d" placeholder="$.00">
                                                     </label>
                                                 </section>
                                             </div>
@@ -534,7 +534,7 @@
                                                 <section class="col col-6">
                                                     <label  style="color: black" >RENTA 5TA</label>
                                                     <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                                                        <input type="number" id="renta_35uit" name="gratificaciones_j_d" placeholder="$.00">
+                                                        <input type="number" id="renta_35uit" value="0.00" name="gratificaciones_j_d" placeholder="$.00">
                                                     </label>
                                                 </section>
 
@@ -549,7 +549,7 @@
                                                 <section class="col col-6">
                                                     <label  style="color: black" >RENTA 5TA</label>
                                                     <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                                                        <input type="number" id="renta_45uit" name="gratificaciones_j_d" placeholder="$.00">
+                                                        <input type="number" id="renta_45uit"  value="0.00" name="gratificaciones_j_d" placeholder="$.00">
                                                     </label>
                                                 </section>
                                             </div>
@@ -565,15 +565,16 @@
                                                 <section class="col col-6">
                                                     <label  style="color: black" >RENTA 5TA</label>
                                                     <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                                                        <input type="number" id="renta_45uit1" name="gratificaciones_j_d" placeholder="$.00">
+                                                        <input type="number"  id="renta_45uit1" value="0" name="gratificaciones_j_d" placeholder="$.00">
                                                     </label>
                                                 </section>
                                             </div>
                                         </fieldset>
                                         <footer>
                                             <button type="button" id="CalcularCategoria" class="btn btn-success">CALCULAR CATEGORIA</button>
+                                            <button type="button"  class="btn btn-dark" onclick="sumarRentas();">SUMAR RENTAS</button>
                                             <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-                                            <button type="button" class="btn btn-dark" onclick="sumarRentas();" data-dismiss="modal">SUMAR RENTAS</button>
+
                                         </footer>
 
 
@@ -1000,6 +1001,18 @@
                 break;
         }
         */
+
+    }
+    function sumarRentas() {
+        var renta1=$('#renta_5uit').val();
+        var renta2=$('#renta_20uit').val();
+        var renta3=$('#renta_35uit').val();
+        var renta4=$('#renta_45uit').val();
+        var renta5=$('#renta_45uit1').val();
+        var subtotal=parseFloat(renta1)+parseFloat(renta2)+parseFloat(renta3)+parseFloat(renta4)+
+            parseFloat(renta5);
+        var total=parseFloat(subtotal)/12;
+        alert(total);
 
     }
     function calculalarRenumeracion() {
