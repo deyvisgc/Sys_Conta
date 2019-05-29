@@ -573,7 +573,7 @@
                                         <footer>
                                             <button type="button" id="CalcularCategoria" class="btn btn-success">CALCULAR CATEGORIA</button>
                                             <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-
+                                            <button type="button" class="btn btn-dark" onclick="sumarRentas();" data-dismiss="modal">SUMAR RENTAS</button>
                                         </footer>
 
 
@@ -852,37 +852,89 @@
         var subtotal5;
         var subtota7;
         var subtotal8;
+        var subtotal9;
        var renta_neta= $('#renta_neta').val();
 
            //primera categoria
            if(renta_neta<=primerauit){
                subtotal1=parseFloat(renta_neta)-0;
-               alert(subtotal1);
-           }else if(renta_neta>21000){
-               subtotal2=parseFloat(renta_neta)-primerauit;
-               alert(subtotal2);
-               //segunda categoria
-           }if(subtotal2<=segundauit){
-            subtotal3=parseFloat(subtotal2)-parseFloat(segundauit)*0;
+               $('#5uit').val(subtotal1.toFixed(2));
+               var rentauitcinco=$('#5uit').val();
+               var rentatotal5=parseFloat(rentauitcinco)*0.08;
+               $('#renta_5uit').val(rentatotal5.toFixed(2));
 
+           }
+           else if(renta_neta>=21000){
+               $('#5uit').val(primerauit);
+               var rentauitcinco1=$('#5uit').val();
+               var rentatotal51=parseFloat(rentauitcinco1)*0.08;
+
+               $('#renta_5uit').val(rentatotal51.toFixed(2));
+               subtotal2=parseFloat(renta_neta)-primerauit;
+
+             //  alert(subtotal2);
+           }
+
+           if(subtotal2<=segundauit){
+            subtotal3=parseFloat(subtotal2)-segundauit;
+            var segundouit=parseFloat(subtotal3)-0;
+               $('#20uit').val(segundouit.toFixed(2));
+
+               var rentauitveinte= $('#20uit').val();
+               var rentatotal20=parseFloat(rentauitveinte)*0.14;
+               $('#renta_20uit').val(rentatotal20.toFixed(2));
 
         }if(subtotal2>=segundauit){
             subtotal4=parseFloat(subtotal2)-parseFloat(segundauit);
-            alert(subtotal4);
+            $('#20uit').val(subtotal4.toFixed(2));
+
+            var rentauitveinte1= $('#20uit').val();
+            var rentatotal201=parseFloat(rentauitveinte1)*0.14;
+            $('#renta_20uit').val(rentatotal201.toFixed(2));
+         //   alert(subtotal4);
+            //fin segunda categoria
+
+
             //tercera categoria
 
         }if(subtotal4<=tercerauit){
-            subtotal5=parseFloat(subtotal4)-parseFloat(tercerauit);
-          var subtotal6=parseFloat(subtotal5)*0;
-            alert(subtotal6);
-        }if(subtotal4>=tercerauit){
-            subtota7=parseFloat(subtotal4)-parseFloat(tercerauit);
-            alert(subtota7);
+            subtotal5=parseFloat(subtotal4);
+          var subtotal6=parseFloat(subtotal5)-0;
+            $('#35uit').val(subtotal6.toFixed(2));
+
+            var rentauittreinta5= $('#35uit').val();
+            var rentatreinta5=parseFloat(rentauittreinta5)*0.17;
+            $('#renta_35uit').val(rentatreinta5.toFixed(2));
         }
-        //tercera categoria
+
+           if(subtotal4>=tercerauit){
+            subtota7=parseFloat(subtotal4)-parseFloat(tercerauit);
+            $('#35uit').val(subtota7.toFixed(2));
+
+               var rentauittreinta51= $('#35uit').val();
+               var rentatreinta51=parseFloat(rentauittreinta51)*0.17;
+               $('#renta_35uit').val(rentatreinta51.toFixed(2));
+           // alert(subtota7);
+        }
+        //fin de la 3 categoria
+        //cuarta categoria
            if(subtota7<=cuartauit){
-            subtotal8=parseFloat(subtota7)-parseFloat(cuartauit);
-            var subtotal9=parseFloat(subtotal8)*0;
+               subtotal8=parseFloat(subtota7);
+               var subtotal10=parseFloat(subtotal8)-0;
+               $('#45uit').val(subtotal10.toFixed(2));
+               var rentauitcuarentacinco= $('#45uit').val();
+               var rentacuarentacinco=parseFloat(rentauitcuarentacinco)*0.2;
+               $('#renta_45uit').val(rentacuarentacinco.toFixed(2));
+
+            //   alert(subtotal10);
+        }
+
+           if(subtota7>=cuartauit){
+            subtotal9=parseFloat(subtota7)-parseFloat(cuartauit);
+            $('#45uit').val(subtotal9.toFixed(2));
+               var rentauitcuarentacinco1= $('#45uit').val();
+               var rentacuarentacinco1=parseFloat(rentauitcuarentacinco1)*0.2;
+               $('#renta_45uit').val(rentacuarentacinco1.toFixed(2));
             alert(subtotal9);
         }
 
