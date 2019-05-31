@@ -122,7 +122,7 @@
                                                             <section class="col col-3">
                                                                 <label style="color: black" >NOMBRES(*)</label>
                                                                 <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                                                                    <input type="text" name="" id="nombres" placeholder="APELLIDOS Y NOMBRES">
+                                                                    <input type="text" readonly name="" id="nombres" placeholder="APELLIDOS Y NOMBRES">
                                                                 </label>
                                                             </section>
                                                             <section class="col col-3">
@@ -188,7 +188,7 @@
                                                             <section class="col col-3">
                                                                 <label  style="color: black" > DIAS DE FALTAS(*)</label>
                                                                 <label class="input"> <i class="icon-prepend fa fa-times"></i>
-                                                                    <input type="text" onkeyup="CalcularInasistencias();" id="Faltas" name="Faltas" placeholder="Faltas">
+                                                                    <input type="text" value="0" onkeyup="CalcularInasistencias();" id="Faltas" name="Faltas" placeholder="Faltas">
                                                                 </label>
                                                             </section>
 
@@ -205,7 +205,7 @@
                                                                 <label  style="color: black" > CTS(*)</label>
 
                                                                 <label class="input"> <i class="icon-prepend fas fa-address-card"></i></i>
-                                                                    <input type="number"  name="cts" placeholder="CTS" id="cts">
+                                                                    <input type="number" readonly  name="cts" placeholder="CTS" id="cts">
                                                                 </label>
                                                                 <input type="hidden"  name="numero_fecha" placeholder="CTS" id="numero_fecha">
 
@@ -214,20 +214,20 @@
                                                                 <label  style="color: black" > VACACIONES(*)</label>
 
                                                                 <label class="input"> <i class="icon-prepend fas fa-code"></i>
-                                                                    <input type="number" value="0" name="vacaciones_trun" placeholder="VACACIONES TRUNCADAS" id="vacaciones_trun">
+                                                                    <input type="number" readonly value="0" name="vacaciones_trun" placeholder="VACACIONES TRUNCADAS" id="vacaciones_trun">
                                                                 </label>
                                                             </section>
                                                             <section class="col col-3">
                                                                 <label  style="color: black" > BONIFICACION(*)</label>
 
                                                                 <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                                                                    <input type="number" name="bonificacion" id="bonificacion" placeholder="$.00">
+                                                                    <input type="number" value="0.00" readonly name="bonificacion" id="bonificacion" placeholder="$.00">
                                                                 </label>
                                                             </section>
                                                             <section class="col col-3">
                                                                 <label  style="color: black" > BONIFICACION EXTRAORDINARIA(*)</label>
                                                                 <label class="input"><i class=" icon-prepend  fas fa-calendar-alt"></i>
-                                                                    <input type="number" name="bonificacion_extraordinaria"  id="bonificacion_extraordinaria" placeholder="$.00" >
+                                                                    <input type="number" value="0.00" readonly name="bonificacion_extraordinaria"  id="bonificacion_extraordinaria" placeholder="$.00" >
                                                                 </label>
                                                             </section>
 
@@ -248,49 +248,49 @@
                                                         <section class="col col-3">
                                                             <label  style="color: black" > DESCUENTO POR FALTAS(*)</label>
                                                             <label class="input"> <i class="icon-prepend fa fa-money"></i>
-                                                                <input type="number"  name="inasistencias"  id="inasistencias" placeholder="$.00">
+                                                                <input type="number" value="0.00" readonly  name="inasistencias"  id="inasistencias" placeholder="$.00">
                                                             </label>
                                                         </section>
                                                         <section class="col col-3">
                                                             <label  style="color: black" > PAGO DE CADA MES(*)</label>
                                                             <label class="input"> <i class="icon-prepend fa fa-money"></i>
-                                                                <input type="number"  name="valorxmes"  id="valorxmes" placeholder="$.00">
+                                                                <input type="number" value="0.00" readonly name="valorxmes"  id="valorxmes" placeholder="$.00">
                                                             </label>
                                                         </section>
                                                         <section class="col col-3">
                                                             <label  style="color: black" > HORAS EXTRAS AL 25%(*)</label>
                                                             <label class="input"> <i class="icon-prepend fa fa-money"></i>
-                                                                <input type="number" value="0" name="horas_extras"  id="horas_extrasx25" placeholder="$.00">
+                                                                <input type="number" readonly value="0" name="horas_extras"  id="horas_extrasx25" placeholder="$.00">
                                                             </label>
                                                         </section>
                                                         <section class="col col-3">
                                                             <label  style="color: black" > HORAS EXTRAS AL 35%(*)</label>
                                                             <label class="input"> <i class="icon-prepend fa fa-money"></i>
-                                                                <input type="number" value="0" name="horas_extras"  id="horas_extrasx35" placeholder="$.00">
+                                                                <input type="number" value="0" readonly name="horas_extras"  id="horas_extrasx35" placeholder="$.00">
                                                             </label>
                                                         </section>
                                                         <section class="col col-3">
                                                             <label  style="color: black" > MOVILIDAD(*)</label>
                                                             <label class="input"> <i class="icon-prepend fa fa-car"></i>
-                                                                <input type="number" id="movilidad" name="movilidad" placeholder="$.00">
+                                                                <input type="number" id="movilidad" name="movilidad" value="0.00" placeholder="$.00">
                                                             </label>
                                                         </section>
                                                         <section class="col col-3">
                                                             <label  style="color: black" > ALIMENTACION(*)</label>
                                                             <label class="input"> <i class="icon-prepend fas fa-utensils"></i>
-                                                                <input type="number" id="alimentacion" name="alimentacion" placeholder="$.00">
+                                                                <input type="number" id="alimentacion" name="alimentacion" value="0.00" placeholder="$.00">
                                                             </label>
                                                         </section>
                                                         <section class="col col-3">
                                                             <label  style="color: black" > BONOS EXTRAS(*)</label>
                                                             <label class="input"> <i class="icon-prepend fa fa-money"></i>
-                                                                <input type="number" id="bonox_Extras" name="bonox_Extras" placeholder="$.00">
+                                                                <input type="number" id="bonox_Extras" name="bonox_Extras" value="0.00" placeholder="$.00">
                                                             </label>
                                                         </section>
                                                         <section class="col col-3">
                                                             <label  style="color: black" > OTROS(*)</label>
                                                             <label class="input"> <i class="icon-prepend fa fa-money"></i>
-                                                                <input type="number" id="otros" name="otros" placeholder="$.00">
+                                                                <input type="number" id="otros" name="otros" value="0.00" placeholder="$.00">
                                                             </label>
                                                         </section>
 
@@ -305,7 +305,7 @@
                                                          <section class="col col-3">
                                                              <label  style="color: black" >RENUMRACION BRUTA(*)</label>
                                                              <label class="input"> <i class="icon-prepend fa fa-money"></i>
-                                                                 <input type="number" name="total_renumeracion" id="total_renumeracion" placeholder="TOTAL RENUMERACION">
+                                                                 <input type="number" value="0.00" readonly name="total_renumeracion" id="total_renumeracion" placeholder="TOTAL RENUMERACION">
                                                              </label>
                                                          </section>
 
@@ -313,20 +313,20 @@
                                                          <section class="col col-3">
                                                              <label  style="color: black" >BASE CALCULOS  (ONP/AFP)</label>
                                                              <label class="input"> <i class="icon-prepend fa fa-money"></i>
-                                                                 <input type="number" name="base_calculo" id="base_calculo" placeholder="$.00">
+                                                                 <input type="number" name="base_calculo" id="base_calculo" value="0.00" readonly placeholder="$.00">
                                                              </label>
                                                          </section>
                                                          <section class="col col-3">
                                                              <label  style="color: black" >TIPO SEGUROS</label>
                                                              <label class="input"> <i class="icon-prepend fa fa-money"></i>
-                                                                 <input type="text" name="tipo_seguro" id="tipe_Seguo" placeholder="$.00">
+                                                                 <input type="text" name="tipo_seguro" id="tipe_Seguo" readonly placeholder="tipos seguros">
                                                              </label>
                                                          </section>
 
                                                          <section class="col col-3">
                                                              <label  style="color: black" >SEGUROS</label>
                                                              <label class="input"> <i class="icon-prepend fa fa-money"></i>
-                                                                 <input type="text" name="seguros" id="seguro1" placeholder="$.00">
+                                                                 <input type="text" name="seguros" id="seguro1" readonly placeholder="seguro">
                                                              </label>
                                                          </section>
 
@@ -339,25 +339,50 @@
                                                          <section class="col col-3">
                                                              <label  style="color: black" >APORTE OBLIGATORIO</label>
                                                              <label class="input"> <i class="icon-prepend fa fa-money"></i>
-                                                                 <input type="number" name="aporte_obligatorio1" id="aporte_obligatorio1" placeholder="$.00">
+                                                                 <input type="number" readonly name="aporte_obligatorio1" id="aporte_obligatorio1" placeholder="$.00">
                                                              </label>
                                                          </section>
                                                          <section class="col col-3">
                                                              <label  style="color: black" >Comisión sobre la remuneración </label>
                                                              <label class="input"> <i class="icon-prepend fa fa-money"></i>
-                                                                 <input type="number" name="comision_renumeracion1" id="comision_renumeracion1" placeholder="$.00">
+                                                                 <input type="number" readonly name="comision_renumeracion1" id="comision_renumeracion1" placeholder="$.00">
                                                              </label>
                                                          </section>
                                                          <section class="col col-3">
                                                              <label  style="color: black" >PRIMA SEGUROS</label>
                                                              <label class="input"> <i class="icon-prepend fa fa-money"></i>
-                                                                 <input type="number" name="prima_Seguros1" id="prima_Seguros1" placeholder="$.00">
+                                                                 <input type="number" readonly name="prima_Seguros1" id="prima_Seguros1" placeholder="$.00">
                                                              </label>
                                                          </section>
                                                          <section class="col col-3">
-                                                             <label  style="color: black" >TOTAL DESCUENTO (AFP/ONP)</label>
+                                                             <label  style="color: black" >TOTAL DESCUENTO AFP</label>
                                                              <label class="input"> <i class="icon-prepend fa fa-money"></i>
-                                                                 <input type="number" name="prima_Seguros1" id="total_Descuento_afp" placeholder="$.00">
+                                                                 <input type="number" readonly name="prima_Seguros1" id="total_Descuento_afp" value="0.00">
+                                                             </label>
+                                                         </section>
+
+                                                         <section class="col col-3">
+                                                             <label  style="color: black" >TOTAL DESCUENTO ONP</label>
+                                                             <label class="input"> <i class="icon-prepend fa fa-money"></i>
+                                                                 <input type="number" readonly name="prima_Seguros_ONP" value="0.00" id="prima_Seguros_ONP" placeholder="$.00">
+                                                             </label>
+                                                         </section>
+                                                         <section class="col col-3">
+                                                             <label  style="color: black" >RENTA A LA 5TA CATEGORIA</label>
+                                                             <label class="input"> <i class="icon-prepend fa fa-money"></i>
+                                                                 <input type="number" readonly name="renta_5_categoria" id="renta_5_categoria" placeholder="$.00">
+                                                             </label>
+                                                         </section>
+                                                         <section class="col col-3">
+                                                             <label  style="color: black" >RENUMERACION NETA</label>
+                                                             <label class="input"> <i class="icon-prepend fa fa-money"></i>
+                                                                 <input type="number" readonly name="renumeracion_neta" id="renumeracion_neta" placeholder="$.00">
+                                                             </label>
+                                                         </section>
+                                                         <section class="col col-3">
+                                                             <label  style="color: black" >ESSALUD(9%)</label>
+                                                             <label class="input"> <i class="icon-prepend fa fa-money"></i>
+                                                                 <input type="number" readonly name="essalud" id="essalud" placeholder="$.00">
                                                              </label>
                                                          </section>
 
@@ -412,13 +437,13 @@
                                                 <section class="col col-6">
                                                     <label  style="color: black" >SUELDO ANUAL(*)</label>
                                                     <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                                                        <input type="number" id="sueldo_anual" name="sueldo_anual" placeholder="$.00">
+                                                        <input type="number" readonly id="sueldo_anual" name="sueldo_anual" placeholder="$.00">
                                                     </label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label  style="color: black" >GRATIFICACIONES(J/D)</label>
                                                     <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                                                        <input type="number" id="gratificaciones_j_d" name="gratificaciones_j_d" placeholder="$.00">
+                                                        <input type="number" readonly id="gratificaciones_j_d" name="gratificaciones_j_d" placeholder="$.00">
                                                     </label>
                                                 </section>
                                             </div>
@@ -426,13 +451,13 @@
                                                 <section class="col col-6">
                                                     <label  style="color: black" >BONIFICACION EXTRA(*)</label>
                                                     <label class="input"> <i class="icon-prepend fas fa-address-card"></i>
-                                                        <input type="number" id="bonificacion_extra" name="bonificacion_extra" placeholder="$.00">
+                                                        <input type="number" readonly id="bonificacion_extra" name="bonificacion_extra" placeholder="$.00">
                                                     </label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label  style="color: black" >TOTAL HORAS EXTRAS(*)</label>
                                                     <label class="input"> <i class="icon-prepend fas fa-address-card"></i>
-                                                        <input type="number" id="total_horas" name="total_horas" placeholder="$.00">
+                                                        <input type="number" readonly id="total_horas" name="total_horas" placeholder="$.00">
                                                     </label>
                                                 </section>
                                             </div>
@@ -440,13 +465,13 @@
                                                 <section class="col col-6">
                                                     <label  style="color: black" >VACACIONES TRUNCADAS(*)</label>
                                                     <label class="input"> <i class="icon-prepend fa fa-share-square"></i>
-                                                        <input type="number" value="0" id="vaca_trunc" name="vaca_trunc" placeholder="$.00">
+                                                        <input type="number" readonly value="0" id="vaca_trunc" name="vaca_trunc" placeholder="$.00">
                                                     </label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label  style="color: black" >RENTA BRUTA(*)</label>
                                                     <label class="input"> <i class="icon-prepend far fa-credit-card	"></i>
-                                                        <input type="number" id="renta_bruta" name="renta_bruta" placeholder="$.00">
+                                                        <input type="number" readonly id="renta_bruta" name="renta_bruta" placeholder="$.00">
                                                     </label>
                                                 </section>
                                             </div>
@@ -455,22 +480,22 @@
                                                 <section class="col col-6">
                                                     <label  style="color: black" >TOTAL INGRESOS(*)</label>
                                                     <label class="input"> <i class="icon-prepend fa fa-envelope-o"></i>
-                                                        <input type="number" id="total_ingre" name="total_ingre" placeholder="$.00">
+                                                        <input type="number" readonly id="total_ingre" name="total_ingre" placeholder="$.00">
                                                     </label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label  style="color: black" >RENTA NETA(*)</label>
                                                     <label class="input"> <i class="icon-prepend fa fa-phone"></i>
-                                                        <input type="number" id="renta_neta" name="renta_neta" placeholder="$.00">
+                                                        <input type="number" readonly id="renta_neta" name="renta_neta" placeholder="$.00">
                                                     </label>
                                                 </section>
                                             </div>
-                                           <center><button type="button" onclick="renta5categoria();" id="CalcularCategoria" class="btn btn-dark">CALCULAR 5 CATEGORIA</button></center>
+
 
                                         </fieldset><br>
 
                                         <footer>    <br><br>
-                                            <button type="button" id="CalcularCategoria" class="btn btn-success">CALCULAR CATEGORIA</button>
+                                            <center><button type="button" onclick="renta5categoria();" id="CalcularCategoria" class="btn btn-dark">CALCULAR 5 CATEGORIA</button></center>
                                             <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
 
                                         </footer>
@@ -498,13 +523,13 @@
                                                 <section class="col col-6">
                                                     <label  style="color: black" >5UIT(8%)</label>
                                                     <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                                                        <input type="number" id="5uit" name="sueldo_anual" placeholder="$.00">
+                                                        <input type="number" readonly id="5uit" name="sueldo_anual" placeholder="$.00">
                                                     </label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label  style="color: black" >RENTA 5TA</label>
                                                     <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                                                        <input type="number" id="renta_5uit" value="0.00" name="gratificaciones_j_d" placeholder="$.00">
+                                                        <input type="number" readonly id="renta_5uit" value="0.00" name="gratificaciones_j_d" placeholder="$.00">
                                                     </label>
                                                 </section>
                                             </div>
@@ -512,13 +537,13 @@
                                                 <section class="col col-6">
                                                     <label  style="color: black" >20UIT(14%)</label>
                                                     <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                                                        <input type="number" id="20uit" value="0.00" name="gratificaciones_j_d" placeholder="$.00">
+                                                        <input type="number" readonly id="20uit" value="0.00" name="gratificaciones_j_d" placeholder="$.00">
                                                     </label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label  style="color: black" >RENTA 5TA</label>
                                                     <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                                                        <input type="number" id="renta_20uit" value="0.00"  name="gratificaciones_j_d" placeholder="$.00">
+                                                        <input type="number" readonly id="renta_20uit" value="0.00"  name="gratificaciones_j_d" placeholder="$.00">
                                                     </label>
                                                 </section>
                                             </div>
@@ -527,14 +552,14 @@
                                                 <section class="col col-6">
                                                     <label  style="color: black" >35UIT(17%)</label>
                                                     <label class="input"> <i class="icon-prepend fas fa-address-card"></i>
-                                                        <input type="number" id="35uit" name="bonificacion_extra" placeholder="$.00">
+                                                        <input type="number" readonly id="35uit" name="bonificacion_extra" placeholder="$.00">
                                                     </label>
                                                 </section>
 
                                                 <section class="col col-6">
                                                     <label  style="color: black" >RENTA 5TA</label>
                                                     <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                                                        <input type="number" id="renta_35uit" value="0.00" name="gratificaciones_j_d" placeholder="$.00">
+                                                        <input type="number" readonly id="renta_35uit" value="0.00" name="gratificaciones_j_d" placeholder="$.00">
                                                     </label>
                                                 </section>
 
@@ -543,13 +568,13 @@
                                                 <section class="col col-6">
                                                     <label  style="color: black" >45UIT(20%)</label>
                                                     <label class="input"> <i class="icon-prepend fas fa-address-card"></i>
-                                                        <input type="number" id="45uit" name="total_horas" placeholder="$.00">
+                                                        <input type="number" readonly id="45uit" name="total_horas" placeholder="$.00">
                                                     </label>
                                                 </section>
                                                 <section class="col col-6">
                                                     <label  style="color: black" >RENTA 5TA</label>
                                                     <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                                                        <input type="number" id="renta_45uit"  value="0.00" name="gratificaciones_j_d" placeholder="$.00">
+                                                        <input type="number" readonly id="renta_45uit"  value="0.00" name="gratificaciones_j_d" placeholder="$.00">
                                                     </label>
                                                 </section>
                                             </div>
@@ -558,20 +583,19 @@
                                                 <section class="col col-6">
                                                     <label  style="color: black" >45UIT(30%)</label>
                                                     <label class="input"> <i class="icon-prepend fas fa-address-card"></i>
-                                                        <input type="number" id="45uit1" name="total_horas" placeholder="$.00">
+                                                        <input type="number" readonly id="45uit1" name="total_horas" placeholder="$.00">
                                                     </label>
                                                 </section>
 
                                                 <section class="col col-6">
                                                     <label  style="color: black" >RENTA 5TA</label>
                                                     <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                                                        <input type="number"  id="renta_45uit1" value="0" name="gratificaciones_j_d" placeholder="$.00">
+                                                        <input type="number" readonly  id="renta_45uit1" value="0" name="gratificaciones_j_d" placeholder="$.00">
                                                     </label>
                                                 </section>
                                             </div>
                                         </fieldset>
                                         <footer>
-                                            <button type="button" id="CalcularCategoria" class="btn btn-success">CALCULAR CATEGORIA</button>
                                             <button type="button"  class="btn btn-dark" onclick="sumarRentas();">SUMAR RENTAS</button>
                                             <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
 
@@ -877,7 +901,7 @@
            }
 
            if(subtotal2<=segundauit){
-            subtotal3=parseFloat(subtotal2)-segundauit;
+            subtotal3=parseFloat(subtotal2);
             var segundouit=parseFloat(subtotal3)-0;
                $('#20uit').val(segundouit.toFixed(2));
 
@@ -936,7 +960,7 @@
                var rentauitcuarentacinco1= $('#45uit').val();
                var rentacuarentacinco1=parseFloat(rentauitcuarentacinco1)*0.2;
                $('#renta_45uit').val(rentacuarentacinco1.toFixed(2));
-            alert(subtotal9);
+
         }
 
 
@@ -1012,7 +1036,25 @@
         var subtotal=parseFloat(renta1)+parseFloat(renta2)+parseFloat(renta3)+parseFloat(renta4)+
             parseFloat(renta5);
         var total=parseFloat(subtotal)/12;
-        alert(total);
+        $('#renta_5_categoria').val(total.toFixed(2));
+
+        var total_renumeracion=$('#total_renumeracion').val();
+        var totaldescuentoAFP=$('#total_Descuento_afp').val();
+        var totaldescuentoONP=$('#prima_Seguros_ONP').val();
+        var total5categoria=$('#renta_5_categoria').val();
+       var esaludmaximo=83.7;
+
+        var renumeracion_neta=parseFloat(total_renumeracion)-parseFloat(totaldescuentoAFP)-parseFloat(totaldescuentoONP)-parseFloat(total5categoria);
+          $('#renumeracion_neta').val(renumeracion_neta.toFixed(2));
+        var base_Calculo=$('#base_calculo').val();
+        var subtotalesalud=parseFloat(base_Calculo)*0.09;
+        if(subtotalesalud<esaludmaximo){
+            $('#essalud').val(83.7);
+        }else {
+            $('#essalud').val(subtotalesalud.toFixed(2));
+        }
+
+
 
     }
     function calculalarRenumeracion() {
@@ -1031,7 +1073,9 @@
 
         if (cts == '') {
             $('#cts').val(0);
-        } else {
+        }
+        //se activa cuando el canpo vacaciones no tienen valor
+        else {
             var subtotal = parseFloat(asisganacion_familair) + parseFloat(cts) + parseFloat(vacaciones) + parseFloat(bonificacion) + parseFloat(bonifi_extraor);
             var subtotal1 = parseFloat(pagoxcademes) + parseFloat(horas_extras25) + parseFloat(horasextras35) + parseFloat(movilidad) + parseFloat(alimentacion) +
                 parseFloat(bonosextras) + parseFloat(otros);
@@ -1039,6 +1083,7 @@
             $('#total_renumeracion').val(total.toFixed(2));
             $('#base_calculo').val(total.toFixed(2));
 
+            //se activa cuando las vaciones tiene valor
             if (vacaciones!=0){
                 var pagoxcademes=$('#valorxmes').val();
                 var asisganacion_familair=$('#asigna_familiar').val();
@@ -1264,9 +1309,9 @@
           $('#total_Descuento_afp').val(totalpensiones.toFixed(2));
       }else if(tipo_seguros=='ONP'){
           var base_Calculo=$('#base_calculo').val();
-          var subtotalANP=parseFloat(base_Calculo)*0.13;
+          var totalONP=parseFloat(base_Calculo)*0.13;
 
-          $('#total_Descuento_afp').val(subtotalANP.toFixed(2));
+          $('#prima_Seguros_ONP').val(totalONP.toFixed(2));
       }
 
 
