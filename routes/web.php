@@ -22,6 +22,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('Trabajador','TrabajadorController');
 Route::resource('Planilla','PlanillaController');
+Route::get('Listar_Beneficios/{idPlanilla}','PlanillaController@listarBeneficios');
+Route::get('Listar_Retenciones/{idPlanilla}','PlanillaController@ListarRetenciones');
+Route::get('Listar_Otros/{idPlanilla}','PlanillaController@ListarOtros');
 Route::get('PlanillaRegistro', 'PlanillaController@getPlanilla');
 
 Route::get('DeleTrabajador/{idPersona}', 'TrabajadorController@DeleTrabajador');

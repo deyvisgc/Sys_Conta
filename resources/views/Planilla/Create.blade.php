@@ -103,8 +103,10 @@
                                                 <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">RENUMERACIONES</a>
                                             </div>
                                         </nav>
-                                        <form id="checkout-form" class="smart-form" novalidate="novalidate">
-                                        <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+                                        <form id="RegisPlanilla" class="smart-form" novalidate="novalidate">
+                                            <input type="text"  hidden name="idtrabajador" placeholder="DESCRIPCION....." id="idtrabajador">
+
+                                            <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
 
                                             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
 
@@ -154,7 +156,7 @@
 
                                                                 <label class="select">
                                                                     <label  style="color: black" >TIPO HORAS EXTRAS(*)</label>
-                                                                    <select  name="horastrabajadas" id="horastrabajadas" aria-required="true" aria-invalid="false" class="valid form-control">
+                                                                    <select  name="tipos_horas_extras" id="horastrabajadas" aria-required="true" aria-invalid="false" class="valid form-control">
                                                                         <option value="0" selected="" disabled="">Horas Extras</option>
                                                                         <option value="1" >Horas extras normales</option>
                                                                         <option value="2" >Horas nocturnas </option>
@@ -260,13 +262,13 @@
                                                         <section class="col col-3">
                                                             <label  style="color: black" > HORAS EXTRAS AL 25%(*)</label>
                                                             <label class="input"> <i class="icon-prepend fa fa-money"></i>
-                                                                <input type="number" readonly value="0" name="horas_extras"  id="horas_extrasx25" placeholder="$.00">
+                                                                <input type="number" readonly value="0" name="horas_extras25"  id="horas_extrasx25" placeholder="$.00">
                                                             </label>
                                                         </section>
                                                         <section class="col col-3">
                                                             <label  style="color: black" > HORAS EXTRAS AL 35%(*)</label>
                                                             <label class="input"> <i class="icon-prepend fa fa-money"></i>
-                                                                <input type="number" value="0" readonly name="horas_extras"  id="horas_extrasx35" placeholder="$.00">
+                                                                <input type="number" value="0" readonly name="horas_extras35"  id="horas_extrasx35" placeholder="$.00">
                                                             </label>
                                                         </section>
                                                         <section class="col col-3">
@@ -339,32 +341,32 @@
                                                          <section class="col col-3">
                                                              <label  style="color: black" >APORTE OBLIGATORIO</label>
                                                              <label class="input"> <i class="icon-prepend fa fa-money"></i>
-                                                                 <input type="number" readonly name="aporte_obligatorio1" id="aporte_obligatorio1" placeholder="$.00">
+                                                                 <input type="number" readonly name="aporte_obligatorio_total" id="aporte_obligatorio1" placeholder="$.00">
                                                              </label>
                                                          </section>
                                                          <section class="col col-3">
                                                              <label  style="color: black" >Comisión sobre la remuneración </label>
                                                              <label class="input"> <i class="icon-prepend fa fa-money"></i>
-                                                                 <input type="number" readonly name="comision_renumeracion1" id="comision_renumeracion1" placeholder="$.00">
+                                                                 <input type="number" readonly name="comision_renumeracion_total" id="comision_renumeracion1" placeholder="$.00">
                                                              </label>
                                                          </section>
                                                          <section class="col col-3">
                                                              <label  style="color: black" >PRIMA SEGUROS</label>
                                                              <label class="input"> <i class="icon-prepend fa fa-money"></i>
-                                                                 <input type="number" readonly name="prima_Seguros1" id="prima_Seguros1" placeholder="$.00">
+                                                                 <input type="number" readonly name="prima_Seguros_monto" id="prima_Seguros1" placeholder="$.00">
                                                              </label>
                                                          </section>
                                                          <section class="col col-3">
                                                              <label  style="color: black" >TOTAL DESCUENTO AFP</label>
                                                              <label class="input"> <i class="icon-prepend fa fa-money"></i>
-                                                                 <input type="number" readonly name="prima_Seguros1" id="total_Descuento_afp" value="0.00">
+                                                                 <input type="number" readonly name="total_Descuento_afp" id="total_Descuento_afp" value="0.00">
                                                              </label>
                                                          </section>
 
                                                          <section class="col col-3">
                                                              <label  style="color: black" >TOTAL DESCUENTO ONP</label>
                                                              <label class="input"> <i class="icon-prepend fa fa-money"></i>
-                                                                 <input type="number" readonly name="prima_Seguros_ONP" value="0.00" id="prima_Seguros_ONP" placeholder="$.00">
+                                                                 <input type="number" readonly name="total_Descuento_onp" value="0.00" id="prima_Seguros_ONP" placeholder="$.00">
                                                              </label>
                                                          </section>
                                                          <section class="col col-3">
@@ -391,6 +393,11 @@
                                             </div>
 
                                         </div>
+                                            <footer>    <br><br>
+                                                <center><button type="button"  id="registrar_planilla" class="btn btn-success">REGISTRAR PLANILLA</button></center>
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+
+                                            </footer>
                                         </form>
                                     </div>
                                 </div>
@@ -401,6 +408,10 @@
             </article>
         </div>
     </section>
+
+
+
+
 
     <div class="modal fade" id="calcular5categoria" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
@@ -769,7 +780,7 @@
                 $('#aporte_obligatorio').val(ui.item.aporte_obligatorio);
                 $('#comision_renumeracion').val(ui.item.comision_renumeracion);
                 $('#prima_Seguros').val(ui.item.Prima_Seguro);
-
+                $('#idtrabajador').val(ui.item.idtrabajador);
                 return false;
             }
 
@@ -782,6 +793,36 @@
         $('#informacionojo').click(function () {
             Swal.fire('los topes maximo se sacan restando el tope mayor de cada renta con el otro');
         });
+
+        $('#registrar_planilla').click(function (e) {
+            e.preventDefault();
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            var frm =$('#RegisPlanilla');
+            $.ajax({
+                url: '{{url('Planilla')}}',
+                type:'post',
+                dataType: 'json',
+                data:frm.serialize(),
+                success:function (response) {
+
+                    if(response.success===true){
+                        frm.trigger('reset');
+
+                        iziToast.success({
+                            title: 'OK',
+                            message: 'Successfully Planilla Registrada!',
+                        });
+                    }
+
+                }
+
+            })
+
+        })
     });
 
 
@@ -822,7 +863,10 @@
             $('#total_ingre').val(sumarrentas.toFixed(2));
             var total_ingreso=$('#total_ingre').val();
             var totalrenta=parseFloat(total_ingreso)-29400.00;
-
+            iziToast.success({
+                title: 'OK',
+                message: 'Exito al calcular la 5 categoria!',
+            });
             $('#renta_neta').val(totalrenta.toFixed(2));
 
         }else if(inasistencias==inasistencias){
@@ -854,6 +898,10 @@
             $('#total_ingre').val(sumarrentas.toFixed(2));
             var total_ingreso=$('#total_ingre').val();
             var totalrenta=parseFloat(total_ingreso)-29400.00;
+            iziToast.success({
+                title: 'OK',
+                message: 'Exito al calcular la 5 categoria!',
+            });
             $('#renta_neta').val(totalrenta.toFixed(2));
         }
 
@@ -1045,6 +1093,10 @@
        var esaludmaximo=83.7;
 
         var renumeracion_neta=parseFloat(total_renumeracion)-parseFloat(totaldescuentoAFP)-parseFloat(totaldescuentoONP)-parseFloat(total5categoria);
+        iziToast.success({
+            title: 'OK',
+            message: 'Exito al sumar la renta 5ta categoria!',
+        });
           $('#renumeracion_neta').val(renumeracion_neta.toFixed(2));
         var base_Calculo=$('#base_calculo').val();
         var subtotalesalud=parseFloat(base_Calculo)*0.09;
@@ -1082,6 +1134,10 @@
             var total = parseFloat(subtotal) + parseFloat(subtotal1);
             $('#total_renumeracion').val(total.toFixed(2));
             $('#base_calculo').val(total.toFixed(2));
+            iziToast.success({
+                title: 'OK',
+                message: 'Exito en las renumeraciones!',
+            });
 
             //se activa cuando las vaciones tiene valor
             if (vacaciones!=0){
@@ -1091,6 +1147,10 @@
                 var liquidacion=parseFloat(pagoxcademes)+parseFloat(asisganacion_familair)+parseFloat(vacaciones);
                 $('#base_calculo').val(liquidacion.toFixed(2));
                 $('#total_renumeracion').val(total.toFixed(2));
+                iziToast.success({
+                    title: 'OK',
+                    message: 'Exito en las renumeraciones!',
+                });
             }
         }
 
@@ -1286,33 +1346,61 @@
     }
     function calculalarPensiones() {
       var tipo_seguros=$('#tipe_Seguo').val();
-      if(tipo_seguros=='AFP'){
-          var base_Calculo=$('#base_calculo').val();
-          var aporte_obligatorio=$('#aporte_obligatorio').val();
-          var comision_sobre_renumeracion=$('#comision_renumeracion').val();
-          var prima_Seguros=$('#prima_Seguros').val();
-          //se divide entre 100% para sacar el porcentaje de cada valor que viene
-          var subtotalaporte=parseFloat(aporte_obligatorio)/100;
-          var subtotalcomicion=parseFloat(comision_sobre_renumeracion)/100;
-          var subtotalprima_Seguros=parseFloat(prima_Seguros)/100;
-          //calculo de las pensiones por cada tipo
-          var totalaporte=parseFloat(base_Calculo)*parseFloat(subtotalaporte);
-          $('#aporte_obligatorio1').val(totalaporte.toFixed(2));
+        if(tipo_seguros==0){
+            iziToast.error({
+                title: 'Error',
+                message: 'Es necesario agregar el tipo de seguro',
+            });
+        }else{
+            if(tipo_seguros=='AFP'){
 
-          var totalcomision=parseFloat(base_Calculo)*parseFloat(subtotalcomicion);
-          $('#comision_renumeracion1').val(totalcomision.toFixed(2));
+                var base_Calculo=$('#base_calculo').val();
+                var aporte_obligatorio=$('#aporte_obligatorio').val();
+                var comision_sobre_renumeracion=$('#comision_renumeracion').val();
+                var prima_Seguros=$('#prima_Seguros').val();
+                if(base_Calculo==0){
+                    iziToast.error({
+                        title: 'Error',
+                        message: 'Es necesario agregar el monto base calculo',
+                    });
 
-          var primaseguros=parseFloat(base_Calculo)*parseFloat(subtotalprima_Seguros);
-          $('#prima_Seguros1').val(primaseguros.toFixed(2));
+                }else{
+                    //se divide entre 100% para sacar el porcentaje de cada valor que viene
+                    var subtotalaporte=parseFloat(aporte_obligatorio)/100;
+                    var subtotalcomicion=parseFloat(comision_sobre_renumeracion)/100;
+                    var subtotalprima_Seguros=parseFloat(prima_Seguros)/100;
+                    //calculo de las pensiones por cada tipo
+                    var totalaporte=parseFloat(base_Calculo)*parseFloat(subtotalaporte);
+                    $('#aporte_obligatorio1').val(totalaporte.toFixed(2));
 
-          var totalpensiones=parseFloat(totalaporte)+parseFloat(totalcomision)+parseFloat(primaseguros);
-          $('#total_Descuento_afp').val(totalpensiones.toFixed(2));
-      }else if(tipo_seguros=='ONP'){
-          var base_Calculo=$('#base_calculo').val();
-          var totalONP=parseFloat(base_Calculo)*0.13;
+                    var totalcomision=parseFloat(base_Calculo)*parseFloat(subtotalcomicion);
+                    $('#comision_renumeracion1').val(totalcomision.toFixed(2));
 
-          $('#prima_Seguros_ONP').val(totalONP.toFixed(2));
-      }
+                    var primaseguros=parseFloat(base_Calculo)*parseFloat(subtotalprima_Seguros);
+                    $('#prima_Seguros1').val(primaseguros.toFixed(2));
+
+                    var totalpensiones=parseFloat(totalaporte)+parseFloat(totalcomision)+parseFloat(primaseguros);
+                    $('#total_Descuento_afp').val(totalpensiones.toFixed(2));
+                }
+
+            }else if(tipo_seguros=='ONP'){
+
+                if(base_Calculo==0){
+                    iziToast.error({
+                        title: 'Error',
+                        message: 'Es necesario agregar el monto base calculo',
+                    });
+
+                }else{
+                    var base_Calculo=$('#base_calculo').val();
+                    var totalONP=parseFloat(base_Calculo)*0.13;
+
+                    $('#prima_Seguros_ONP').val(totalONP.toFixed(2));
+                }
+
+            }
+        }
+
 
 
 
