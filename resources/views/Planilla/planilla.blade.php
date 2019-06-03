@@ -44,11 +44,14 @@
 
                 <!-- widget div-->
                 <div>
+                    <a   style="margin-left: 10px;margin-top: 5px" id="ListarTotales" class="btn btn-outline-warning  txt-color-blue"> <i class="fa fa-eye text-success" data-toggle="modal" data-target="#totales"> TOTALES DE PLANILLA</i></a>
+                    <a   style="margin-left: 10px;margin-top: 5px" id="Asiento_contable" class="btn btn-outline-danger  txt-color-blue"> <i class="fas fa-chart-line text-warning" data-toggle="modal" data-target="#asiento_contable"> ASIENTOS CONTABLES</i></a><br><br>
+
                     <div class="widget-body no-padding">
-                        <a href="{{url('PlanillaRegistro')}}"  style="margin-left: 950px;margin-top: 5px" id="RegisTrabajador" class="btn btn-dark txt-color-blue"> <i class="fa fa-eye text-success"> DETALLE</i></a>
 
                         <div class="table-responsive">
                             <table id="tb_renumeraciones" class="table table-striped table-bordered" cellspacing="0" width="100%">
+
                                 <thead>
                                 <tr>
                                     <th data-hide="phone">N°</th>
@@ -79,6 +82,7 @@
                                 </tfoot>
 
                             </table>
+
                         </div>
                         </div>
 
@@ -96,7 +100,7 @@
         <div class="modal-dialog modal-lg " role="document">
             <div class="modal-content modal-co" >
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">DETALLE DE PLANILLA</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -148,7 +152,8 @@
                                         <th><i class="fa fa-fw fa-dollartext-muted hidden-md hidden-sm hidden-xs"></i>APORTE OBLIGATORIO</th>
                                         <th data-hide="phone,tablet"><i class="fa fa-fw fa-dollar txt-color-blue hidden-md hidden-sm hidden-xs"></i>COMISION SOBRE R.A</th>
                                         <th data-hide="phone,tablet"><i class="fa fa-fw fa-dollar txt-color-blue hidden-md hidden-sm hidden-xs"></i>PRIMA SEGURO</th>
-                                        <th><i class="fa fa-fw fa-dollar text-muted hidden-md hidden-sm hidden-xs"></i>TOTAL DESCUENDO ONP/AFP</th>
+                                        <th><i class="fa fa-fw fa-dollar text-muted hidden-md hidden-sm hidden-xs"></i>TOTAL DESCUENDO AFP</th>
+                                        <th><i class="fa fa-fw fa-dollar text-muted hidden-md hidden-sm hidden-xs"></i>TOTAL DESCUENDO ONP</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -181,8 +186,91 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="totales" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg " role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">DETALLE DE LOS TOTALES DE LA PLANILLA</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist" style="background-color: #0aa699">
+                        <li class="nav-item">
+                            <a class="nav-link active"  id="home-tab" data-toggle="tab" href="#totales1" role="tab" aria-controls="home" aria-selected="true">TOTALES INGRESOS </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#totales2" role="tab" aria-controls="profile" aria-selected="false">TOTALES RETENCIONES </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">OTROS TOTALES</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="totales1" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="table-responsive">
+                                <table id="tb_total" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                    <thead>
+                                    <tr>
+                                        <th ><i class="fa fa-fw fa-dollar text-muted hidden-md hidden-sm hidden-xs"></i>Horasx25 25%</th>
+                                        <th ><i class="fa fa-fw fa-dollar text-muted hidden-md hidden-sm hidden-xs"></i>Horasx35 35%</th>
+                                        <th ><i class="fa fa-fw fa-dollartext-muted hidden-md hidden-sm hidden-xs"></i>cts</th>
+                                        <th ><i class="fa fa-fw fa-dollar text-muted hidden-md hidden-sm hidden-xs"></i>Vacaciones</th>
+                                        <th ><i class="fa fa-fw fa-dollar text-muted hidden-md hidden-sm hidden-xs"></i>bonificacion</th>
+                                        <th ><i class="fa fa-fw fa-dollartext-muted hidden-md hidden-sm hidden-xs"></i>bonificacion_Extra</th>
+                                        <th ><i class="fa fa-fw fa-dollartext-muted hidden-md hidden-sm hidden-xs"></i>Renumeracion_Bruta</th>
+                                        <th ><i class="fa fa-fw fa-dollartext-muted hidden-md hidden-sm hidden-xs"></i>Base_Calculo</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="totales2" role="tabpanel" aria-labelledby="profile-tab">
+                            <div class="table-responsive">
+                                <table id="tb_totales1" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                    <thead>
+                                    <tr>
+                                        <th ><i class="fa fa-fw fa-dollar text-muted hidden-md hidden-sm hidden-xs"></i>APORTE OBLIGATORIO</th>
+                                        <th ><i class="fa fa-fw fa-dollar text-muted hidden-md hidden-sm hidden-xs"></i>COMISON SOBRE R.A</th>
+                                        <th ><i class="fa fa-fw fa-dollartext-muted hidden-md hidden-sm hidden-xs"></i>PRIMA DE SEGURO</th>
+                                        <th ><i class="fa fa-fw fa-dollar text-muted hidden-md hidden-sm hidden-xs"></i>TOTAL DESCUENTO AFP</th>
+                                        <th ><i class="fa fa-fw fa-dollar text-muted hidden-md hidden-sm hidden-xs"></i>TOTAL DESCUENTO ONP 13%</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                            <div class="table-responsive">
+                                <table id="tb_total2" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                    <thead>
+                                    <tr>
+                                        <th ><i class="fa fa-fw fa-dollar text-muted hidden-md hidden-sm hidden-xs"></i>RENTA 5 CATEGORIA</th>
+                                        <th ><i class="fa fa-fw fa-dollar text-muted hidden-md hidden-sm hidden-xs"></i>RENUMERACION NETA</th>
+                                        <th ><i class="fa fa-fw fa-dollartext-muted hidden-md hidden-sm hidden-xs"></i>ESSALUD 9%</th>
 
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cerrar</button>
 
+                </div>
+            </div>
+        </div>
+    </div>
+   @include('Planilla.asiento_contable');
 @endsection
 
 
@@ -302,11 +390,197 @@
                 ],
 
             });
+            $('#Asiento_contable').click(function () {
+                var hola;
+              $.ajax({
+                  url:'{{url('Asiento_Contable')}}',
+                  type:'get',
+                  dataType:'json',
+                  success:function (response) {
+                      $.each(response,function (index,val) {
+                          $('#reumeraciones1').val(val.renumeracion_bruta);
+                          $('#regimen_presentaciones').val(val.salud);
+                          $('#seguro_complementario').val(val.sctr);
+                          $('#seguridad_prevision1').val(val.total_seguro);
+                          $('#essalud1').val(val.salud);
+                          $('#onp1').val(val.descuento_ONP);
+                          $('#otras_instituciones1').val(val.sctr);
+                          $('#renumeracion_pagar1').val(val.renumeracion_neta);
+                          $('#afp1').val(val.prima_seguros+val.aporte_obligatorio+val.comision_sobre);
+                          $('#gastos_personal').val(val.renumeracion_bruta+val.total_seguro);
+
+
+                      });
 
 
 
+                  }
+              });
+            });
+
+
+
+$('#ListarTotales').click(function () {
+  $('#tb_total').DataTable({
+      stateSave: true,
+      responsive: true,
+      processing: false,
+      serverSide : true,
+      "ordering": false,
+
+
+      language: {
+          "sProcessing":     "Procesando...",
+          "sLengthMenu":     "Mostrar _MENU_ registros",
+          "sZeroRecords":    "No se encontraron resultados",
+          "sEmptyTable":     "Ningún dato disponible en esta tabla",
+          "sInfo":           "Mostrando del _START_ al _END_ de un total de _TOTAL_ registros",
+          "sInfoEmpty":      "Ningún dato disponible en esta tabla",
+          "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
+          "sInfoPostFix":    "",
+          "sSearch":         "Buscar:",
+          "sUrl":            "",
+          "sInfoThousands":  ",",
+          "sLoadingRecords": "Cargando...",
+          "oPaginate": {
+              "sFirst":    "Primero",
+              "sLast":     "Último",
+              "sNext":     "Siguiente",
+              "sPrevious": "Anterior"
+          },
+          "oAria": {
+              "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+              "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+          },
+      },
+
+      ajax: '{{url('Totales_ingresos')}}',
+      columns: [
+          {data: 'horasx25',name:'horasx25'},
+          {data: 'horasx35',name:'horasx35'},
+          {data: 'CTS',name:'CTS'},
+          {data: 'vacaciones',name:'vacaciones'},
+          {data: 'bonificacion',name:'bonificacion'},
+          {data: 'bonificacionExtra',name:'bonificacionExtra'},
+          {data: 'renumeracion_bruta',name:'renumeracion_bruta'},
+          {data: 'base_calculo',name:'base_calculo'},
+
+
+
+      ],
+      destroy:true,
+
+  });
+
+    $('#tb_totales1').DataTable({
+        stateSave: true,
+        responsive: true,
+        processing: false,
+        serverSide : true,
+        "ordering": false,
+
+
+        language: {
+            "sProcessing":     "Procesando...",
+            "sLengthMenu":     "Mostrar _MENU_ registros",
+            "sZeroRecords":    "No se encontraron resultados",
+            "sEmptyTable":     "Ningún dato disponible en esta tabla",
+            "sInfo":           "Mostrando del _START_ al _END_ de un total de _TOTAL_ registros",
+            "sInfoEmpty":      "Ningún dato disponible en esta tabla",
+            "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
+            "sInfoPostFix":    "",
+            "sSearch":         "Buscar:",
+            "sUrl":            "",
+            "sInfoThousands":  ",",
+            "sLoadingRecords": "Cargando...",
+            "oPaginate": {
+                "sFirst":    "Primero",
+                "sLast":     "Último",
+                "sNext":     "Siguiente",
+                "sPrevious": "Anterior"
+            },
+            "oAria": {
+                "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+                "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+            },
+        },
+
+        ajax: '{{url('Totales_aportes')}}',
+        columns: [
+            {data: 'aporte_obligatorio',name:'aporte_obligatorio'},
+            {data: 'comision_sobre',name:'comision_sobre'},
+            {data: 'prima_seguros',name:'prima_seguros'},
+            {data: 'descuento_AFP',name:'descuento_AFP'},
+            {data: 'descuento_ONP',name:'descuento_ONP'},
+
+
+
+        ],
+        destroy:true,
+
+    });
+    $('#tb_total2').DataTable({
+        stateSave: true,
+        responsive: true,
+        processing: false,
+        serverSide : true,
+        "ordering": false,
+
+
+        language: {
+            "sProcessing":     "Procesando...",
+            "sLengthMenu":     "Mostrar _MENU_ registros",
+            "sZeroRecords":    "No se encontraron resultados",
+            "sEmptyTable":     "Ningún dato disponible en esta tabla",
+            "sInfo":           "Mostrando del _START_ al _END_ de un total de _TOTAL_ registros",
+            "sInfoEmpty":      "Ningún dato disponible en esta tabla",
+            "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
+            "sInfoPostFix":    "",
+            "sSearch":         "Buscar:",
+            "sUrl":            "",
+            "sInfoThousands":  ",",
+            "sLoadingRecords": "Cargando...",
+            "oPaginate": {
+                "sFirst":    "Primero",
+                "sLast":     "Último",
+                "sNext":     "Siguiente",
+                "sPrevious": "Anterior"
+            },
+            "oAria": {
+                "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+                "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+            },
+        },
+
+        ajax: '{{url('Totales_0tros')}}',
+        columns: [
+            {data: 'quinta_categoria',name:'quinta_categoria'},
+            {data: 'renumeracion_neta',name:'renumeracion_neta'},
+            {data: 'salud',name:'salud'},
+
+
+
+
+        ],
+        destroy:true,
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+});
 
         });
+
+
         function detalle(id) {
             $('#tb_renumeraciones1').DataTable({
                 stateSave: true,
@@ -400,7 +674,8 @@
                     {data: 'aporte_obligatorio_monto',name:'aporte_obligatorio_monto'},
                     {data: 'comisison_sobre_renumeracion_total',name:'comisison_sobre_renumeracion_total'},
                     {data: 'Prima_Seguros_monto',name:'Prima_Seguros_monto'},
-                    {data: 'total_DescuentoAFP_ONP',name:'total_DescuentoAFP_ONP'},
+                    {data: 'total_DescuentoAFP',name:'total_DescuentoAFP'},
+                    {data: 'Total_descuentoONP',name:'Total_descuentoONP'},
 
 
 

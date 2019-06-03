@@ -16,7 +16,7 @@ class Persona extends Model
      */
     protected $fillable = [
     'apellidos_Per','Dni','Care_extranjeria','Telefono','Direccion','Fecha_Nacimiento','Numero_cuenta',
-        'Trabajador_idTrabajador','correo','nombre_personas',
+        'Trabajador_idTrabajadores','correo','nombre_personas',
     ];
 
 }

@@ -386,7 +386,9 @@
                                                              <label class="input"> <i class="icon-prepend fa fa-money"></i>
                                                                  <input type="number" readonly name="essalud" id="essalud" placeholder="$.00">
                                                              </label>
+
                                                          </section>
+                                                         <input type="hidden" readonly name="SCTR" id="SCTR" value="0.00" placeholder="$.00">
 
                                                      </div>
                                                 </fieldset>
@@ -1100,10 +1102,12 @@
           $('#renumeracion_neta').val(renumeracion_neta.toFixed(2));
         var base_Calculo=$('#base_calculo').val();
         var subtotalesalud=parseFloat(base_Calculo)*0.09;
+        var SCTR=parseFloat(base_Calculo)*0.0125;
         if(subtotalesalud<esaludmaximo){
             $('#essalud').val(83.7);
         }else {
             $('#essalud').val(subtotalesalud.toFixed(2));
+            $('#SCTR').val(SCTR.toFixed(2));
         }
 
 

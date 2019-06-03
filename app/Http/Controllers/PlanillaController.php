@@ -63,7 +63,6 @@ class PlanillaController extends Controller
     public function store(Request $request){
 
         $regla=[
-            'cuspp'=>'required',
             'ocupasion'=>'required',
             'sueldo_basico' =>'required ',
 
@@ -80,8 +79,8 @@ class PlanillaController extends Controller
             $renumeracion->Horas_Extras_25=$request->horas_extras25;
             $renumeracion->Horas_Extras_35=$request->horas_extras35;
             $renumeracion->total_renumeracion_bruta=$request->total_renumeracion;
-            $renumeracion->total_DescuentoAFP_ONP=$request->total_Descuento_onp;
-            $renumeracion->total_DescuentoAFP_ONP=$request->total_Descuento_afp;
+            $renumeracion->Total_descuentoONP=$request->total_Descuento_onp;
+            $renumeracion->total_DescuentoAFP=$request->total_Descuento_afp;
             $renumeracion->Renumeracion_neta=$request->renumeracion_neta;
             $renumeracion->Salud=$request->essalud;
             $renumeracion->S_D='10.29';
@@ -92,6 +91,7 @@ class PlanillaController extends Controller
             $renumeracion->aporte_obligatorio_monto=$request->aporte_obligatorio_total;
             $renumeracion->comisison_sobre_renumeracion_total=$request->comision_renumeracion_total;
             $renumeracion->otros=$request->otros;
+            $renumeracion->SCTR=$request->SCTR;
             $renumeracion->save();
             $planilla=new Planilla();
             $planilla->idRenumeracion=$renumeracion->idRenumeraciones;
@@ -116,6 +116,22 @@ class PlanillaController extends Controller
         }
         return response()->json(array("success"=>true));
 
+    }
+    public function TotalesIngresos(){
+        $totales = DB::select("call Listar_totales");
+        return Datatables::of($totales)->make(true);
+    }
+    public function TotalesAportes(){
+        $totales = DB::select("call Listar_totales");
+        return Datatables::of($totales)->make(true);
+    }
+    public function Totales_0tros(){
+        $totales = DB::select("call Listar_totales");
+        return Datatables::of($totales)->make(true);
+    }
+    public function AsientoContable(){
+        $totales = DB::select("call Listar_totales");
+        return response()->json($totales);
     }
 
 }
