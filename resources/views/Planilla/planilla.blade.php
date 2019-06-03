@@ -270,6 +270,7 @@
             </div>
         </div>
     </div>
+    @include('Planilla.boleta')
    @include('Planilla.asiento_contable');
 @endsection
 
@@ -381,7 +382,7 @@
                     {"mRender": function ( data, type, row ) {
                             return '<a onclick="detalle('+row.idPlanilla+')"  title="Detalle Planilla" class="btn btn-success "  data-toggle="modal" data-target="#exampleModal"><i class="fa fa-eye text-warning"></i></a>' +
                                 '<a title="Eliminar Planilla" style="margin-left: 5px" class="btn btn-danger " onclick="eliminar('+row.idPlanilla+')"><i class="fa fa-remove text-warning"></i></a>' +
-                                '<a title="Imprimir Boleta de pago" style="margin-left: 5px" class="btn btn-primary " onclick="Imprimir('+row.idPlanilla+')"><i class="fa fa-print text-warning"></i></a>'
+                                '<a data-toggle="modal" data-target="#boleta" title="Imprimir Boleta de pago" style="margin-left: 5px" class="btn btn-primary " onclick="Imprimir('+row.idPlanilla+')"><i class="fa fa-print text-warning"></i></a>'
                         },
                     }
 
