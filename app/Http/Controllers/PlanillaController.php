@@ -133,5 +133,8 @@ class PlanillaController extends Controller
         $totales = DB::select("call Listar_totales");
         return response()->json($totales);
     }
+    public function Boleta(){
+        return view('Planilla.boleta');
+    }
 
 }

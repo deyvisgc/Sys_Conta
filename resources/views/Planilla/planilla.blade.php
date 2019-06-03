@@ -253,7 +253,7 @@
                                         <th ><i class="fa fa-fw fa-dollar text-muted hidden-md hidden-sm hidden-xs"></i>RENTA 5 CATEGORIA</th>
                                         <th ><i class="fa fa-fw fa-dollar text-muted hidden-md hidden-sm hidden-xs"></i>RENUMERACION NETA</th>
                                         <th ><i class="fa fa-fw fa-dollartext-muted hidden-md hidden-sm hidden-xs"></i>ESSALUD 9%</th>
-
+                                        <th ><i class="fa fa-fw fa-dollartext-muted hidden-md hidden-sm hidden-xs"></i>SCTR 1.25%</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -381,7 +381,7 @@
                     {"mRender": function ( data, type, row ) {
                             return '<a onclick="detalle('+row.idPlanilla+')"  title="Detalle Planilla" class="btn btn-success "  data-toggle="modal" data-target="#exampleModal"><i class="fa fa-eye text-warning"></i></a>' +
                                 '<a title="Eliminar Planilla" style="margin-left: 5px" class="btn btn-danger " onclick="eliminar('+row.idPlanilla+')"><i class="fa fa-remove text-warning"></i></a>' +
-                                '<a title="ver totales" style="margin-left: 5px" class="btn btn-primary " onclick="eliminar('+row.idPlanilla+')"><i class="fa fa-eye text-warning"></i></a>'
+                                '<a title="Imprimir Boleta de pago" style="margin-left: 5px" class="btn btn-primary " onclick="Imprimir('+row.idPlanilla+')"><i class="fa fa-print text-warning"></i></a>'
                         },
                     }
 
@@ -408,7 +408,9 @@
                           $('#renumeracion_pagar1').val(val.renumeracion_neta);
                           $('#afp1').val(val.prima_seguros+val.aporte_obligatorio+val.comision_sobre);
                           $('#gastos_personal').val(val.renumeracion_bruta+val.total_seguro);
-
+                          $('#tributs_aportes1').val(val.salud+val.descuento_ONP+val.sctr);
+                          $('#renumeraciones_participaciones1').val(val.renumeracion_neta);
+                          $('#cuentas_diversas1').val(val.prima_seguros+val.aporte_obligatorio+val.comision_sobre);
 
                       });
 
@@ -557,6 +559,7 @@ $('#ListarTotales').click(function () {
             {data: 'quinta_categoria',name:'quinta_categoria'},
             {data: 'renumeracion_neta',name:'renumeracion_neta'},
             {data: 'salud',name:'salud'},
+            {data: 'sctr',name:'sctr'},
 
 
 

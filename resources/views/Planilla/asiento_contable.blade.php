@@ -262,14 +262,14 @@
                                     </section>
                                     <section class="col col-3">
                                       <center><label>DEBE</label></center>
-                                        <label class="input"> <i class="icon-prepend fa fa-user"></i>
+                                        <label class="input"> <i class="icon-prepend fa fa-dollar"></i>
                                             <input type="number" name="gastos_personal" id="gastos_personal" value="0.00">
                                         </label>
                                     </section>
                                     <section class="col col-3">
                                         <center><label>HABER</label></center>
-                                        <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                                            <input type="text" name="lname" placeholder="Last name">
+                                        <label class="input"> <i class="icon-prepend fa fa-dollar"></i>
+                                            <input type="number" name="gastos_personal1" id="gastos_personal1" placeholder="0.00">
                                         </label>
                                     </section>
 
@@ -280,13 +280,13 @@
 
                                     </section>
                                     <section class="col col-3">
-                                        <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                                            <input type="text" name="lname" placeholder="Last name">
+                                        <label class="input"> <i class="icon-prepend fa fa-dollar"></i>
+                                            <input type="number" name="tributs_aportes" id="tributs_aportes" value="0.00">
                                         </label>
                                     </section>
                                     <section class="col col-3">
-                                        <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                                            <input type="text" name="lname" placeholder="Last name">
+                                        <label class="input"> <i class="icon-prepend fa fa-dollar"></i>
+                                            <input type="number" name="tributs_aportes1" id="tributs_aportes1" value="0.00">
                                         </label>
                                     </section>
                                 </div>
@@ -296,13 +296,13 @@
 
                                     </section>
                                     <section class="col col-3">
-                                        <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                                            <input type="text" name="lname" placeholder="Last name">
+                                        <label class="input"> <i class="icon-prepend fa fa-dollar"></i>
+                                            <input type="number" name="renumeraciones_participaciones" id="renumeraciones_participaciones" value="0.00">
                                         </label>
                                     </section>
                                     <section class="col col-3">
-                                        <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                                            <input type="text" name="lname" placeholder="Last name">
+                                        <label class="input"> <i class="icon-prepend fa fa-dollar"></i>
+                                            <input type="number" name="renumeraciones_participaciones1" id="renumeraciones_participaciones1" value="0.00">
                                         </label>
                                     </section>
 
@@ -313,13 +313,13 @@
 
                                     </section>
                                     <section class="col col-3">
-                                        <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                                            <input type="text" name="lname" placeholder="Last name">
+                                        <label class="input"> <i class="icon-prepend fa fa-dollar"></i>
+                                            <input type="number" name="cuentas_diversas" id="cuentas_diversas" value="0.00">
                                         </label>
                                     </section>
                                     <section class="col col-3">
-                                        <label class="input"> <i class="icon-prepend fa fa-user"></i>
-                                            <input type="text" name="lname" placeholder="Last name">
+                                        <label class="input"> <i class="icon-prepend fa fa-dollar"></i>
+                                            <input type="number" name="cuentas_diversas1" id="cuentas_diversas1" value="0.00">
                                         </label>
                                     </section>
 

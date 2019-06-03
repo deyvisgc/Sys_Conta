@@ -30,7 +30,7 @@ Route::get('Totales_aportes','PlanillaController@TotalesAportes');
 Route::get('Totales_0tros','PlanillaController@Totales_0tros');
 Route::get('Asiento_Contable','PlanillaController@AsientoContable');
 Route::get('PlanillaRegistro', 'PlanillaController@getPlanilla');
-
+Route::get('Boleta', 'PlanillaController@Boleta');
 Route::get('DeleTrabajador/{idPersona}', 'TrabajadorController@DeleTrabajador');
 Route::get('buscador', 'PlanillaController@search');
 
