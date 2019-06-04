@@ -62,7 +62,7 @@ class TrabajadorController extends Controller
             $trabajador->Direccion=$request->direccion;
             $trabajador->Numero_cuenta=$request->n_cuenta;
             $trabajador->correo=$request->Correo;
-            $trabajador->Telefono=$request->phone;
+            $trabajador->estado=$request->phone;
             $trabajador->Fecha_Nacimiento=$request->fecha_naci;
             $trabajador->save();
             DB::commit();
