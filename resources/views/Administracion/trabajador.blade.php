@@ -74,7 +74,7 @@
 
     <!-- Modal -->
     <div class="modal fade" id="ModalTrabajador" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <center> <strong><h5 style="color: black ;font-family:'Arial Black' " class="modal-title" id="exampleModalLabel">Registrar Trabajador</h5></strong></center>
@@ -170,6 +170,44 @@
                                         </section>
                                     </div>
 
+
+                                    <div class="row">
+                                        <section class="col col-6">
+                                            <label  style="color: black" > PERIDO DE TRABAJO(*)</label>
+                                            <label class="select">
+                                                <select name="periodo_tra" aria-required="true" aria-invalid="false" class="valid">
+                                                    <option value="0" selected="" disabled="">SELECCIONE PERIODO</option>
+                                                    <option value="Mensual">Mensual</option>
+                                                    <option value="QUINCENAL">QUINCENAL</option>
+                                                    <option value="SEMANAL">SEMANAL</option>
+                                                </select></label>
+                                        </section>
+
+
+                                        <section class="col col-6">
+                                            <label  style="color: black" > HIJOS(*)</label>
+                                            <label class="input"> <i class="icon-append fa fa-child"></i>
+                                                <input type="number" name="hijo" id="hijo" placeholder="Hijos">
+                                            </label>
+                                        </section>
+                                    </div>
+                                    <div class="row">
+
+                                        <section class="col col-6">
+                                            <label  style="color: black" > FECHA INGRESO(*)</label>
+                                            <label class="input"> <i class="icon-append fa fa-calendar"></i>
+                                                <input type="date" name="fecha_ingreso" id="fecha_ingreso" placeholder="Expected finish date" class="hasDatepicker valid" aria-invalid="false">
+                                            </label>
+                                        </section>
+
+
+                                        <section class="col col-6">
+                                            <label  style="color: black" > FECHA SALIDA(*)</label>
+                                            <label class="input"> <i class="icon-append fa fa-calendar"></i>
+                                                <input type="date" name="fecha_salidad" id="fecha_salidad" placeholder="Expected finish date" class="hasDatepicker valid" aria-invalid="false">
+                                            </label>
+                                        </section>
+                                    </div>
                                     <div class="row">
                                         <section class="col col-6">
                                             <label  style="color: black" > SEGUROS(*)</label>
@@ -297,7 +335,40 @@
                                             </label>
                                         </section>
                                     </div>
+                                    <div class="row">
+                                        <section class="col col-6">
+                                            <label  style="color: black" > PERIDO DE TRABAJO(*)</label>
+                                            <label class="select">
+                                                <select name="periodo_tra" id="periodo" aria-required="true" aria-invalid="false" class="valid">
+                                                    <option value="Mensual"></option>
+                                                </select></label>
+                                        </section>
 
+
+                                        <section class="col col-6">
+                                            <label  style="color: black" > HIJOS(*)</label>
+                                            <label class="input"> <i class="icon-append fa fa-child"></i>
+                                                <input type="number" name="hijo" id="hijos" placeholder="Hijos">
+                                            </label>
+                                        </section>
+                                    </div>
+                                    <div class="row">
+
+                                        <section class="col col-6">
+                                            <label  style="color: black" > FECHA INGRESO(*)</label>
+                                            <label class="input"> <i class="icon-append fa fa-calendar"></i>
+                                                <input type="date" name="fecha_ingreso" id="fecha_ingre" placeholder="Expected finish date" class="hasDatepicker valid" aria-invalid="false">
+                                            </label>
+                                        </section>
+
+
+                                        <section class="col col-6">
+                                            <label  style="color: black" > FECHA SALIDA(*)</label>
+                                            <label class="input"> <i class="icon-append fa fa-calendar"></i>
+                                                <input type="date" name="fecha_salidad" id="fecha_sali" placeholder="Expected finish date" class="hasDatepicker valid" aria-invalid="false">
+                                            </label>
+                                        </section>
+                                    </div>
                                     <div class="row">
                                         <section class="col col-6">
                                             <label class="select">
@@ -342,6 +413,13 @@
     <script>
         var tabla;
         $(document).ready( function () {
+
+            fecha_Actual= get_fhoy();
+            $('#fecha_naci').val(fecha_Actual);
+            $('#fecha_ingreso').val(fecha_Actual);
+            $('#fecha_salidad').val(fecha_Actual);
+
+
        tabla=$('#dt_basic').DataTable({
 
 
@@ -385,8 +463,9 @@
                     {data: 'nombre_Seguro',name:'nombre_Seguro'},
                     {data: 'nombre_tipo',name:'nombre_tipo'},
                     {"mRender": function ( data, type, row ) {
-                            return '<a style="margin-left: 5px" class="btn btn-success btnEdit" data-edit="/Trabajador/'+row.idPersona+'/edit" ><i class="fa fa-edit text-warning"></i></a>' +
-                                '<a style="margin-left: 5px" class="btn btn-danger " onclick="eliminar('+row.idPersona+')"><i class="fa fa-remove text-warning"></i></a>'
+                            return '<a style="margin-left: 5px" class="btn btn-outline-success btnEdit" data-edit="/Trabajador/'+row.idPersona+'/edit" ><i class="fa fa-edit text-warning"></i></a>' +
+                                '<a style="margin-left: 5px" class="btn btn-outline-danger" onclick="eliminar('+row.idPersona+')"><i class="fa fa-remove text-warning"></i></a>'+
+                            '<a style="margin-left: 5px" class="btn btn-outline-warning " onclick="Detalle('+row.idPersona+')"><i class="fa fa-eye text-dark"></i></a>'
                                ;
                     }
                     },
@@ -420,6 +499,10 @@
                           $('#fecha_nacimiento').val(valor.Fecha_Nacimiento);
                            $('#id_persona').val(valor.idPersona);
                            $('#id_trabajador').val(valor.idTrabajador);
+                           $('#periodo').val(valor.Periodo_trabajo);
+                          $('#hijos').val(valor.tra_hijos);
+                          $('#fecha_ingre').val(valor.fecha_Ingreso);
+                          $('#fecha_sali').val(valor.fecha_Salida);
                           $.each(response.segu,function (index,va) {
 
                               if(va.idseguros===valor.seguros_idseguros){

@@ -382,7 +382,7 @@
                     {"mRender": function ( data, type, row ) {
                             return '<a onclick="detalle('+row.idPlanilla+')"  title="Detalle Planilla" class="btn btn-success "  data-toggle="modal" data-target="#exampleModal"><i class="fa fa-eye text-warning"></i></a>' +
                                 '<a title="Eliminar Planilla" style="margin-left: 5px" class="btn btn-danger " onclick="eliminar('+row.idPlanilla+')"><i class="fa fa-remove text-warning"></i></a>' +
-                                '<a data-toggle="modal" data-target="#boleta" title="Imprimir Boleta de pago" style="margin-left: 5px" class="btn btn-primary " onclick="Imprimir('+row.idPlanilla+')"><i class="fa fa-print text-warning"></i></a>'
+                                '<a data-toggle="modal" data-target="#boleta" title="Imprimir Boleta de pago" style="margin-left: 5px" class="btn btn-primary " onclick="Imprimir('+row.Trabajador_idTrabajador+')"><i class="fa fa-print text-warning"></i></a>'
                         },
                     }
 
@@ -409,7 +409,8 @@
                           $('#renumeracion_pagar1').val(val.renumeracion_neta);
                           $('#afp1').val(val.prima_seguros+val.aporte_obligatorio+val.comision_sobre);
                           $('#gastos_personal').val(val.renumeracion_bruta+val.total_seguro);
-                          $('#tributs_aportes1').val(val.salud+val.descuento_ONP+val.sctr);
+                            $('#tributs_aportes1').val(val.salud+val.descuento_ONP+val.sctr);
+                        //  $('#tributs_aportes1').val(val.salud+val.descuento_ONP+val.sctr);
                           $('#renumeraciones_participaciones1').val(val.renumeracion_neta);
                           $('#cuentas_diversas1').val(val.prima_seguros+val.aporte_obligatorio+val.comision_sobre);
 
@@ -731,6 +732,111 @@ $('#ListarTotales').click(function () {
                 ],
                 destroy:true,
             });
+
+        }
+        function Imprimir(id) {
+
+            var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+            var f=new Date();
+            $('#meses').text(f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
+
+            $.ajax({
+                url: '{{url('BoletaPagos')}}/'+id,
+                type: 'get',
+                dataType: 'json',
+                success:function (response) {
+                    var cuerpo=$('#cuerpo').html("");
+                    var cuerpoTrabajador=$('#cuerpoTrabajador').html("");
+                   var traba_razonocial=$('#traba_razonocial').html("");
+                    var dias_deltrabajador=$('#dias_deltrabajador').html("");
+                    var renumeraciones=$('#Renumeraciones').html("");
+                    $.each(response,function (index,val) {
+
+                   var tabla=
+                       '<tr>'+
+                       '<td>'+val.Ruc+'</td>'+
+                       '<td>'+val.Razon_Social+'</td>'+
+                       '<td>'+val.Rubro_empresa+'</td>'+
+                       '<td>'+val.Direccion+'</td>'+
+                       '</tr>';
+                        cuerpo.append(tabla);
+
+
+                        var tabla1=
+                            '<tr>'+
+                            '<td>'+val.idPersona+'</td>'+
+                            '<td>'+val.nombre_personas+'</td>'+
+                            '<td>'+val.apellidos_Per+'</td>'+
+                            '<td>'+val.Dni+'</td>'+
+                            '<td>'+val.Fecha_Nacimiento+'</td>'+
+                            '<td>'+val.tra_hijos+'</td>'+
+                            '<td>'+val.Direccion_Persona+'</td>'+
+                            '</tr>';
+                        cuerpoTrabajador.append(tabla1);
+                        var tabla2=
+                            '<tr>'+
+                            '<td>'+val.Ocupacion+'</td>'+
+                            '<td>'+val.Periodo_trabajo+'</td>'+
+                            '<td>'+val.nombre_tipo+'</td>'+
+                            '<td>'+val.nombre_Seguro+'</td>'+
+                            '<td>'+val.CUSPP+'</td>'+
+                            '<td>'+val.fecha_Ingreso+'</td>'+
+                            '<td>'+val.fecha_Salida+'</td>'+
+                            '</tr>';
+                        traba_razonocial.append(tabla2);
+                        var tabla3= '<tr>'+
+                            '<td>'+val.dias_laborales+'</td>'+
+                            '<td>'+val.total_horas_trabajadas+'</td>'+
+                            '<td>'+val.monto_horasEstrasx25+'</td>'+
+                            '<td>'+val.monto_horasEstrasx35+'</td>'+
+                            '<td>'+val.dias_faltantes+'</td>'+
+                            '</tr>';
+
+                        dias_deltrabajador.append(tabla3);
+
+
+                        var tabla4= '<tr>'+
+                            '<td>' +
+                            '<strong><label style="color: black;">Sueldo Computable: $.</label></strong> '+val.Renumeracion_neta+'' +'\n'+
+                            '<strong><label style="color: black;">Asignacion Familiar: $.</label></strong> ' +val.Asignacion_familiar+'' +'\n'+
+                            '<strong><label style="color: black;">Renumeracion Vaca: $. </label></strong> '+val.vacaciones+'' +'\n'+
+                            '<strong><label style="color: black;">CTS: $.</label></strong> '+val.cts+'' +'\n'+
+                            '</td>'+
+
+                            '<td>' +
+                            'Sueldo Computable: '+val.Renumeracion_neta+'' +'\n'+
+
+                            'Asignacion Familiar: ' +val.Asignacion_familiar+'' +'\n'+
+
+                            'Renumeracion Vaca: ' +val.cts+''+ '\n'+
+
+                            'CTS: ' +val.vacaciones+''+
+                            '</td>'+
+                            '<td>' +
+                            'Sueldo Computable: '+val.Renumeracion_neta+'' +'\n'+
+
+                            'Asignacion Familiar: ' +val.Asignacion_familiar+'' +'\n'+
+
+                            'Renumeracion Vaca: ' +val.cts+''+ '\n'+
+
+                            'CTS: ' +val.vacaciones+''+
+                            '</td>'+
+
+                        '</tr>';
+
+                        renumeraciones.append(tabla4);
+
+
+
+                    });
+
+
+
+                }
+
+
+            });
+
 
         }
     </script>

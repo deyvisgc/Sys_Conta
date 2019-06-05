@@ -18,7 +18,7 @@
                         <center><p>ART. 19 DEL DECRETO SUPREMO N° 001-98-TR DEL 22-01-98</p></center>
                         <div class="row">
                             <section class="col col-12" style="border-radius: 2px;">
-                                <center><strong><label style="color: black;">MES:</label></strong></center>
+                                <center><strong><label  style="color: black;">MES: <span id="meses"></span></label></strong></center>
 
                             </section>
                         </div>
@@ -31,7 +31,7 @@
                         <div class="row">
                             <section class="co col-12">
                                 <div class="table-responsive" >
-                                    <table id="tb_total2" style="background-color:#F7BFBF " class="table table-striped table-bordered "  width="100%">
+                                    <table id="tb_Empresa" style="background-color:#F7BFBF " class="table table-striped table-bordered "  width="100%">
                                         <thead>
                                         <tr>
                                             <th  style="background-color:#E58484 "><i class="fa fa-fw fa-dollar text-muted hidden-md hidden-sm hidden-xs"></i>RUC</th>
@@ -40,11 +40,7 @@
                                             <th style="background-color:#E58484 "><i class="fa fa-fw fa-dollartext-muted hidden-md hidden-sm hidden-xs"></i>DIRECCIÓN</th>
                                         </tr>
                                         </thead>
-                                        <tbody>
-                                        <td>sdsdsds</td>
-                                        <td>sasasa</td>
-                                        <td>sasasasa</td>
-                                        <td>sdsdsdsd</td>
+                                        <tbody id="cuerpo">
                                         </tbody>
                                     </table>
                                 </div>
@@ -72,14 +68,7 @@
                                             <th style="background-color:#E58484 "><i class="fa fa-fw fa-dollartext-muted hidden-md hidden-sm hidden-xs"></i>DIRECCIÓN</th>
                                         </tr>
                                         </thead>
-                                        <tbody>
-                                        <td>sdsdsds</td>
-                                        <td>sasasa</td>
-                                        <td>sasasasa</td>
-                                        <td>sdsdsdsd</td>
-                                        <td>sasasa</td>
-                                        <td>sasasasa</td>
-                                        <td>sdsdsdsd</td>
+                                        <tbody id="cuerpoTrabajador">
                                         </tbody>
                                     </table>
                                 </div>
@@ -104,22 +93,10 @@
                                             <th style="background-color:#E58484 "><i class="fa fa-fw fa-dollar text-muted hidden-md hidden-sm hidden-xs"></i>C.U.S.P.P.</th>
                                             <th style="background-color:#E58484 "><i class="fa fa-fw fa-dollartext-muted hidden-md hidden-sm hidden-xs"></i>F. ING.</th>
                                             <th style="background-color:#E58484 "><i class="fa fa-fw fa-dollartext-muted hidden-md hidden-sm hidden-xs"></i>F. CESE</th>
-                                            <th style="background-color:#E58484 "><i class="fa fa-fw fa-dollar text-muted hidden-md hidden-sm hidden-xs"></i>INI. VAC.</th>
-                                            <th style="background-color:#E58484 "><i class="fa fa-fw fa-dollartext-muted hidden-md hidden-sm hidden-xs"></i>FIN VAC.</th>
-                                            <th style="background-color:#E58484 "><i class="fa fa-fw fa-dollartext-muted hidden-md hidden-sm hidden-xs"></i>DIAS VAC</th>
                                         </tr>
                                         </thead>
-                                        <tbody>
-                                        <td>sdsdsds</td>
-                                        <td>sasasa</td>
-                                        <td>sasasasa</td>
-                                        <td>sdsdsdsd</td>
-                                        <td>sasasa</td>
-                                        <td>sasasasa</td>
-                                        <td>sdsdsdsd</td>
-                                        <td>sasasa</td>
-                                        <td>sasasasa</td>
-                                        <td>sdsdsdsd</td>
+                                        <tbody id="traba_razonocial">
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -127,7 +104,7 @@
 
                         </div>
                         <div class="row">
-                            <section class="co col-6">
+                            <section class="co col-12">
                                 <div class="table-responsive" >
                                     <table id="tb_total2" style="background-color:#F7BFBF " class="table table-striped table-bordered "  width="100%">
                                         <thead>
@@ -140,39 +117,7 @@
 
                                         </tr>
                                         </thead>
-                                        <tbody>
-                                        <td>sdsdsds</td>
-                                        <td>sasasa</td>
-                                        <td>sasasasa</td>
-                                        <td>sdsdsdsd</td>
-                                        <td>sasasa</td>
-
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </section>
-                            <section class="co col-3">
-                                <div class="table-responsive" >
-                                    <table id="tb_total2" style="background-color:#F7BFBF " class="table table-striped table-bordered "  width="100%">
-                                        <tr>
-                                            <td style="background-color:#E58484" rowspan="3">OTRO EMPLEADOR</td><td>IMPORTE REMUN.</td>
-                                        </tr>
-                                        <tr>
-                                            <td>0.00</td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </section>
-                            <section class="co col-3">
-                                <div class="table-responsive" >
-                                    <table id="tb_total2" style="background-color:#F7BFBF " class="table table-striped table-bordered "  width="100%">
-                                        <thead>
-                                        <tr>
-                                            <th  style="background-color:#E58484 ">CTA CTE DE DEPÓSITO</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <td style="padding-top: 40px;">sdsdsds</td>
+                                        <tbody id="dias_deltrabajador">
                                         </tbody>
                                     </table>
                                 </div>
@@ -190,33 +135,7 @@
                                             <th  style="background-color:#E58484 "><center>APORTACIONES DEL EMPLEADOR</center></th>
                                         </tr>
                                         </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td>ASASA</td>
-                                            <td>SASAS</td>
-                                            <td>SASA</td>
-                                        </tr>
-                                        <tr>
-                                            <td>SAASSASA</td>
-                                            <td>SASAS</td>
-                                            <td>SASASASA</td>
-                                        </tr>
-                                        <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-
+                                        <tbody id="Renumeraciones">
                                         </tbody>
                                         <tfoot>
                                         <tr>

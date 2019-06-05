@@ -29,5 +29,7 @@ class Planilla extends Model
         'vacaciones',
         'bonificacion',
         'bonificacion_extraord',
+        'dias_laborales',
+        'total_horas_trabajadas',
     ];
 }

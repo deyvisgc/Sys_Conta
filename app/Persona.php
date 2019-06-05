@@ -20,7 +20,7 @@ class Persona extends Model
         'Dni',
         'Care_extranjeria',
         'Telefono',
-        'Direccion',
+        'Direccion_Persona',
         'Fecha_Nacimiento',
         'Numero_cuenta',
         'correo',

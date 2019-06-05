@@ -103,7 +103,8 @@ class PlanillaController extends Controller
             $planilla->Trabajador_idTrabajador=$request->idtrabajador;
             $planilla->monto_horasEstrasx25=$request->horas_extras25;
             $planilla->monto_horasEstrasx35=$request->horas_extras35;
-
+            $planilla->dias_laborales=$request->dias_laborales;
+            $planilla->total_horas_trabajadas=$request->total_diaslaborales;
             $planilla->dias_faltantes=$request->Faltas;
             $planilla->cts=$request->cts;
             $planilla->vacaciones=$request->vacaciones_trun;
@@ -133,8 +134,13 @@ class PlanillaController extends Controller
         $totales = DB::select("call Listar_totales");
         return response()->json($totales);
     }
-    public function Boleta(){
-        return view('Planilla.boleta');
+    public function Boleta($id){
+        $boleta=DB::select("SELECT * FROM persona,trabajador,planilla,seguros,tipo_seguro,renumeraciones,empresa WHERE persona.Trabajador_idTrabajadores=trabajador.idTrabajador 
+                                    and trabajador.idempresa=empresa.idEmpresa and trabajador.seguros_idseguros=seguros.idseguros and
+                                    trabajador.idTipo_Seguros=tipo_seguro.idTipo_seguro and planilla.Trabajador_idTrabajador=trabajador.idTrabajador and planilla.idRenumeracion=renumeraciones.idRenumeraciones
+                                    and planilla.Trabajador_idTrabajador=$id");
+        return response()->json($boleta);
     }
+
 
 }

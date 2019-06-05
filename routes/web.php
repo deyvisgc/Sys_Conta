@@ -26,6 +26,7 @@ Route::get('DeleTrabajador/{idPersona}', 'TrabajadorController@DeleTrabajador');
 Route::get('DeleUsuario/{idUsuarios}', 'UsuarioController@DeleTUsuario');
 Route::get('DeleEmpresa/{idEmpresa}', 'EmpresaController@DeleEmpresa');
 Route::get('buscador', 'PlanillaController@search');
+Route::get('BoletaPagos/{idEmpresa}','PlanillaController@Boleta');
 
 
 

@@ -17,7 +17,7 @@ use Validator;
 class TrabajadorController extends Controller
 {
     public function index(Request $request){
-        $trabaja=DB::select("SELECT persona.idPersona, trabajador.idTrabajador, CONCAT(persona.nombre_personas,' ',persona.apellidos_Per) as nombres,persona.Dni,persona.Care_extranjeria,persona.Telefono,persona.Direccion,persona.Fecha_Nacimiento,persona.Numero_cuenta,persona.correo,seguros.nombre_Seguro,tipo_seguro.nombre_tipo,empresa.Razon_Social FROM persona ,trabajador,seguros ,tipo_seguro,empresa WHERE persona.Trabajador_idTrabajadores=trabajador.idTrabajador and trabajador.seguros_idseguros=seguros.idseguros and trabajador.idTipo_Seguros=tipo_seguro.idTipo_seguro and trabajador.idempresa=empresa.idEmpresa and  trabajador.Estado_trabajador='Contratado'");
+        $trabaja=DB::select("SELECT persona.idPersona, trabajador.idTrabajador, CONCAT(persona.nombre_personas,' ',persona.apellidos_Per) as nombres,persona.Dni,persona.Care_extranjeria,persona.Telefono,persona.Fecha_Nacimiento,persona.Fecha_Nacimiento,persona.Numero_cuenta,persona.correo,seguros.nombre_Seguro,tipo_seguro.nombre_tipo,empresa.Razon_Social FROM persona ,trabajador,seguros ,tipo_seguro,empresa WHERE persona.Trabajador_idTrabajadores=trabajador.idTrabajador and trabajador.seguros_idseguros=seguros.idseguros and trabajador.idTipo_Seguros=tipo_seguro.idTipo_seguro and trabajador.idempresa=empresa.idEmpresa and  trabajador.Estado_trabajador='Contratado'");
        if ($request->ajax()){
            return Datatables::of($trabaja)->make(true);
        }
@@ -38,8 +38,6 @@ class TrabajadorController extends Controller
             'Correo'=>'required |',
             'phone'=>'required ',
             'fecha_naci'=>'required ',
-            'seguros'=>'required ',
-            'tipo_seguros'=>'required ',
         ];
         $valida=Validator::make(Input::all(),$regla);
         if ($valida->fails()){
@@ -53,6 +51,10 @@ class TrabajadorController extends Controller
             $trabajador1->seguros_idseguros=$request->seguros;
             $trabajador1->idTipo_Seguros=$request->tipo_seguros;
             $trabajador1->idempresa=$request->empresa;
+            $trabajador1->Periodo_trabajo=$request->periodo_tra;
+            $trabajador1->tra_hijos=$request->hijo;
+            $trabajador1->fecha_Ingreso=$request->fecha_ingreso;
+            $trabajador1->fecha_Salida=$request->fecha_salidad;
             $trabajador1->save();
             $trabajador=new Persona();
             $trabajador->Trabajador_idTrabajadores=$trabajador1->idTrabajador;
@@ -60,7 +62,7 @@ class TrabajadorController extends Controller
             $trabajador->apellidos_Per=$request->Apellido;
             $trabajador->Dni=$request->dni;
             $trabajador->Care_extranjeria=$request->car_extran;
-            $trabajador->Direccion=$request->direccion;
+            $trabajador->Direccion_Persona=$request->direccion;
             $trabajador->Numero_cuenta=$request->n_cuenta;
             $trabajador->correo=$request->Correo;
             $trabajador->Telefono=$request->phone;
@@ -75,7 +77,7 @@ class TrabajadorController extends Controller
          $seguro=seguro::all();
          $empresa=Empresa::all();
          $tiposeguro=TipoSeguro::all();
-        $trabaja=DB::select("SELECT persona.idPersona,trabajador.idTrabajador,persona.nombre_personas,persona.apellidos_Per,persona.Dni,persona.Care_extranjeria,persona.Telefono,persona.Direccion,persona.Fecha_Nacimiento,persona.Numero_cuenta,persona.correo,seguros.nombre_Seguro,tipo_seguro.nombre_tipo,empresa.Razon_Social,trabajador.seguros_idseguros,trabajador.idTipo_Seguros,trabajador.idempresa FROM persona ,trabajador,seguros ,tipo_seguro,empresa WHERE persona.Trabajador_idTrabajadores=trabajador.idTrabajador and trabajador.seguros_idseguros=seguros.idseguros and trabajador.idTipo_Seguros=tipo_seguro.idTipo_seguro and trabajador.idempresa=empresa.idEmpresa and  trabajador.Estado_trabajador='Contratado' and persona.idPersona=$id");
+        $trabaja=DB::select("SELECT persona.idPersona,trabajador.idTrabajador,persona.nombre_personas,persona.apellidos_Per,persona.Dni,persona.Care_extranjeria,persona.Telefono,persona.Direccion_Persona,persona.Fecha_Nacimiento,persona.Numero_cuenta,persona.correo,seguros.nombre_Seguro,tipo_seguro.nombre_tipo,empresa.Razon_Social,trabajador.seguros_idseguros,trabajador.idTipo_Seguros,trabajador.idempresa,trabajador.tra_hijos,trabajador.Periodo_trabajo,trabajador.fecha_Ingreso,trabajador.fecha_Salida FROM persona ,trabajador,seguros ,tipo_seguro,empresa WHERE persona.Trabajador_idTrabajadores=trabajador.idTrabajador and trabajador.seguros_idseguros=seguros.idseguros and trabajador.idTipo_Seguros=tipo_seguro.idTipo_seguro and trabajador.idempresa=empresa.idEmpresa and trabajador.Estado_trabajador='Contratado' and persona.idPersona=$id");
         $data=array('segu'=>$seguro,'tipo_segu'=>$tiposeguro,'trabaja'=>$trabaja,'empre'=>$empresa);
 
         return response()->json($data);
@@ -91,8 +93,7 @@ class TrabajadorController extends Controller
             'Correo'=>'required |',
             'phone'=>'required ',
             'fecha_nacimiento'=>'required ',
-            'seguro'=>'required ',
-            'tipo_Seguros'=>'required ',
+
         ];
         $valida=Validator::make(Input::all(),$regla);
         if ($valida->fails()){
@@ -105,7 +106,7 @@ class TrabajadorController extends Controller
             $Persona->apellidos_Per=$request->Apellido;
             $Persona->Dni=$request->dni;
             $Persona->Care_extranjeria=$request->car_extran;
-            $Persona->Direccion=$request->direccion;
+            $Persona->Direccion_Persona=$request->direccion;
             $Persona->Numero_cuenta=$request->n_cuenta;
             $Persona->correo=$request->Correo;
             $Persona->Telefono=$request->phone;
@@ -115,6 +116,10 @@ class TrabajadorController extends Controller
             $trabajador->seguros_idseguros=$request->seguro;
             $trabajador->idTipo_Seguros=$request->tipo_Seguros;
             $trabajador->idempresa=$request->empresa;
+            $trabajador->Periodo_trabajo=$request->periodo_tra;
+            $trabajador->tra_hijos=$request->hijo;
+            $trabajador->fecha_Ingreso=$request->fecha_ingreso;
+            $trabajador->fecha_Salida=$request->fecha_salidad;
                 $trabajador->save();
 
             DB::commit();

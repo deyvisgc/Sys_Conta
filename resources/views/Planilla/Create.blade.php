@@ -190,9 +190,13 @@
                                                             <section class="col col-3">
                                                                 <label  style="color: black" > DIAS DE FALTAS(*)</label>
                                                                 <label class="input"> <i class="icon-prepend fa fa-times"></i>
-                                                                    <input type="text" value="0" onkeyup="CalcularInasistencias();" id="Faltas" name="Faltas" placeholder="Faltas">
+                                                                    <input type="number" value="0" onkeyup="CalcularInasistencias();" id="Faltas" name="Faltas" placeholder="Faltas">
                                                                 </label>
                                                             </section>
+
+                                                                    <input type="hidden"  id="dias_laborales" name="dias_laborales" placeholder="Faltas">
+                                                            <input type="hidden"  id="total_diaslaborales" name="total_diaslaborales" placeholder="Faltas">
+
 
 
                                                         </div>
@@ -1204,8 +1208,14 @@
 
     }
     function CalcularInasistencias() {
+        var diaslaborales=31;
         var pago=$('#sueldo_basico').val();
         var inasistencias=$('#Faltas').val();
+        var totaldiaslaborales=parseFloat(diaslaborales)-parseFloat(inasistencias);
+        var totalHoraTrabajadas=parseFloat(totaldiaslaborales)*8;
+       $('#total_diaslaborales').val(totalHoraTrabajadas);
+        $('#dias_laborales').val(totaldiaslaborales);
+
         //saco el saldo del monto por  dia
         var totalpagoxdia=parseFloat(pago)/30;
         //valor del dia domingo
@@ -1213,7 +1223,9 @@
         //valor de la inasistencia
         var totalinasistencia=parseFloat(totalxdomingo)+totalpagoxdia;
         var totalxdia=parseFloat(totalinasistencia)*inasistencias;
+
         $('#inasistencias').val(totalxdia.toFixed(2));
+
 
         deyvis();
 
