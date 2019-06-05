@@ -4,10 +4,11 @@ namespace Sys_Conta;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Trabajadores extends Model
+class Empresa extends Model
 {
-    protected $table="trabajador";
-    protected $primaryKey="idTrabajador";
+
+    protected $table="empresa";
+    protected $primaryKey="idEmpresa";
     public $timestamps=false;
     /**
      * The attributes that are mass assignable.
@@ -15,7 +16,6 @@ class Trabajadores extends Model
      * @var array
      */
     protected $fillable = [
-        'Estado_trabajador', 'seguros_idseguros','idTipo_Seguros','idempresa',
+        'Razon_Social','Ruc','Direccion','fecha_creacion','telefono_empresa','correo_empresa',
     ];
-
 }

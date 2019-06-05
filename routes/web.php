@@ -12,6 +12,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('Trabajador','TrabajadorController');
 Route::resource('Planilla','PlanillaController');
 Route::resource('Usuarios','UsuarioController');
+Route::resource('Empresa','EmpresaController');
 Route::get('Listar_Beneficios/{idPlanilla}','PlanillaController@listarBeneficios');
 Route::get('Listar_Retenciones/{idPlanilla}','PlanillaController@ListarRetenciones');
 Route::get('Listar_Otros/{idPlanilla}','PlanillaController@ListarOtros');
@@ -22,6 +23,9 @@ Route::get('Asiento_Contable','PlanillaController@AsientoContable');
 Route::get('PlanillaRegistro', 'PlanillaController@getPlanilla');
 Route::get('Boleta', 'PlanillaController@Boleta');
 Route::get('DeleTrabajador/{idPersona}', 'TrabajadorController@DeleTrabajador');
+Route::get('DeleUsuario/{idUsuarios}', 'UsuarioController@DeleTUsuario');
+Route::get('DeleEmpresa/{idEmpresa}', 'EmpresaController@DeleEmpresa');
 Route::get('buscador', 'PlanillaController@search');
+
 
 

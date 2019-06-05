@@ -283,10 +283,10 @@ Use search to find needed section.
                         <a href="datatables.html">ROLES</a>
                     </li>
                     <li>
-                        <a href="jqgrid.html">EMPRESA</a>
+                        <a href="{{url('Empresa')}}">EMPRESA</a>
                     </li>
                     <li>
-                        <a href="jqgrid.html">USUARIO</a>
+                        <a href="{{url('Usuarios')}}">USUARIO</a>
                     </li>
                 </ul>
             </li>
@@ -300,13 +300,10 @@ Use search to find needed section.
                         <a href="{{url('PlanillaRegistro')}}">RegistrarPlanilla</a>
                     </li>
                     <li>
-                        <a href="validation.html">Smart Form Validation</a>
+                        <a href="validation.html">Seguros</a>
                     </li>
                     <li>
-                        <a href="bootstrap-forms.html">Bootstrap Form Elements</a>
-                    </li>
-                    <li>
-                        <a href="bootstrap-validator.html">Bootstrap Form Validation</a>
+                        <a href="bootstrap-forms.html">Tipo Seguros</a>
                     </li>
                 </ul>
             </li>

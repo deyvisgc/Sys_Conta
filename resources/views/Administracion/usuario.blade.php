@@ -72,8 +72,9 @@
 @endsection
 @section('scripts')
     <script>
+        var tabla;
         $(document).ready( function () {
-            var tabla;
+
 
             tabla=$('#dt_basic').DataTable({
 
@@ -180,7 +181,57 @@
         });
 
 function eliminarUsuario(id) {
-    alert(id);
+    iziToast.question({
+        timeout: 20000,
+        close: false,
+        overlay: true,
+        displayMode: 'once',
+        id: 'question',
+        zindex: 999,
+        title: 'Hey',
+        message: 'Are you sure about that?',
+        position: 'center',
+        buttons: [
+            ['<button><b>YES</b></button>', function (instance, toast) {
+
+                instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                $.ajax({
+                    url : '{{url('DeleUsuario')}}/'+id,
+                    type : 'get',
+                    datatype : 'json',
+                    success:function(response){
+                        if (response.success===true){
+                            tabla.ajax.reload();
+                            iziToast.success({
+                                title: 'OK',
+                                message: 'Successfully Eliminado Correctamente!',
+                            });
+
+                            tabla.ajax.reload();
+                        }
+
+                    }
+
+                });
+            }, true],
+            ['<button>NO</button>', function (instance, toast) {
+
+                instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                iziToast.error({
+                    title: 'Error',
+                    message: 'confirme para eliminar',
+                });
+            }],
+        ],
+        onClosing: function(instance, toast, closedBy){
+            console.info('Closing | closedBy: ' + closedBy);
+        },
+        onClosed: function(instance, toast, closedBy){
+            console.info('Closed | closedBy: ' + closedBy);
+        }
+    });
+
+
 
 }
     </script>

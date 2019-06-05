@@ -168,20 +168,4 @@
     </div>
 </div>
 
-<div class="modal fade" id="ModalTrabajador1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <center> <strong><h5 style="color: black ;font-family:'Arial Black' " class="modal-title" id="exampleModalLabel">ACTUALZIAR DATOS DEL TRABAJADOR</h5></strong></center>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
 
-            </div>
-
-        </div>
-
-    </div>
-</div>

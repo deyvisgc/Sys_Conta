@@ -60,8 +60,18 @@ class UsuarioController extends Controller
             $usuarios=new User();
             $usuarios->Persona_idPersona=$persona->idPersona;
             $usuarios->usuario=$request->get('usuario');
-            $usuarios->password=$request->get('password');
-            $usuarios->foto=$request->get('foto');
+            $usuarios->password=bcrypt($request->get('password'));
+            if ($usuarios->foto!=null){
+
+
+                if(Input::HasFile('foto')){
+                    $file=Input::file('foto');
+                    $file->move(public_path().'/Imagenes/Usuario',$file->getClientOriginalName());
+                    $usuarios->foto=$file->getClientOriginalName();
+                } else{
+                    $usuarios->foto='usuario.jpg';
+                }
+            }
             $usuarios->Rol_idRol=$request->get('rol');
             $usuarios->user_estado=$request->get('estado');
             $usuarios->save();
@@ -69,5 +79,10 @@ class UsuarioController extends Controller
         }
         return response()->json(array("success"=>true));
 
+    }
+    public function DeleTUsuario($id){
+        $User=User::find($id);
+        $User->delete();
+        return response()->json(array("success"=>true));
     }
 }

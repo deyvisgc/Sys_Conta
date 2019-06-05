@@ -43,6 +43,7 @@
                                     <th data-class="expand"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i>Nombre</th>
                                     <th data-class="expand"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i>DNI</th>
                                     <th data-class="expand"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i>CARNE</th>
+                                    <th data-class="expand"><i class="fa fa-fw fa-user text-muted hidden-md hidden-sm hidden-xs"></i>EMPRESA</th>
                                     <th data-hide="phone"><i class="fa fa-fw fa-phone text-muted hidden-md hidden-sm hidden-xs"></i> Phone</th>
                                     <th data-hide="phone,tablet"><i class="fa fa-fw fa-calendar txt-color-blue hidden-md hidden-sm hidden-xs"></i>FECHA</th>
                                     <th data-hide="phone,tablet">Seguros</th>
@@ -83,17 +84,20 @@
                 </div>
                 <div class="modal-body">
                     <form id="regisTraba" class="smart-form" novalidate="novalidate">
+                        <input type="hidden" name="Estado_trabajador" value="Contratado" readonly>
                         <!-- widget div-->
                         <div>
                             <div class="widget-body no-padding">
                                 <fieldset>
                                     <div class="row">
                                         <section class="col col-6">
+                                            <label  style="color: black" >NOMBRES(*)</label>
                                             <label class="input"> <i class="icon-prepend fa fa-user"></i>
                                                 <input type="text" name="nombre_Per" placeholder="Nombre">
                                             </label>
                                         </section>
                                         <section class="col col-6">
+                                            <label  style="color: black" > APELLIDOS(*)</label>
                                             <label class="input"> <i class="icon-prepend fa fa-user"></i>
                                                 <input type="text" name="Apellido" placeholder="Apellido">
                                             </label>
@@ -101,11 +105,13 @@
                                     </div>
                                     <div class="row">
                                         <section class="col col-6">
+                                            <label  style="color: black" > DNI(*)</label>
                                             <label class="input"> <i class="icon-prepend fas fa-address-card"></i>
                                                 <input type="text" name="dni" placeholder="DNI">
                                             </label>
                                         </section>
                                         <section class="col col-6">
+                                            <label  style="color: black" > CARNET EXTRANJERIA(*)</label>
                                             <label class="input"> <i class="icon-prepend fas fa-address-card"></i>
                                                 <input type="text" name="car_extran" placeholder="CARNE EXTRANJERIA">
                                             </label>
@@ -113,11 +119,13 @@
                                     </div>
                                     <div class="row">
                                         <section class="col col-6">
+                                            <label  style="color: black" > DIRECCION(*)</label>
                                             <label class="input"> <i class="icon-prepend fa fa-share-square"></i>
                                                 <input type="text" name="direccion" placeholder="Direccion">
                                             </label>
                                         </section>
                                         <section class="col col-6">
+                                            <label  style="color: black" > NUMERO DE CUENTA(*)</label>
                                             <label class="input"> <i class="icon-prepend far fa-credit-card	"></i>
                                                 <input type="number" name="n_cuenta" placeholder="Numero de Cuenta">
                                             </label>
@@ -126,11 +134,13 @@
 
                                     <div class="row">
                                         <section class="col col-6">
+                                            <label  style="color: black" > EMAIL(*)</label>
                                             <label class="input"> <i class="icon-prepend fa fa-envelope-o"></i>
                                                 <input type="Correo" name="Correo" placeholder="E-mail">
                                             </label>
                                         </section>
                                         <section class="col col-6">
+                                            <label  style="color: black" > TELEFONO(*)</label>
                                             <label class="input"> <i class="icon-prepend fa fa-phone"></i>
                                                 <input type="tel" name="phone" placeholder="Celular" data-mask="(999) 999-9999">
                                             </label>
@@ -139,11 +149,21 @@
 
                                     <div class="row">
                                         <section class="col col-6">
-                                            <label class="input"> <i class="icon-prepend fa fa-envelope-o"></i>
-                                                <input type="text" name="estado" value="Contratado" readonly>
-                                            </label>
+                                            <label  style="color: black" > EMPRESA(*)</label>
+                                            <label class="select">
+                                                <select name="empresa" aria-required="true" aria-invalid="false" class="valid">
+                                                    <option value="0" selected="" disabled="">SELECCIONE EMPRESA</option>
+
+                                                    @foreach($empresa as $emp)
+                                                        <center><option value="{{$emp->idEmpresa}}">{{$emp->Razon_Social}}</option></center>
+
+                                                    @endforeach
+                                                </select></label>
                                         </section>
+
+
                                         <section class="col col-6">
+                                            <label  style="color: black" > FECHA NACIMIENTO(*)</label>
                                             <label class="input"> <i class="icon-append fa fa-calendar"></i>
                                                 <input type="date" name="fecha_naci" id="fecha_naci" placeholder="Expected finish date" class="hasDatepicker valid" aria-invalid="false">
                                             </label>
@@ -152,7 +172,7 @@
 
                                     <div class="row">
                                         <section class="col col-6">
-
+                                            <label  style="color: black" > SEGUROS(*)</label>
                                             <label class="select">
                                                 <select name="seguros" aria-required="true" aria-invalid="false" class="valid">
                                                     <option value="0" selected="" disabled="">Seguro</option>
@@ -162,7 +182,7 @@
                                                 </select></label>
                                         </section>
                                         <section class="col col-6">
-
+                                            <label  style="color: black" > TIPO SEGUROS(*)</label>
                                             <label class="select">
                                                 <select name="tipo_seguros" aria-required="true" aria-invalid="false" class="valid">
                                                     <option value="0" selected="" disabled="">tipo seguro</option>
@@ -209,8 +229,8 @@
                 <div class="modal-body">
                     <form id="UPDATATRABAJADOR" class="smart-form" novalidate="novalidate">
                         <!-- widget div-->
-                        <input type="hidden" data-chat-id="fecha_naci" name="id_persona" id="id_persona" placeholder="Expected finish date" class="hasDatepicker valid" aria-invalid="false">
-                        <input type="hidden" data-chat-id="fecha_naci" name="id_trabajador" id="id_trabajador" placeholder="Expected finish date" class="hasDatepicker valid" aria-invalid="false">
+                        <input type="hidden"  name="id_persona" id="id_persona" placeholder="Expected finish date" class="hasDatepicker valid" aria-invalid="false">
+                        <input type="hidden"  name="id_trabajador" id="id_trabajador"   aria-invalid="false">
 
                         <div>
                             <div class="widget-body no-padding">
@@ -267,9 +287,9 @@
 
                                     <div class="row">
                                         <section class="col col-6">
-                                            <label class="input"> <i class="icon-prepend fa fa-envelope-o"></i>
-                                                <input type="text" id="estado" name="estado"  readonly>
-                                            </label>
+                                            <label class="select">
+                                                <select name="empresa"  id="empresas" name="seguro">
+                                                </select> <i></i> </label>
                                         </section>
                                         <section class="col col-6">
                                             <label class="input"> <i class="icon-append fa fa-calendar"></i>
@@ -359,14 +379,15 @@
                     {data: 'nombres', name: 'nombres'},
                     {data: 'Dni', name: 'Dni'},
                     {data: 'Care_extranjeria', name: 'Care_extranjeria'},
+                    {data: 'Razon_Social',name:'Razon_Social'},
                     {data: 'Telefono', name: 'Telefono'},
                     {data: 'Fecha_Nacimiento',name:'Fecha_Nacimiento'},
                     {data: 'nombre_Seguro',name:'nombre_Seguro'},
                     {data: 'nombre_tipo',name:'nombre_tipo'},
                     {"mRender": function ( data, type, row ) {
                             return '<a style="margin-left: 5px" class="btn btn-success btnEdit" data-edit="/Trabajador/'+row.idPersona+'/edit" ><i class="fa fa-edit text-warning"></i></a>' +
-                                '<a style="margin-left: 5px" class="btn btn-danger " onclick="eliminar('+row.idPersona+')"><i class="fa fa-remove text-warning"></i></a>' +
-                                '<a style="margin-left: 5px" class="btn btn-warning" href=""><i class="fa fa-eye text-success"></i></a>';
+                                '<a style="margin-left: 5px" class="btn btn-danger " onclick="eliminar('+row.idPersona+')"><i class="fa fa-remove text-warning"></i></a>'
+                               ;
                     }
                     },
 
@@ -396,13 +417,12 @@
                           $('#n_cuenta').val(valor.Numero_cuenta);
                           $('#phone').val(valor.Telefono);
                           $('#Correo').val(valor.correo);
-                          $('#estado').val(valor.estado);
                           $('#fecha_nacimiento').val(valor.Fecha_Nacimiento);
                            $('#id_persona').val(valor.idPersona);
-                           $('#id_trabajador').val(valor.Trabajador_idTrabajador);
-                          $.each(response.seguro,function (index,va) {
+                           $('#id_trabajador').val(valor.idTrabajador);
+                          $.each(response.segu,function (index,va) {
 
-                              if(va.idseguros===valor.idseguros){
+                              if(va.idseguros===valor.seguros_idseguros){
                                   $("#seguro").append('<option value='+va.idseguros+ '  selected >'+va.nombre_Seguro+ '</option>');
                               }else {
                                   $("#seguro").append('<option value='+va.idseguros+ '  >'+va.nombre_Seguro+ '</option>');
@@ -411,13 +431,22 @@
 
 
                           });
-                          $.each(response.tipo_seguro,function (index,val) {
-                              if(val.idTipo_seguro===valor.idTipo_seguro){
+                          $.each(response.tipo_segu,function (index,val) {
+                              if(val.idTipo_seguro===valor.idTipo_Seguros){
 
                                   $("#tipo_Seguros").append('<option value='+val.idTipo_seguro+ '  selected >'+val.nombre_tipo+ '</option>');
 
                               }else {
                                   $("#tipo_Seguros").append('<option value='+val.idTipo_seguro+ '  >'+val.nombre_tipo+ '</option>');
+                              }
+                          });
+                          $.each(response.empre,function (index,val) {
+                              if(val.idEmpresa===valor.idempresa){
+
+                                  $("#empresas").append('<option value='+val.idEmpresa+ '  selected >'+val.Razon_Social+ '</option>');
+
+                              }else {
+                                  $("#empresas").append('<option value='+val.idEmpresa+ '  >'+val.Razon_Social+ '</option>');
                               }
                           });
 
@@ -472,7 +501,7 @@
 
 
                   //registrar trabajador
-              $('#RegisTrabajador').click(function (e) {
+              $('#RegisTrabajador').click(function () {
                   $('#ModalTrabajador').modal('show');
 
                   $('#RegistrarTraba').click(function (e) {
@@ -571,6 +600,7 @@
         $('body').on('hidden.bs.modal', '.modal', function () {
             $("#seguro").empty();
             $("#tipo_Seguros").empty();
+            $("#empresas").empty();
         });
 
     </script>
