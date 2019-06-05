@@ -800,7 +800,7 @@ $('#ListarTotales').click(function () {
                             '<strong><label style="color: black;">Sueldo Computable: $.</label></strong> '+val.Renumeracion_neta+'' +'\n'+
                             '<strong><label style="color: black;">Asignacion Familiar: $.</label></strong> ' +val.Asignacion_familiar+'' +'\n'+
                             '<strong><label style="color: black;">Renumeracion Vaca: $. </label></strong> '+val.vacaciones+'' +'\n'+
-                            '<strong><label style="color: black;">CTS: $.</label></strong> '+val.cts+'' +'\n'+
+                            '<strong><label style="color: black;">Comicion por CTS: $.      </label></strong>'+val.cts+'' +'\n'+
                             '</td>'+
 
                             '<td>' +
@@ -836,8 +836,27 @@ $('#ListarTotales').click(function () {
 
 
             });
+            document.querySelector("#btnImprimir").addEventListener("click", function() {
+                var div = document.querySelector(".cotenido");
+                imprimirElemento(div);
+            });
 
 
+        }
+        function imprimirElemento(div) {
+            var ventana = window.open('', 'PRINT', 'height=400,width=600');
+            ventana.document.write('<html><head><title>Boleta de pago</title>');
+            ventana.document.write('<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">');
+            ventana.document.write('</head><body >');
+            ventana.document.write(div.innerHTML);
+            ventana.document.write('</body></html>');
+            ventana.document.close();
+            ventana.focus();
+            ventana.onload = function() {
+                ventana.print();
+                ventana.close();
+            };
+            return true;
         }
     </script>
     @endsection
