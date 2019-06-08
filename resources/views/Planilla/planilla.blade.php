@@ -750,9 +750,10 @@ $('#ListarTotales').click(function () {
                    var traba_razonocial=$('#traba_razonocial').html("");
                     var dias_deltrabajador=$('#dias_deltrabajador').html("");
                     var renumeraciones=$('#Renumeraciones').html("");
+                    var totales=$('#pie_totatales').html("");
                     $.each(response,function (index,val) {
 
-                   var tabla=
+                        var tabla=
                        '<tr>'+
                        '<td>'+val.Ruc+'</td>'+
                        '<td>'+val.Razon_Social+'</td>'+
@@ -793,38 +794,53 @@ $('#ListarTotales').click(function () {
                             '</tr>';
 
                         dias_deltrabajador.append(tabla3);
+                        //suma las renumeraciones
+                      var suma= parseFloat(val.Renumeracion_neta)+parseFloat(val.Asignacion_familiar)
+                            +parseFloat(val.vacaciones)+parseFloat(val.cts);
+                        //suma los descuentos
+                        var suma2=parseFloat(val.aporte_obligatorio)+parseFloat(val.comision_renumeracion)+
+                            parseFloat(val.Prima_Seguro)+parseFloat(val.Total_descuentoONP)+parseFloat(val.descuento_inasistencia)+parseFloat(val.Quinta_Categoria);
+                        //suma las aportaciones del empleador
+                     var suma3=parseFloat(val.Salud)+parseFloat(val.SCTR);
+
+
+
 
 
                         var tabla4= '<tr>'+
                             '<td>' +
-                            '<strong><label style="color: black;">Sueldo Computable: $.</label></strong> '+val.Renumeracion_neta+'' +'\n'+
-                            '<strong><label style="color: black;">Asignacion Familiar: $.</label></strong> ' +val.Asignacion_familiar+'' +'\n'+
-                            '<strong><label style="color: black;">Renumeracion Vaca: $. </label></strong> '+val.vacaciones+'' +'\n'+
-                            '<strong><label style="color: black;">Comicion por CTS: $.      </label></strong>'+val.cts+'' +'\n'+
+                            '<strong><label style="color: black;">Sueldo Computable: $.</label></strong> '+val.Renumeracion_neta+'' +'<br>'+
+                            '<strong><label style="color: black;">Asignacion Familiar: $.</label></strong> ' +val.Asignacion_familiar+'' +'<br>'+
+                            '<strong><label style="color: black;">Renumeracion Vaca: $.</label></strong> '+val.vacaciones+'' +'<br>'+
+                            '<strong><label style="color: black;">Comicion por CTS: $.</label></strong>'+val.cts+'' +'<br>'+
                             '</td>'+
 
                             '<td>' +
-                            'Sueldo Computable: '+val.Renumeracion_neta+'' +'\n'+
-
-                            'Asignacion Familiar: ' +val.Asignacion_familiar+'' +'\n'+
-
-                            'Renumeracion Vaca: ' +val.cts+''+ '\n'+
-
-                            'CTS: ' +val.vacaciones+''+
+                            '<strong><label style="color: black;">AFP Apore Obligatorio: $.</label></strong>        '        +val.aporte_obligatorio+'' +'<br>'+
+                            '<strong><label style="color: black;">AFP Comisión: $.</label></strong>                 '        +val.comision_renumeracion+'' +'<br>'+
+                            '<strong><label style="color: black;">AFP Seguro: $.</label></strong>                   '        +val.Prima_Seguro+'' +'<br>'+
+                            '<strong><label style="color: black;">ONP: $.</label></strong>                          '        +val.Total_descuentoONP+'' +'<br>'+
+                            '<strong><label style="color: black;">Faltas:  $.</label></strong>                      '        +val.descuento_inasistencia+'' +'<br>'+
+                            '<strong><label style="color: black;">Retenciones 5ta:   $.</label></strong>             '        +val.Quinta_Categoria+'' +'<br>'+
                             '</td>'+
                             '<td>' +
-                            'Sueldo Computable: '+val.Renumeracion_neta+'' +'\n'+
+                            '<strong><label style="color: black;">Essalud:$.</label></strong> '+val.Salud+''+'<br >'+
 
-                            'Asignacion Familiar: ' +val.Asignacion_familiar+'' +'\n'+
+                            '<strong><label style="color: black;">S.C.T.R.:$.</label></strong> ' +val.SCTR+'<br>' +
 
-                            'Renumeracion Vaca: ' +val.cts+''+ '\n'+
-
-                            'CTS: ' +val.vacaciones+''+
                             '</td>'+
 
                         '</tr>';
 
                         renumeraciones.append(tabla4);
+
+                        var tabla5= '<tr>'+
+                            '<td>TOTAL RENU: $.'+suma+'</td>'+
+                            '<td>TOTAL DESC: $.'+suma2+'</td>'+
+                            '<td>TOTAL APOR: $.'+suma3+'</td>'+
+                            '</tr>';
+
+                        totales.append(tabla5);
 
 
 

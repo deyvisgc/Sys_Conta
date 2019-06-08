@@ -92,6 +92,7 @@ class PlanillaController extends Controller
             $renumeracion->comisison_sobre_renumeracion_total=$request->comision_renumeracion_total;
             $renumeracion->otros=$request->otros;
             $renumeracion->SCTR=$request->SCTR;
+            $renumeracion->descuento_inasistencia=$request->inasistencias;
             $renumeracion->save();
             $planilla=new Planilla();
             $planilla->idRenumeracion=$renumeracion->idRenumeraciones;

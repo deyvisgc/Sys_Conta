@@ -33,5 +33,6 @@ class Renumeraciones extends Model
         'aporte_obligatorio_monto',
         'comisison_sobre_renumeracion_total',
         'otros',
+        'descuento_inasistencia',
     ];
 }

@@ -1219,9 +1219,11 @@
         //saco el saldo del monto por  dia
         var totalpagoxdia=parseFloat(pago)/30;
         //valor del dia domingo
+
         var totalxdomingo=parseFloat(totalpagoxdia)/30;
-        //valor de la inasistencia
+        //valor de la inasistencia sumo el valor del domingo mas el pago por el dia
         var totalinasistencia=parseFloat(totalxdomingo)+totalpagoxdia;
+        //multiplico el total de la deuda por los dias de faltas
         var totalxdia=parseFloat(totalinasistencia)*inasistencias;
 
         $('#inasistencias').val(totalxdia.toFixed(2));

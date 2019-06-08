@@ -137,12 +137,7 @@
                                         </thead>
                                         <tbody id="Renumeraciones">
                                         </tbody>
-                                        <tfoot>
-                                        <tr>
-                                            <td>TOTAL RENUMERACIONES:$.</td>
-                                            <td>TOTAL DESCUENTOS:$.</td>
-                                            <td>TOTAL EMPLEADOR:$.</td>
-                                        </tr>
+                                        <tfoot id="pie_totatales">
                                         </tfoot>
                                     </table>
                                 </div>
