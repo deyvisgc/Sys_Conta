@@ -413,6 +413,11 @@
                         //  $('#tributs_aportes1').val(val.salud+val.descuento_ONP+val.sctr);
                           $('#renumeraciones_participaciones1').val(val.renumeracion_neta);
                           $('#cuentas_diversas1').val(val.prima_seguros+val.aporte_obligatorio+val.comision_sobre);
+                          var tributos_aportes= $('#tributs_aportes1').val();
+                          var renumeraciones_participaciones1=$('#renumeraciones_participaciones1').val();
+                          var cuentas_diversas1= $('#cuentas_diversas1').val();
+                          var totalhaber=parseFloat(tributos_aportes)+parseFloat(renumeraciones_participaciones1)+parseFloat(cuentas_diversas1);
+                          $('#total_haber').val(totalhaber.toFixed(2));
 
                       });
 
@@ -798,8 +803,8 @@ $('#ListarTotales').click(function () {
                       var suma= parseFloat(val.Renumeracion_neta)+parseFloat(val.Asignacion_familiar)
                             +parseFloat(val.vacaciones)+parseFloat(val.cts);
                         //suma los descuentos
-                        var suma2=parseFloat(val.aporte_obligatorio)+parseFloat(val.comision_renumeracion)+
-                            parseFloat(val.Prima_Seguro)+parseFloat(val.Total_descuentoONP)+parseFloat(val.descuento_inasistencia)+parseFloat(val.Quinta_Categoria);
+                        var suma2=parseFloat(val.aporte_obligatorio_monto)+parseFloat(val.comisison_sobre_renumeracion_total)+
+                            parseFloat(val.Prima_Seguros_monto)+parseFloat(val.Total_descuentoONP)+parseFloat(val.descuento_inasistencia)+parseFloat(val.Quinta_Categoria);
                         //suma las aportaciones del empleador
                      var suma3=parseFloat(val.Salud)+parseFloat(val.SCTR);
 
@@ -816,9 +821,9 @@ $('#ListarTotales').click(function () {
                             '</td>'+
 
                             '<td>' +
-                            '<strong><label style="color: black;">AFP Apore Obligatorio: $.</label></strong>        '        +val.aporte_obligatorio+'' +'<br>'+
-                            '<strong><label style="color: black;">AFP Comisión: $.</label></strong>                 '        +val.comision_renumeracion+'' +'<br>'+
-                            '<strong><label style="color: black;">AFP Seguro: $.</label></strong>                   '        +val.Prima_Seguro+'' +'<br>'+
+                            '<strong><label style="color: black;">AFP Apore Obligatorio: $.</label></strong>        '        +val.aporte_obligatorio_monto+'' +'<br>'+
+                            '<strong><label style="color: black;">AFP Comisión: $.</label></strong>                 '        +val.comisison_sobre_renumeracion_total+'' +'<br>'+
+                            '<strong><label style="color: black;">AFP Seguro: $.</label></strong>                   '        +val.Prima_Seguros_monto+'' +'<br>'+
                             '<strong><label style="color: black;">ONP: $.</label></strong>                          '        +val.Total_descuentoONP+'' +'<br>'+
                             '<strong><label style="color: black;">Faltas:  $.</label></strong>                      '        +val.descuento_inasistencia+'' +'<br>'+
                             '<strong><label style="color: black;">Retenciones 5ta:   $.</label></strong>             '        +val.Quinta_Categoria+'' +'<br>'+
@@ -835,9 +840,9 @@ $('#ListarTotales').click(function () {
                         renumeraciones.append(tabla4);
 
                         var tabla5= '<tr>'+
-                            '<td>TOTAL RENU: $.'+suma+'</td>'+
-                            '<td>TOTAL DESC: $.'+suma2+'</td>'+
-                            '<td>TOTAL APOR: $.'+suma3+'</td>'+
+                            '<td>TOTAL RENU: $.'+suma.toFixed(2)+'</td>'+
+                            '<td>TOTAL DESC: $.'+suma2.toFixed(2)+'</td>'+
+                            '<td>TOTAL APOR: $.'+suma3.toFixed(2)+'</td>'+
                             '</tr>';
 
                         totales.append(tabla5);
@@ -873,6 +878,62 @@ $('#ListarTotales').click(function () {
                 ventana.close();
             };
             return true;
+        }
+        function RegistrarAsientos() {
+            var data = {};
+            data.renumeraciones = $('#reumeraciones').val();
+            data.renumeraciones1 = $('#reumeraciones1').val();
+            data.seguridad_prevision = $('#seguridad_prevision').val();
+            data.seguridad_prevision1 = $('#seguridad_prevision1').val();
+            data.regimen_presentaciones = $('#regimen_presentaciones').val();
+            data.regimen_presentaciones1 = $('#regimen_presentaciones1').val();
+            data.seguro_complementario = $('#seguro_complementario').val();
+            data.seguro_complementario1 = $('#seguro_complementario1').val();
+            data.instituciones_publicas = $('#instituciones_publicas').val();
+            data.instituciones_publicas1 = $('#instituciones_publicas1').val();
+            data.essalud = $('#essalud').val();
+            data.essalud1 = $('#essalud1').val();
+            data.onp = $('#onp').val();
+            data.onp1 = $('#onp1').val();
+            data.otras_instituciones = $('#otras_instituciones').val();
+            data.otras_instituciones1 = $('#otras_instituciones1').val();
+            data.sctr = $('#sctr').val();
+            data.sctr1 = $('#sctr1').val();
+            data.renumeracion_pagar = $('#renumeracion_pagar').val();
+            data.renumeracion_pagar1 = $('#renumeracion_pagar1').val();
+            data.otras_cuentas = $('#otras_cuentas').val();
+            data.otras_cuentas1 = $('#otras_cuentas1').val();
+            data.afp = $('#afp').val();
+            data.afp1 = $('#afp1').val();
+            data.gastos_personal = $('#gastos_personal').val();
+            data.gastos_personal1 = $('#gastos_personal1').val();
+            data.tributs_aportes = $('#tributs_aportes').val();
+            data.tributs_aportes1 = $('#tributs_aportes1').val();
+            data.tributs_participaciones = $('#renumeraciones_participaciones').val();
+            data.tributs_participaciones1 = $('#renumeraciones_participaciones1').val();
+            data.cuentas_diversas = $('#cuentas_diversas').val();
+            data.cuentas_diversas1 = $('#cuentas_diversas1').val();
+            data.total_haber = $('#total_haber').val();
+            data._token = $('#_token').val();
+            $.ajax({
+                url: '{{url('Asiento')}}',
+                type: 'post',
+                data: data,
+                dataType: 'json',
+                success: function (response) {
+                    if (response.success===true){
+                        // data.trigger('reset');
+                        $('#asiento_contable').modal('hide');
+                        iziToast.success({
+                            title: 'OK',
+                            message: 'Successfully Registrado Correctamente!',
+                        });
+
+
+                    }
+
+                }
+            })
         }
     </script>
     @endsection

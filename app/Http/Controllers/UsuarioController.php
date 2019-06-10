@@ -52,7 +52,7 @@ class UsuarioController extends Controller
             $persona->Dni=$request->dni;
             $persona->Care_extranjeria=$request->car_extran;
             $persona->Telefono=$request->phone;
-            $persona->Direccion=$request->direccion;
+            $persona->Direccion_Persona=$request->direccion;
             $persona->Fecha_Nacimiento=$request->fecha_nacimiento;
             $persona->Numero_cuenta=$request->n_cuenta;
             $persona->correo=$request->Correo;

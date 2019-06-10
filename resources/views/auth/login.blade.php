@@ -53,8 +53,195 @@
     <link rel="apple-touch-startup-image" href="img/splash/iphone.png" media="screen and (max-device-width: 320px)">
 
 </head>
+<style>
 
-<body class="animated fadeInDown">
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+
+
+    }
+    *:focus {
+        outline: 0;
+    }
+
+    html {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    }
+    .fondo{
+        background-color: red;
+    }
+
+    .form {
+        background: url('https://i0.imgpile.com/2016/09/14/7861aab59aa07c9499278339f41522c3.jpg') rgba(15, 15, 15, 0.9) left top / cover no-repeat scroll;
+        border-radius: 5px;
+        box-shadow: 0 0 15px #1c1c1c;
+        margin: 1.5em auto 0 auto;
+        max-width: 400px;
+        padding: 2em;
+        width: 90%;
+    }
+
+    .ctn-img-title-login {
+        text-align: center;
+    }
+
+    .img-login {
+        max-width: 7em;
+        pointer-events: none;
+        width: 90%;
+    }
+
+    .title-form-login {
+        color: #cdcdcd;
+        font: bold 2em 'Dancing Script', sans-serif;
+        margin-top: 25px;
+    }
+
+    .ctn-input {
+        margin-top: 50px;
+        position: relative;
+    }
+
+    .support-text {
+        color: #cdcdcd;
+        font: normal 15px 'Quicksand', sans-serif;
+        left: 2px;
+        pointer-events: none;
+        position: absolute;
+        top: 2px;
+        transition: 0.3s ease all;
+    }
+
+    .support-text.active-input {
+        color: #ffffff;
+        font-size: 13px;
+        transform: translateY(-125%);
+    }
+
+    .effect-input {
+        background-color: rgba(0, 0, 0, 0);
+        border-style: none;
+        border-bottom: 1px solid #cdcdcd;
+        color: #ffffff;
+        display: block;
+        font: normal 15px 'Quicksand', sans-serif;
+        height: 30px;
+        letter-spacing: 1px;
+        max-width: 400px;
+        padding: 1em 1.5em 1em 2px;
+        width: 100%;
+    }
+
+    .validate-input:invalid {
+        border-bottom-color: #ff807c;
+    }
+
+    .bar:before,
+    .bar:after {
+        background-color: #ffffff;
+        border-radius: 50%;
+        bottom: 0;
+        content: '';
+        height: 2px;
+        position: absolute;
+        transition: 0.5s ease all;
+        width: 0;
+    }
+
+    .bar {
+        display: block;
+        position: relative;
+    }
+
+    .bar:before {
+        left: auto;
+        right: 0;
+    }
+
+    .bar.active-input:before,
+    .bar.active-input:after {
+        width: 75%;
+    }
+
+    .validate-input:invalid + .bar:before,
+    .validate-input:invalid + .bar:after {
+        background-color: #ff807c;
+    }
+
+    .clear-input,
+    .eye {
+        bottom: 10px;
+        color: #ffffff;
+        cursor: pointer;
+        display: none;
+        font-size: 12px;
+        position: absolute;
+    }
+
+    .clear-input {
+        right: 5px;
+    }
+
+    .eye {
+        right: 20px;
+    }
+
+    .validate-input:invalid + .bar .clear-input,
+    .validate-input:invalid + .bar .eye {
+        color: #ff807c;
+    }
+
+    .ctn-btns {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 50px;
+    }
+
+    .btns {
+        background-color: #1d7566;
+        border-radius: 2px;
+        border-style: none;
+        box-shadow: 1px 0px #202020,
+        0px 1px #202020,
+        2px 1px #202020,
+        1px 2px #202020,
+        3px 2px #202020,
+        2px 3px #202020,
+        4px 3px #202020,
+        3px 4px #202020,
+        5px 4px #202020,
+        4px 5px #202020,
+        6px 5px #202020,
+        5px 6px #202020;
+        color: #ffffff;
+        cursor: pointer;
+        font: normal 13px 'Quicksand', sans-serif;
+        letter-spacing: 1px;
+        margin: 0 5px;
+        padding: 10px 20px;
+        transition: 0.3s ease all;
+    }
+
+    .btns:hover,
+    .btns:focus {
+        background-color: #20806f;
+    }
+
+    .btns:active {
+        box-shadow: 1px 0px #202020,
+        0px 1px #202020,
+        2px 1px #202020,
+        3px 2px #202020,
+        2px 3px #202020,
+        4px 3px #202020,
+        3px 4px #202020;
+        transform: translate(2px);
+    }
+</style>
+<body class="fondo">
 
 <header id="header">
 
@@ -62,123 +249,55 @@
         <span id="logo"> <img src="img/logo.png" alt="SmartAdmin"> </span>
     </div>
 
-    <span id="extr-page-header-space"> <span class="hidden-mobile hiddex-xs">Need an account?</span> <a href="register.html" class="btn btn-danger">Create account</a> </span>
-
 </header>
 
 <div id="main" role="main">
 
     <!-- MAIN CONTENT -->
-    <div id="content" class="container">
-
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-7 col-lg-8 hidden-xs hidden-sm">
-                <h1 class="txt-color-red login-header-big">SmartAdmin</h1>
-                <div class="hero">
-
-                    <div class="pull-left login-desc-box-l">
-                        <h4 class="paragraph-header">It's Okay to be Smart. Experience the simplicity of SmartAdmin, everywhere you go!</h4>
-                        <div class="login-app-icons">
-                            <a href="javascript:void(0);" class="btn btn-danger btn-sm">Frontend Template</a>
-                            <a href="javascript:void(0);" class="btn btn-danger btn-sm">Find out more</a>
-                        </div>
-                    </div>
-
-                    <img src="img/demo/iphoneview.png" class="pull-right display-image" alt="" style="width:210px">
-
-                </div>
-
-                <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                        <h5 class="about-heading">About SmartAdmin - Are you up to date?</h5>
-                        <p>
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa.
-                        </p>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                        <h5 class="about-heading">Not just your average template!</h5>
-                        <p>
-                            Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi voluptatem accusantium!
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-5 col-lg-4">
-                <div class="well no-padding">
-                    <form  id="login-form" class="smart-form client-form" method="POST" action="{{ route('login') }}"   >
-                        @csrf
-                        <header>
-                            Sign In
-                        </header>
-
-                        <fieldset>
-
-                            <section>
-                                <label class="label">E-mail</label>
-                                <label class="input"> <i class="icon-append fa fa-user"></i>
-                                    <input type="text" name="usuario" class="form-control @error('usuario') is-invalid @enderror" name="usuario" value="{{ old('usuario') }}" required autocomplete="usuario" >
-                                    @error('usuario')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                    <b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i> Please enter email address/username</b></label>
-                            </section>
-
-                            <section>
-                                <label class="label">Password</label>
-                                <label class="input"> <i class="icon-append fa fa-lock"></i>
-                                    <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-                                    @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                    <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i> Enter your password</b> </label>
-                                <div class="note">
-                                    @if (Route::has('password.request'))
-                                        <a class="btn btn-link" href="{{ route('password.request') }}">
-                                            {{ __('Forgot Your Password?') }}
-                                        </a>
-                                    @endif
-                                </div>
-                            </section>
-
-                            <section>
-                                <label class="checkbox">
-                                    <input type="checkbox" name="remember" checked=""  class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }} >
-                                    <i></i>Stay signed in</label>
-                            </section>
-                        </fieldset>
-                        <footer>
-                            <button type="submit" class="btn btn-primary">
-                                {{ __('Login') }}
-                            </button>
-                        </footer>
-                    </form>
-
-
-                </div>
-
-                <h5 class="text-center"> - Or sign in using -</h5>
-
-                <ul class="list-inline text-center">
-                    <li>
-                        <a href="javascript:void(0);" class="btn btn-primary btn-circle"><i class="fa fa-facebook"></i></a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);" class="btn btn-info btn-circle"><i class="fa fa-twitter"></i></a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);" class="btn btn-warning btn-circle"><i class="fa fa-linkedin"></i></a>
-                    </li>
-                </ul>
-
-            </div>
+    <form  method="POST" action="{{ route('login') }}" class="form">
+        @csrf
+        <div class="ctn-img-title-login">
+            <img src="https://cdn4.iconfinder.com/data/icons/ios-web-user-interface-multi-circle-flat-vol-7/512/Lock_protected_safe_privacy_password_security-512.png" alt="Login" title="Login" class="img-login">
+            <h1 class="title-form-login">
+              SYSCONTA
+            </h1>
         </div>
-    </div>
 
+        <div class="ctn-input">
+            <label for="user" class="support-text">
+                Usuario
+            </label>
+            <input type="text" id="user" class="effect-input @error('usuario') is-invalid @enderror" name="usuario" value="{{ old('usuario') }}" >
+            @error('usuario')
+            <span class="invalid-feedback" role="alert">
+                <strong style="color: red" >{{ $message }}</strong></span>
+            @enderror
+            <span class="bar">
+      <i class="fa fa-times clear-input" aria-hidden="true"></i>
+    </span>
+        </div>
+
+        <div class="ctn-input">
+            <label for="pass" class="support-text">
+                Contraseña
+            </label>
+            <input type="password" name="password" class="effect-input password @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+            @error('password')
+            <span class="invalid-feedback" role="alert">
+                                        <strong style="color: red">{{ $message }}</strong>
+                                    </span>
+            @enderror
+            <span class="bar">
+      <i class="fa fa-times clear-input" aria-hidden="true"></i>
+      <i class="fa fa-eye-slash eye" aria-hidden="true"></i>
+    </span>
+        </div>
+
+        <div class="ctn-btns">
+            <input type="submit" id="reset-inputs" class="btns"   {{ __('Ingresar') }}>
+        </div>
+
+    </form>
 </div>
 
 <!--================================================== -->
@@ -210,7 +329,6 @@
 
 <!--[if IE 8]>
 
-<h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
 
 <![endif]-->
 
@@ -252,6 +370,59 @@
                 error.insertAfter(element.parent());
             }
         });
+
+    });
+    $(document).ready(function() {
+
+        $('.effect-input').on('focus', function() {
+            $(this).siblings('.support-text, .bar').addClass('active-input');
+        });
+
+        $('.effect-input').on('keydown keyup', function() {
+            $(this).addClass('validate-input');
+            if ( $(this).val().length >= 1 ) {
+                $(this).siblings('.bar').children('.clear-input').fadeIn();
+            } else {
+                $(this).siblings('.bar').children('.clear-input').fadeOut();
+            }
+        });
+
+        $('.password').on('keydown keyup', function() {
+            if ( $(this).val().length >= 1 ) {
+                $(this).siblings('.bar').children('.eye').fadeIn();
+            } else {
+                $(this).siblings('.bar').children('.eye').fadeOut();
+            }
+        });
+
+        $('.effect-input').on('focusout', function() {
+            $(this).addClass('validate-input');
+            if ( $(this).val() == '' ) {
+                $(this).siblings('.support-text, .bar').removeClass('active-input');
+            }
+        });
+
+        $('.clear-input').on('click', function() {
+            $(this).fadeOut();
+            $(this).siblings('.eye').fadeOut();
+            $(this).parent('.bar').siblings('.effect-input').val('');
+            $(this).siblings('.eye').addClass('fa-eye-slash').removeClass('fa-eye view-pass');
+            $(this).parent('.bar').siblings('.password').attr('type', 'password');
+            $(this).parent('.bar').siblings('.effect-input').focusout();
+            $(this).parent('.bar').siblings('.effect-input').removeClass('validate-input');
+        });
+
+        $('.eye').on('click', function() {
+            $(this).toggleClass('fa-eye-slash fa-eye view-pass');
+            if ( $(this).hasClass('view-pass') ) {
+                $(this).parent('.bar').siblings('.password').attr('type', 'text');
+            } else {
+                $(this).parent('.bar').siblings('.password').attr('type', 'password');
+            }
+        });
+
+
+
     });
 </script>
 

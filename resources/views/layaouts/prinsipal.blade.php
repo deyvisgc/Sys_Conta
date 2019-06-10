@@ -273,9 +273,11 @@ Use search to find needed section.
 
             </li>
 
+            @if(Auth::user()->Rol_idRol==1)
             <li>
                 <a href="#"><i class="fa fa-lg fa-fw fa-table"></i> <span class="menu-item-parent">ADMINISTRACION</span></a>
                 <ul>
+
                     <li>
                         <a href="{{url('Trabajador')}}">TRABAJADOR</a>
                     </li>
@@ -290,6 +292,8 @@ Use search to find needed section.
                     </li>
                 </ul>
             </li>
+
+            @endif
             <li>
                 <a href="#"><i class="fa fa-lg fa-fw fa-pencil-square-o"></i> <span class="menu-item-parent">Planilla</span></a>
                 <ul>
@@ -304,6 +308,9 @@ Use search to find needed section.
                     </li>
                     <li>
                         <a href="bootstrap-forms.html">Tipo Seguros</a>
+                    </li>
+                    <li>
+                        <a href="{{url('Asiento')}}">Asientos Contables</a>
                     </li>
                 </ul>
             </li>

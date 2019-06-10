@@ -19,7 +19,7 @@
                         <div class="widget-body no-padding">
 
                             <form id="checkout-form" class="smart-form" novalidate="novalidate">
-
+                                <input type="hidden" id="_token" name="_token" value="{{ csrf_token() }}">
                                 <fieldset>
                                     <div class="row">
                                         <section class="col col-8">
@@ -230,7 +230,7 @@
                                         </section>
                                         <section class="col col-2">
                                             <label class="input"> <i class="icon-prepend fa fa-dollar"></i>
-                                                <input type="number" readonly name="AFP" id="AFP" value="0.00">
+                                                <input type="number" readonly name="AFP" id="afp" value="0.00">
                                             </label>
                                         </section>
                                         <section class="col col-2">
@@ -244,7 +244,7 @@
                                 </fieldset>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-outline-warning txt-color-blue">REGISTRAR ASIENTOS </button>
+                                    <button type="button" onclick="RegistrarAsientos();"  class="btn btn-outline-warning txt-color-blue">REGISTRAR ASIENTOS </button>
                                 </div>
                             </form>
                         </div>
@@ -322,6 +322,13 @@
                                             <input type="number" name="cuentas_diversas1" id="cuentas_diversas1" value="0.00">
                                         </label>
                                     </section>
+                                    <section class="col col-3" style="margin-left: 575px;">
+                                      <center><strong><label>Total Haber</label></strong></center>
+                                        <label class="input"> <i class="icon-prepend fa fa-dollar"></i>
+                                            <input type="number" name="total_haber" id="total_haber" value="0.00">
+                                        </label>
+                                    </section>
+
 
 
                                 </div>

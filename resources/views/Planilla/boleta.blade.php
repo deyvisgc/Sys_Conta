@@ -8,6 +8,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLongTitle">BOLETAS DE PAGO POR TRABAJADOR</h5>
+
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -16,6 +17,7 @@
                     <div class="cotenido">
                         <center><h2>BOLETA DE PAGO</h2></center>
                         <center><p>ART. 19 DEL DECRETO SUPREMO N° 001-98-TR DEL 22-01-98</p></center>
+
                         <div class="row">
                             <section class="col col-12" style="border-radius: 2px;">
                                 <center><strong><label  style="color: black;">MES: <span id="meses"></span></label></strong></center>

@@ -114,7 +114,7 @@
                     {data: 'Dni', name: 'Dni'},
                     {data: 'Telefono', name: 'Telefono'},
                     {data: 'Fecha_Nacimiento',name:'Fecha_Nacimiento'},
-                    {data: 'Direccion',name:'Direccion'},
+                    {data: 'Direccion_Persona',name:'Direccion_Persona'},
                     {data: 'nombre_rol',name:'nombre_rol'},
                     {data: 'user_estado',name:'user_estado'},
                     {"mRender": function ( data, type, row ) {
