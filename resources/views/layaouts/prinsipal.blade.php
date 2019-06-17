@@ -435,10 +435,10 @@ you can add as many as you like
 <div id="shortcut">
     <ul>
         <li>
-            <a href="inbox.html" class="jarvismetro-tile big-cubes bg-color-blue"> <span class="iconbox"> <i class="fa fa-envelope fa-4x"></i> <span>Mail <span class="label pull-right bg-color-darken">14</span></span> </span> </a>
+            <a href="https://www.youtube.com/channel/UCcZAL5gjsh4dSS_xXa92xvQ" class="jarvismetro-tile big-cubes bg-color-blue"> <span class="iconbox"> <i class="fas fa-chart-line fa-4x"></i> <span>Guia Contable</span> </span> </a>
         </li>
         <li>
-            <a href="calendar.html" class="jarvismetro-tile big-cubes bg-color-orangeDark"> <span class="iconbox"> <i class="fa fa-calendar fa-4x"></i> <span>Calendar</span> </span> </a>
+            <a href="https://docs.google.com/document/d/1RAas6wm8yv8zT0TDbPCDxH2sKJjzMKbbBB1rWabZ-iM/edit" class="jarvismetro-tile big-cubes bg-color-orangeDark"> <span class="iconbox"> <i class="fas fa-chart-line fa-4x"></i> <span>Calculos Contables</span> </span> </a>
         </li>
         <li>
             <a href="gmap-xml.html" class="jarvismetro-tile big-cubes bg-color-purple"> <span class="iconbox"> <i class="fa fa-map-marker fa-4x"></i> <span>Maps</span> </span> </a>

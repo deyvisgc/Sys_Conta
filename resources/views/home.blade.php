@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="text-center error-box">
-                        <h1 class="error-text-2 bounceInDown animated">BIENVENIDO  {{Auth::user()->usuario}} <span class="particle particle--c"></span>AL SISTEMA COMTABLE<span class="particle particle--a"></span><span class="particle particle--b"></span></h1>
+                        <h1 class="error-text-2 bounceInDown animated"><label style="font-family: Bahnschrift;color: #0AA699;" >BIENVENIDO Sr(@)</label>  {{Auth::user()->usuario}} <span class="particle particle--c"></span><label style="font-family: Bahnschrift;color: #0AA699;" >AL SISTEMA COMTABLE</label><span class="particle particle--a"></span><span class="particle particle--b"></span></h1>
                         <div id="content">
 
                             <div class="row">
@@ -28,7 +28,7 @@
                                                     <div class="panel-body no-padding text-align-center">
                                                         <div class="the-price">
                                                             <h1>
-                                                                $99<span class="subscript">/ mo</span></h1>
+                                                                <span class="subscript"></span></h1>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -44,7 +44,7 @@
                                                     <div class="panel-body no-padding text-align-center">
                                                         <div class="the-price">
                                                             <h1>
-                                                                $99<span class="subscript">/ mo</span></h1>
+                                                                <span class="subscript"></span></h1>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -60,7 +60,7 @@
                                                     <div class="panel-body no-padding text-align-center">
                                                         <div class="the-price">
                                                             <h1>
-                                                                $99<span class="subscript">/ mo</span></h1>
+                                                                <span class="subscript"></span></h1>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -76,7 +76,7 @@
                                                     <div class="panel-body no-padding text-align-center">
                                                         <div class="the-price">
                                                             <h1>
-                                                                $99<span class="subscript">/ mo</span></h1>
+                                                                <span class="subscript"></span></h1>
                                                         </div>
                                                     </div>
                                                 </div>
