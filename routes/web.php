@@ -22,6 +22,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('Perfil','PerfilController');
 Route::resource('Planilla','PlanillaController');
 Route::resource('Asiento','AsientoController');
+Route::resource('Seguros','SeguroController');
+
 Route::get('Listar_Beneficios/{idPlanilla}','PlanillaController@listarBeneficios');
 Route::get('Listar_Retenciones/{idPlanilla}','PlanillaController@ListarRetenciones');
 Route::get('DeleTPlanilla/{idPlanilla}','PlanillaController@DeleTPlanilla');
@@ -35,6 +37,6 @@ Route::get('Boleta', 'PlanillaController@Boleta');
 
 Route::get('buscador', 'PlanillaController@search');
 Route::get('BoletaPagos/{idEmpresa}','PlanillaController@Boleta');
-
+Route::get('SegurosDelete/{idseguros}','SeguroController@SegurosDelete');
 
 

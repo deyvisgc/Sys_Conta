@@ -15,6 +15,6 @@ class seguro extends Model
      * @var array
      */
     protected $fillable = [
-        'nombre_Seguro', 'Teléfono','Fax','Dirección'
+        'nombre_Seguro', 'aporte_obligatorio','Prima_Seguro','comision_renumeracion'
     ];
 }

@@ -161,7 +161,6 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-info" data-dismiss="modal">DESCARGAR PDF</button>
                     <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
                     <button type="button" id="btnImprimir" class="btn btn-outline-success">IMPRIMIR</button>
                 </div>

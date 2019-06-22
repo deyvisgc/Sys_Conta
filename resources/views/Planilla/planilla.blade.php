@@ -37,7 +37,7 @@
                 <header>
 
                     <span class="widget-icon"> <i class="fa fa-table"></i> </span>
-                    <h2>Listado De Planillas</h2>
+                    <h2>BANDEJA DE ENTRADA DE PLANILLAS</h2>
 
                 </header>
 
@@ -408,7 +408,7 @@
                           $('#otras_instituciones1').val(val.sctr);
                           $('#renumeracion_pagar1').val(val.renumeracion_neta);
                           $('#afp1').val(val.prima_seguros+val.aporte_obligatorio+val.comision_sobre);
-                          $('#gastos_personal').val(val.renumeracion_bruta+val.total_seguro);
+                          $('#gastos_personal').val(val.total_seguro+val.renumeracion_bruta);
                             $('#tributs_aportes1').val(val.salud+val.descuento_ONP+val.sctr);
                         //  $('#tributs_aportes1').val(val.salud+val.descuento_ONP+val.sctr);
                           $('#renumeraciones_participaciones1').val(val.renumeracion_neta);
@@ -804,10 +804,11 @@ $('#ListarTotales').click(function () {
                       var suma= parseFloat(val.Renumeracion_neta)+parseFloat(val.Asignacion_familiar)
                             +parseFloat(val.vacaciones)+parseFloat(val.cts);
                         //suma los descuentos
-                        var suma2=parseFloat(val.aporte_obligatorio_monto)+parseFloat(val.comisison_sobre_renumeracion_total)+
-                            parseFloat(val.Prima_Seguros_monto)+parseFloat(val.Total_descuentoONP)+parseFloat(val.descuento_inasistencia)+parseFloat(val.Quinta_Categoria);
+                        var suma2=parseFloat(val.aporte)+parseFloat(val.comisison_sobre)+
+                            parseFloat(val.prima)+parseFloat(val.Total_descuentoONP)+parseFloat(val.descuento_inasistencia)+parseFloat(val.Quinta_Categoria);
                         //suma las aportaciones del empleador
-                     var suma3=parseFloat(val.Salud)+parseFloat(val.SCTR);
+                     var suma3=parseFloat(suma)+parseFloat(suma2);
+
 
 
 
@@ -822,9 +823,9 @@ $('#ListarTotales').click(function () {
                             '</td>'+
 
                             '<td>' +
-                            '<strong><label style="color: black;">AFP Apore Obligatorio: $.</label></strong>        '        +val.aporte_obligatorio_monto+'' +'<br>'+
-                            '<strong><label style="color: black;">AFP Comisión: $.</label></strong>                 '        +val.comisison_sobre_renumeracion_total+'' +'<br>'+
-                            '<strong><label style="color: black;">AFP Seguro: $.</label></strong>                   '        +val.Prima_Seguros_monto+'' +'<br>'+
+                            '<strong><label style="color: black;">AFP Apore Obligatorio: $.</label></strong>        '        +val.aporte+'' +'<br>'+
+                            '<strong><label  style="color: black;">AFP Comisión: $.</label></strong>                 '        +val.comisison_sobre+'' +'<br>'+
+                            '<strong><label style="color: black;">AFP Seguro: $.</label></strong>                   '        +val.prima+'' +'<br>'+
                             '<strong><label style="color: black;">ONP: $.</label></strong>                          '        +val.Total_descuentoONP+'' +'<br>'+
                             '<strong><label style="color: black;">Faltas:  $.</label></strong>                      '        +val.descuento_inasistencia+'' +'<br>'+
                             '<strong><label style="color: black;">Retenciones 5ta:   $.</label></strong>             '        +val.Quinta_Categoria+'' +'<br>'+
@@ -843,7 +844,7 @@ $('#ListarTotales').click(function () {
                         var tabla5= '<tr>'+
                             '<td>TOTAL RENU: $.'+suma.toFixed(2)+'</td>'+
                             '<td>TOTAL DESC: $.'+suma2.toFixed(2)+'</td>'+
-                            '<td>TOTAL APOR: $.'+suma3.toFixed(2)+'</td>'+
+                            '<td>NETO A PAGAR: $.'+suma3.toFixed(2)+'</td>'+
                             '</tr>';
 
                         totales.append(tabla5);

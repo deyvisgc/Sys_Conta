@@ -136,10 +136,11 @@ class PlanillaController extends Controller
         return response()->json($totales);
     }
     public function Boleta($id){
-        $boleta=DB::select("SELECT * FROM persona,trabajador,planilla,seguros,tipo_seguro,renumeraciones,empresa WHERE persona.Trabajador_idTrabajadores=trabajador.idTrabajador 
-                                    and trabajador.idempresa=empresa.idEmpresa and trabajador.seguros_idseguros=seguros.idseguros and
-                                    trabajador.idTipo_Seguros=tipo_seguro.idTipo_seguro and planilla.Trabajador_idTrabajador=trabajador.idTrabajador and planilla.idRenumeracion=renumeraciones.idRenumeraciones
-                                    and planilla.Trabajador_idTrabajador=$id");
+        $boleta=DB::select("SELECT persona.*,trabajador.*,planilla.*,seguros.*,tipo_seguro.*,empresa.*, IFNULL(renumeraciones.Prima_Seguros_monto,0.00) as prima, 
+                                   IFNULL(renumeraciones.aporte_obligatorio_monto,0.00) as aporte, IFNULL(renumeraciones.comisison_sobre_renumeracion_total,0.00) as comisison_sobre,
+                                    renumeraciones.* FROM persona,trabajador,planilla,seguros,tipo_seguro,renumeraciones,empresa WHERE persona.Trabajador_idTrabajadores=trabajador.idTrabajador and trabajador.idempresa=empresa.idEmpresa 
+                                    and trabajador.seguros_idseguros=seguros.idseguros and trabajador.idTipo_Seguros=tipo_seguro.idTipo_seguro and planilla.Trabajador_idTrabajador=trabajador.idTrabajador
+                                   and planilla.idRenumeracion=renumeraciones.idRenumeraciones and planilla.Trabajador_idTrabajador=$id");
         return response()->json($boleta);
     }
     public function DeleTPlanilla($id){

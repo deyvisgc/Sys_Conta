@@ -28,9 +28,10 @@
                                                     <div class="panel-body no-padding text-align-center">
                                                         <div class="the-price">
                                                             <h1>
-                                                                <span class="subscript"></span></h1>
+                                                                <span class="subscript">{{$trabajador}}</span></h1>
                                                         </div>
                                                     </div>
+
                                                 </div>
                                             </div>
 
@@ -44,7 +45,7 @@
                                                     <div class="panel-body no-padding text-align-center">
                                                         <div class="the-price">
                                                             <h1>
-                                                                <span class="subscript"></span></h1>
+                                                                <span class="subscript">{{$planilla}}</span></h1>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -60,7 +61,7 @@
                                                     <div class="panel-body no-padding text-align-center">
                                                         <div class="the-price">
                                                             <h1>
-                                                                <span class="subscript"></span></h1>
+                                                                <span class="subscript">{{$users}}</span></h1>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -71,12 +72,12 @@
 
                                                     <div class="panel-heading">
                                                         <h3 class="panel-title">
-                                                            N° PLANTILLAS</h3>
+                                                            N° SEGUROS</h3>
                                                     </div>
                                                     <div class="panel-body no-padding text-align-center">
                                                         <div class="the-price">
                                                             <h1>
-                                                                <span class="subscript"></span></h1>
+                                                                <span class="subscript">{{$seguros}}</span></h1>
                                                         </div>
                                                     </div>
                                                 </div>

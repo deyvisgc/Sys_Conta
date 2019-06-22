@@ -73,3 +73,69 @@
 
     </div>
 </div>
+<!--fin modal empresa-->
+<div class="modal fade" id="ModalSeguros" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <center> <strong><h5 style="color: black ;font-family:'Arial Black' " class="modal-title" id="exampleModalLabel">REGISTRAR SEGUROS</h5></strong></center>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="Seguros" class="smart-form" novalidate="novalidate">
+                    <!-- widget div-->
+
+                    <div>
+                        <div class="widget-body no-padding">
+                            <fieldset>
+                                <input type="hidden" id="_token" name="_token" value="{{ csrf_token() }}">
+                                <div class="row">
+                                    <section class="col col-6">
+                                        <label class="input"> <i class="icon-prepend text-danger fas fa-ambulance"></i>
+                                            <input type="text"  name="nombre_seguro" id="nombre_seguro" placeholder="nombre seguros">
+                                        </label>
+                                    </section>
+                                    <section class="col col-6">
+                                        <label class="input"> <i class="icon-prepend text-danger fas fa-ambulance"></i>
+                                            <input type="number"  name="aporte_obligatorio"id="aporte_obligatorio"  placeholder="Aporte Obligatorio">
+                                        </label>
+                                    </section>
+                                </div>
+                                <div class="row">
+                                    <section class="col col-6">
+                                        <label class="input"> <i class="icon-prepend text-danger fas fa-ambulance"></i>
+                                            <input type="number"  name="prima_seguros" id="prima_seguros" placeholder="Prima Seguros">
+                                        </label>
+                                    </section>
+                                    <section class="col col-6">
+                                        <label class="input"> <i class="icon-prepend text-danger fas fa-ambulance"></i>
+                                            <input type="number"  name="comision" id="comision" placeholder="Comision">
+                                        </label>
+                                    </section>
+                                    <input type="hidden"  name="idseguros" id="idseguros" placeholder="Comision">
+                                </div>
+
+                            </fieldset>
+
+
+
+                            <footer>
+                                <button type="button" id="RegistrarSeguro" class="btn btn-success regis">Registrar</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                            </footer>
+
+                        </div>
+                        <!-- end widget content -->
+
+                    </div>
+                    <!-- end widget div -->
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
