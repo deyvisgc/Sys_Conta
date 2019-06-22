@@ -142,6 +142,12 @@ class PlanillaController extends Controller
                                     and planilla.Trabajador_idTrabajador=$id");
         return response()->json($boleta);
     }
+    public function DeleTPlanilla($id){
+        $planilla=Planilla::find($id);
+        $planilla->delete();
+        return response()->json(array("success"=>true));
+    }
+
 
 
 }

@@ -19,11 +19,12 @@ Route::group(['middleware' => ['auth','is_admn']], function () {
     //
 });
 Route::get('/home', 'HomeController@index')->name('home');
-
+Route::resource('Perfil','PerfilController');
 Route::resource('Planilla','PlanillaController');
 Route::resource('Asiento','AsientoController');
 Route::get('Listar_Beneficios/{idPlanilla}','PlanillaController@listarBeneficios');
 Route::get('Listar_Retenciones/{idPlanilla}','PlanillaController@ListarRetenciones');
+Route::get('DeleTPlanilla/{idPlanilla}','PlanillaController@DeleTPlanilla');
 Route::get('Listar_Otros/{idPlanilla}','PlanillaController@ListarOtros');
 Route::get('Totales_ingresos','PlanillaController@TotalesIngresos');
 Route::get('Totales_aportes','PlanillaController@TotalesAportes');

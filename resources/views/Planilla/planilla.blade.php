@@ -381,7 +381,7 @@
 
                     {"mRender": function ( data, type, row ) {
                             return '<a onclick="detalle('+row.idPlanilla+')"  title="Detalle Planilla" class="btn btn-success "  data-toggle="modal" data-target="#exampleModal"><i class="fa fa-eye text-warning"></i></a>' +
-                                '<a title="Eliminar Planilla" style="margin-left: 5px" class="btn btn-danger " onclick="eliminar('+row.idPlanilla+')"><i class="fa fa-remove text-warning"></i></a>' +
+                                '<a  title="Eliminar Planilla"  style="margin-left: 5px" class="btn btn-danger " onclick="eliminarPlanilla('+row.idPlanilla+')"><i class="fa fa-remove text-warning"></i></a>' +
                                 '<a data-toggle="modal" data-target="#boleta" title="Imprimir Boleta de pago" style="margin-left: 5px" class="btn btn-primary " onclick="Imprimir('+row.Trabajador_idTrabajador+')"><i class="fa fa-print text-warning"></i></a>'
                         },
                     }
@@ -480,6 +480,7 @@ $('#ListarTotales').click(function () {
       destroy:true,
 
   });
+  
 
     $('#tb_totales1').DataTable({
         stateSave: true,
@@ -935,5 +936,59 @@ $('#ListarTotales').click(function () {
                 }
             })
         }
+        function eliminarPlanilla(id) {
+            iziToast.question({
+                timeout: 20000,
+                close: false,
+                overlay: true,
+                displayMode: 'once',
+                id: 'question',
+                zindex: 999,
+                title: 'Hey',
+                message: 'Are you sure about that?',
+                position: 'center',
+                buttons: [
+                    ['<button><b>YES</b></button>', function (instance, toast) {
+
+                        instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        $.ajax({
+                            url : '{{url('DeleTPlanilla')}}/'+id,
+                            type : 'get',
+                            datatype : 'json',
+                            success:function(response){
+                                if (response.success===true){
+                                    tabla.ajax.reload();
+                                    iziToast.success({
+                                        title: 'OK',
+                                        message: 'Successfully Eliminado Correctamente!',
+                                    });
+                                }
+
+                            }
+
+                        });
+                    }, true],
+                    ['<button>NO</button>', function (instance, toast) {
+
+                        instance.hide({ transitionOut: 'fadeOut' }, toast, 'button');
+                        iziToast.error({
+                            title: 'Error',
+                            message: 'confirme para eliminar',
+                        });
+                    }],
+                ],
+                onClosing: function(instance, toast, closedBy){
+                    console.info('Closing | closedBy: ' + closedBy);
+                },
+                onClosed: function(instance, toast, closedBy){
+                    console.info('Closed | closedBy: ' + closedBy);
+                }
+            });
+
+
+
+        }
+
+
     </script>
     @endsection

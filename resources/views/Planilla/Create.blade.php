@@ -211,7 +211,7 @@
                                                                 <label  style="color: black" > CTS(*)</label>
 
                                                                 <label class="input"> <i class="icon-prepend fas fa-address-card"></i></i>
-                                                                    <input type="number" readonly  name="cts" placeholder="CTS" id="cts">
+                                                                    <input type="number" readonly  name="cts" value="0.00" placeholder="CTS" id="cts">
                                                                 </label>
                                                                 <input type="hidden"  name="numero_fecha" placeholder="CTS" id="numero_fecha">
 
@@ -503,7 +503,7 @@
                                                 <section class="col col-6">
                                                     <label  style="color: black" >RENTA NETA(*)</label>
                                                     <label class="input"> <i class="icon-prepend fa fa-phone"></i>
-                                                        <input type="number" readonly id="renta_neta" name="renta_neta" placeholder="$.00">
+                                                        <input type="number"  id="renta_neta" name="renta_neta" placeholder="$.00">
                                                     </label>
                                                 </section>
                                             </div>
@@ -904,10 +904,6 @@
             $('#total_ingre').val(sumarrentas.toFixed(2));
             var total_ingreso=$('#total_ingre').val();
             var totalrenta=parseFloat(total_ingreso)-29400.00;
-            iziToast.success({
-                title: 'OK',
-                message: 'Exito al calcular la 5 categoria!',
-            });
             $('#renta_neta').val(totalrenta.toFixed(2));
         }
 
@@ -949,8 +945,7 @@
                var rentatotal51=parseFloat(rentauitcinco1)*0.08;
 
                $('#renta_5uit').val(rentatotal51.toFixed(2));
-               subtotal2=parseFloat(renta_neta)-primerauit;
-
+               subtotal2=parseFloat(renta_neta)- parseFloat(primerauit);
              //  alert(subtotal2);
            }
 
@@ -962,6 +957,7 @@
                var rentauitveinte= $('#20uit').val();
                var rentatotal20=parseFloat(rentauitveinte)*0.14;
                $('#renta_20uit').val(rentatotal20.toFixed(2));
+
 
         }if(subtotal2>=segundauit){
             subtotal4=parseFloat(subtotal2)-parseFloat(segundauit);
@@ -1087,8 +1083,7 @@
         var renta3=$('#renta_35uit').val();
         var renta4=$('#renta_45uit').val();
         var renta5=$('#renta_45uit1').val();
-        var subtotal=parseFloat(renta1)+parseFloat(renta2)+parseFloat(renta3)+parseFloat(renta4)+
-            parseFloat(renta5);
+        var subtotal=parseFloat(renta1)+parseFloat(renta2)+parseFloat(renta3)+parseFloat(renta4)+parseFloat(renta5);
         var total=parseFloat(subtotal)/12;
         $('#renta_5_categoria').val(total.toFixed(2));
 
@@ -1096,13 +1091,30 @@
         var totaldescuentoAFP=$('#total_Descuento_afp').val();
         var totaldescuentoONP=$('#prima_Seguros_ONP').val();
         var total5categoria=$('#renta_5_categoria').val();
-       var esaludmaximo=83.7;
 
-        var renumeracion_neta=parseFloat(total_renumeracion)-parseFloat(totaldescuentoAFP)-parseFloat(totaldescuentoONP)-parseFloat(total5categoria);
-        iziToast.success({
-            title: 'OK',
-            message: 'Exito al sumar la renta 5ta categoria!',
-        });
+       var esaludmaximo=83.7;
+      if (total_renumeracion==0){
+
+      } if(totaldescuentoAFP==0){
+
+        }if (totaldescuentoONP==0){
+            var renumeracion_neta=parseFloat(total5categoria)-parseFloat(total_renumeracion)-parseFloat(totaldescuentoAFP)-parseFloat(totaldescuentoONP);
+
+            $('#calcular5categoria').modal('hide');
+
+            iziToast.success({
+                title: 'OK',
+                message: 'Exito al sumar la renta 5ta categoria!',
+            });
+            $('#renumeracion_neta').val(renumeracion_neta.toFixed(2));
+
+        }else{
+            var renumeracion_neta=parseFloat(total_renumeracion)-parseFloat(totaldescuentoAFP)-parseFloat(totaldescuentoONP)-parseFloat(total5categoria);
+            iziToast.success({
+                title: 'OK',
+                message: 'Exito al sumar la renta 5ta categoria!',
+            });
+        }
           $('#renumeracion_neta').val(renumeracion_neta.toFixed(2));
         var base_Calculo=$('#base_calculo').val();
         var subtotalesalud=parseFloat(base_Calculo)*0.09;
@@ -1117,12 +1129,22 @@
 
 
     }
+    function limpiarUit() {
+   $('#renta_5uit').val("");
+   $('#renta_20uit').val("");
+   $('#renta_35uit').val("");
+   $('#renta_45uit').val("");
+   $('#renta_45uit1').val("");
+   $('#5uit').val("");
+   $('#20uit').val("");
+   $('#35uit').val("");
+   $('#45uit').val("");
+   $('#45uit1').val("");
+
+    }
     function calculalarRenumeracion() {
         var asisganacion_familair = $('#asigna_familiar').val();
-        var cts = $('#cts').val();
         var vacaciones = $('#vacaciones_trun').val();
-        var bonificacion = $('#bonificacion').val();
-        var bonifi_extraor = $('#bonificacion_extraordinaria').val();
         var pagoxcademes = $('#valorxmes').val();
         var horas_extras25 = $('#horas_extrasx25').val();
         var horasextras35 = $('#horas_extrasx35').val();
@@ -1131,43 +1153,75 @@
         var bonosextras = $('#bonox_Extras').val();
         var otros = $('#otros').val();
 
-        if (cts == '') {
-            $('#cts').val(0);
-        }
-        //se activa cuando el canpo vacaciones no tienen valor
-        else {
-            var subtotal = parseFloat(asisganacion_familair) + parseFloat(cts) + parseFloat(vacaciones) + parseFloat(bonificacion) + parseFloat(bonifi_extraor);
-            var subtotal1 = parseFloat(pagoxcademes) + parseFloat(horas_extras25) + parseFloat(horasextras35) + parseFloat(movilidad) + parseFloat(alimentacion) +
-                parseFloat(bonosextras) + parseFloat(otros);
-            var total = parseFloat(subtotal) + parseFloat(subtotal1);
-            $('#total_renumeracion').val(total.toFixed(2));
-            $('#base_calculo').val(total.toFixed(2));
-            iziToast.success({
-                title: 'OK',
-                message: 'Exito en las renumeraciones!',
-            });
 
+        //se activa cuando el canpo vacaciones no tienen valor
+             if (pagoxcademes==0){
+
+               var pago1= $('#sueldo_basico').val();
+              $('#valorxmes').val(pago1);
+              var valorxmes1= $('#valorxmes').val();
+
+
+
+                 var subtotal1 =parseFloat(asisganacion_familair)+ parseFloat(valorxmes1) + parseFloat(horas_extras25) + parseFloat(horasextras35) + parseFloat(movilidad) + parseFloat(alimentacion) +
+                     parseFloat(bonosextras) + parseFloat(otros);
+                 var total = parseFloat(subtotal1);
+                 $('#total_renumeracion').val(total.toFixed(2));
+                 $('#base_calculo').val(total.toFixed(2));
+                 iziToast.success({
+                     title: 'OK',
+                     message: 'Exito en las renumeraciones!',
+                 });
+             }else{
+                 var subtotal1 =parseFloat(asisganacion_familair)+ parseFloat(pagoxcademes) + parseFloat(horas_extras25) + parseFloat(horasextras35) + parseFloat(movilidad) + parseFloat(alimentacion) +
+                     parseFloat(bonosextras) + parseFloat(otros);
+                 var total = parseFloat(subtotal1);
+                 $('#total_renumeracion').val(total.toFixed(2));
+                 $('#base_calculo').val(total.toFixed(2));
+                 iziToast.success({
+                     title: 'OK',
+                     message: 'Exito en las renumeraciones!',
+                 });
+             }
             //se activa cuando las vaciones tiene valor
             if (vacaciones!=0){
-                var pagoxcademes=$('#valorxmes').val();
-                var asisganacion_familair=$('#asigna_familiar').val();
-                var vacaciones=$('#vacaciones_trun').val();
-                var liquidacion=parseFloat(pagoxcademes)+parseFloat(asisganacion_familair)+parseFloat(vacaciones);
-                $('#base_calculo').val(liquidacion.toFixed(2));
-                $('#total_renumeracion').val(total.toFixed(2));
-                iziToast.success({
-                    title: 'OK',
-                    message: 'Exito en las renumeraciones!',
-                });
+                //se el campo pagoxmes no tiene valor se le agrega el valor del sueldo basico
+                if(pagoxcademes==0){
+                    var pago1= $('#sueldo_basico').val();
+                    $('#valorxmes').val(pago1);
+                    var pagoxcademes=$('#valorxmes').val();
+                    var asisganacion_familair=$('#asigna_familiar').val();
+                    var vacaciones=$('#vacaciones_trun').val();
+                    var bonificacion_extra=$('#bonificacion_extraordinaria').val();
+                    var cts=$('#cts').val();
+                    var bonificacion=$('#bonificacion').val();
+                    var liquidacion1=parseFloat(bonificacion_extra)+parseFloat(cts)+parseFloat(bonificacion)+parseFloat(vacaciones)+parseFloat(pagoxcademes)+parseFloat(asisganacion_familair) + parseFloat(movilidad) + parseFloat(alimentacion) +
+                        parseFloat(bonosextras) + parseFloat(otros);
+
+                    var liquidacion=parseFloat(pagoxcademes)+parseFloat(asisganacion_familair)+parseFloat(vacaciones) + parseFloat(movilidad) + parseFloat(alimentacion) +
+                        parseFloat(bonosextras) + parseFloat(otros);
+                    $('#base_calculo').val(liquidacion.toFixed(2));
+
+                    $('#total_renumeracion').val(liquidacion1.toFixed(2));
+                    iziToast.success({
+                        title: 'OK',
+                        message: 'Exito en las renumeraciones!',
+                    });
+
+                }else {
+                    var subtotal1 =parseFloat(asisganacion_familair)+ parseFloat(pagoxcademes) + parseFloat(horas_extras25) + parseFloat(horasextras35) + parseFloat(movilidad) + parseFloat(alimentacion) +
+                        parseFloat(bonosextras) + parseFloat(otros)+parseFloat(vacaciones);
+                    var total = parseFloat(subtotal1);
+                    $('#total_renumeracion').val(total.toFixed(2));
+                    $('#base_calculo').val(total.toFixed(2));
+                    iziToast.success({
+                        title: 'OK',
+                        message: 'Exito en las renumeraciones!',
+                    });
+                }
+
+
             }
-        }
-
-
-
-
-
-
-
 
 
     }
