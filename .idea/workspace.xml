@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d968a66b-2f58-4c63-bcb7-149cfedf46be" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/Perfil/perfil.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Sys_Conta.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PlanillaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PlanillaController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Planilla/Create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Planilla/Create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Planilla/planilla.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Planilla/planilla.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,13 +72,22 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/Planilla/Create.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-269">
-              <caret line="1156" column="62" lean-forward="true" selection-start-line="1156" selection-start-column="62" selection-end-line="1156" selection-end-column="62" />
+            <state relative-caret-position="311">
+              <caret line="1097" column="152" selection-start-line="1097" selection-start-column="152" selection-end-line="1097" selection-end-column="152" />
               <folding>
                 <element signature="e#53944#56274#0#HTML" />
+                <element signature="e#56315#59892#0#HTML" />
                 <element signature="e#59924#65435#0#HTML" />
-                <element signature="e#65463#67472#0#HTML" />
                 <element signature="e#67499#67777#0#HTML" />
+                <element signature="e#67829#70136#0#HTML" />
+                <element signature="e#70034#71024#0#HTML" />
+                <element signature="e#71062#71996#0#HTML" />
+                <element signature="e#72019#72231#0#HTML" />
+                <element signature="e#72259#73884#0#HTML" />
+                <element signature="e#73919#74804#0#HTML" />
+                <element signature="e#74839#75624#0#HTML" />
+                <element signature="e#75662#76615#0#HTML" />
+                <element signature="e#76651#79087#0#HTML" />
               </folding>
             </state>
           </provider>
@@ -361,18 +371,18 @@
       <workItem from="1560794538323" duration="589000" />
       <workItem from="1560796197275" duration="2124000" />
       <workItem from="1560918906622" duration="7225000" />
-      <workItem from="1561173296536" duration="12080000" />
+      <workItem from="1561173296536" duration="14426000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22018000" />
+    <option name="totallyTimeSpent" value="24364000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26096824" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26096824" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -396,6 +406,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/Planilla/Create.blade.php</url>
+          <line>1214</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/resources/views/layaouts/prinsipal.blade.php">
@@ -499,13 +520,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/Planilla/Create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-269">
-          <caret line="1156" column="62" lean-forward="true" selection-start-line="1156" selection-start-column="62" selection-end-line="1156" selection-end-column="62" />
+        <state relative-caret-position="311">
+          <caret line="1097" column="152" selection-start-line="1097" selection-start-column="152" selection-end-line="1097" selection-end-column="152" />
           <folding>
             <element signature="e#53944#56274#0#HTML" />
+            <element signature="e#56315#59892#0#HTML" />
             <element signature="e#59924#65435#0#HTML" />
-            <element signature="e#65463#67472#0#HTML" />
             <element signature="e#67499#67777#0#HTML" />
+            <element signature="e#67829#70136#0#HTML" />
+            <element signature="e#70034#71024#0#HTML" />
+            <element signature="e#71062#71996#0#HTML" />
+            <element signature="e#72019#72231#0#HTML" />
+            <element signature="e#72259#73884#0#HTML" />
+            <element signature="e#73919#74804#0#HTML" />
+            <element signature="e#74839#75624#0#HTML" />
+            <element signature="e#75662#76615#0#HTML" />
+            <element signature="e#76651#79087#0#HTML" />
           </folding>
         </state>
       </provider>

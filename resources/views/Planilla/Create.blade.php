@@ -1093,28 +1093,15 @@
         var total5categoria=$('#renta_5_categoria').val();
 
        var esaludmaximo=83.7;
-      if (total_renumeracion==0){
-
-      } if(totaldescuentoAFP==0){
-
-        }if (totaldescuentoONP==0){
-            var renumeracion_neta=parseFloat(total5categoria)-parseFloat(total_renumeracion)-parseFloat(totaldescuentoAFP)-parseFloat(totaldescuentoONP);
-
             $('#calcular5categoria').modal('hide');
-
-            iziToast.success({
-                title: 'OK',
-                message: 'Exito al sumar la renta 5ta categoria!',
-            });
-            $('#renumeracion_neta').val(renumeracion_neta.toFixed(2));
-
-        }else{
+            console.log(total_renumeracion,' ',totaldescuentoAFP,' ',totaldescuentoONP,' ',total5categoria);
             var renumeracion_neta=parseFloat(total_renumeracion)-parseFloat(totaldescuentoAFP)-parseFloat(totaldescuentoONP)-parseFloat(total5categoria);
+           alert(renumeracion_neta);
             iziToast.success({
                 title: 'OK',
                 message: 'Exito al sumar la renta 5ta categoria!',
             });
-        }
+
           $('#renumeracion_neta').val(renumeracion_neta.toFixed(2));
         var base_Calculo=$('#base_calculo').val();
         var subtotalesalud=parseFloat(base_Calculo)*0.09;
