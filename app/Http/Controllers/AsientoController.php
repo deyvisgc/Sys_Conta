@@ -22,17 +22,21 @@ class AsientoController extends Controller
     }
     public function store(Request $request){
           $asientoContable=new asiento();
-          $asientoContable->asiento_renumeracion=$request->renumeraciones;
         $asientoContable->asiento_renumeracion=$request->renumeraciones1;
-        $asientoContable->asiento_seguridad_prevencion=$request->seguridad_prevision;
+        $asientoContable->asiento_renumeracion=$request->renumeraciones;
+
         $asientoContable->asiento_seguridad_prevencion=$request->seguridad_prevision1;
+        $asientoContable->asiento_seguridad_prevencion=$request->seguridad_prevision;
+
         $asientoContable->Asiento_Regimen=$request->regimen_presentaciones;
         $asientoContable->Asiento_Regimen=$request->regimen_presentaciones1;
-        $asientoContable->Aiento_Seguro_complementario=$request->seguro_complementario;
-        $asientoContable->Aiento_Seguro_complementario=$request->seguro_complementario1;
 
-        $asientoContable->Aiento_Instituciones_publicas=$request->instituciones_publicas;
-        $asientoContable->Aiento_Instituciones_publicas=$request->instituciones_publicas1;
+        $asientoContable->Asiento_Seguro_complementario=$request->seguro_complementario;
+        $asientoContable->Asiento_Seguro_complementario=$request->seguro_complementario1;
+
+        $asientoContable->Asiento_Instituciones_publicas=$request->instituciones_publicas;
+        $asientoContable->Asiento_Instituciones_publicas=$request->instituciones_publicas1;
+
         $asientoContable->Asiento_Essalud=$request->essalud;
         $asientoContable->Asiento_Essalud=$request->essalud1;
 

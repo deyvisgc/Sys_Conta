@@ -17,7 +17,29 @@ use Validator;
 class TrabajadorController extends Controller
 {
     public function index(Request $request){
-        $trabaja=DB::select("SELECT persona.idPersona, trabajador.idTrabajador, CONCAT(persona.nombre_personas,' ',persona.apellidos_Per) as nombres,persona.Dni,persona.Care_extranjeria,persona.Telefono,persona.Fecha_Nacimiento,persona.Fecha_Nacimiento,persona.Numero_cuenta,persona.correo,seguros.nombre_Seguro,tipo_seguro.nombre_tipo,empresa.Razon_Social FROM persona ,trabajador,seguros ,tipo_seguro,empresa WHERE persona.Trabajador_idTrabajadores=trabajador.idTrabajador and trabajador.seguros_idseguros=seguros.idseguros and trabajador.idTipo_Seguros=tipo_seguro.idTipo_seguro and trabajador.idempresa=empresa.idEmpresa and  trabajador.Estado_trabajador='Contratado'");
+        $trabaja=DB::select("SELECT
+        persona.idPersona,
+        trabajador.idTrabajador,
+        CONCAT(persona.nombre_personas,' ',persona.apellidos_Per) as nombres,
+        persona.Dni,
+        persona.Care_extranjeria,
+        persona.Telefono,
+        persona.Fecha_Nacimiento,
+        persona.Fecha_Nacimiento,
+        persona.Numero_cuenta,
+        persona.correo,
+        seguros.nombre_Seguro,
+        tipo_seguro.nombre_tipo,
+        empresa.Razon_Social FROM
+        persona ,
+        trabajador,
+        seguros ,
+        tipo_seguro,empresa
+        WHERE persona.Trabajador_idTrabajador=trabajador.idTrabajador
+        and trabajador.seguros_idseguros=seguros.idseguros
+        and seguros.Tipo_seguro_idTipo_seguro = tipo_seguro.idTipo_seguro
+        and trabajador.idEmpresa=empresa.idEmpresa
+        and trabajador.Estado_trabajador='Contratado'");
        if ($request->ajax()){
            return Datatables::of($trabaja)->make(true);
        }
@@ -49,20 +71,20 @@ class TrabajadorController extends Controller
             $trabajador1=new Trabajadores();
             $trabajador1->Estado_trabajador=$request->Estado_trabajador;
             $trabajador1->seguros_idseguros=$request->seguros;
-            $trabajador1->idTipo_Seguros=$request->tipo_seguros;
-            $trabajador1->idempresa=$request->empresa;
+            //$trabajador1->idTipo_Seguros=$request->tipo_seguros;
+            $trabajador1->idEmpresa=$request->empresa;
             $trabajador1->Periodo_trabajo=$request->periodo_tra;
             $trabajador1->tra_hijos=$request->hijo;
             $trabajador1->fecha_Ingreso=$request->fecha_ingreso;
             $trabajador1->fecha_Salida=$request->fecha_salidad;
             $trabajador1->save();
             $trabajador=new Persona();
-            $trabajador->Trabajador_idTrabajadores=$trabajador1->idTrabajador;
+            $trabajador->Trabajador_idTrabajador=$trabajador1->idTrabajador;
             $trabajador->nombre_personas=$request->nombre_Per;
             $trabajador->apellidos_Per=$request->Apellido;
             $trabajador->Dni=$request->dni;
             $trabajador->Care_extranjeria=$request->car_extran;
-            $trabajador->Direccion_Persona=$request->direccion;
+            $trabajador->Direccion=$request->direccion;
             $trabajador->Numero_cuenta=$request->n_cuenta;
             $trabajador->correo=$request->Correo;
             $trabajador->Telefono=$request->phone;
@@ -77,7 +99,34 @@ class TrabajadorController extends Controller
          $seguro=seguro::all();
          $empresa=Empresa::all();
          $tiposeguro=TipoSeguro::all();
-        $trabaja=DB::select("SELECT persona.idPersona,trabajador.idTrabajador,persona.nombre_personas,persona.apellidos_Per,persona.Dni,persona.Care_extranjeria,persona.Telefono,persona.Direccion_Persona,persona.Fecha_Nacimiento,persona.Numero_cuenta,persona.correo,seguros.nombre_Seguro,tipo_seguro.nombre_tipo,empresa.Razon_Social,trabajador.seguros_idseguros,trabajador.idTipo_Seguros,trabajador.idempresa,trabajador.tra_hijos,trabajador.Periodo_trabajo,trabajador.fecha_Ingreso,trabajador.fecha_Salida FROM persona ,trabajador,seguros ,tipo_seguro,empresa WHERE persona.Trabajador_idTrabajadores=trabajador.idTrabajador and trabajador.seguros_idseguros=seguros.idseguros and trabajador.idTipo_Seguros=tipo_seguro.idTipo_seguro and trabajador.idempresa=empresa.idEmpresa and trabajador.Estado_trabajador='Contratado' and persona.idPersona=$id");
+        $trabaja=DB::select("SELECT
+        persona.idPersona,trabajador.idTrabajador,
+        persona.nombre_personas,
+        persona.apellidos_Per,
+        persona.Dni,
+        persona.Care_extranjeria,
+        persona.Telefono,
+        persona.Direccion_Persona,
+        persona.Fecha_Nacimiento,
+        persona.Numero_cuenta,
+        persona.correo,
+        seguros.nombre_Seguro,
+        tipo_seguro.nombre_tipo,
+        empresa.Razon_Social,
+        trabajador.seguros_idseguros,
+        trabajador.Tipo_seguro_idTipo_seguro,
+        trabajador.idempresa,
+        trabajador.tra_hijos,
+        trabajador.Periodo_trabajo,
+        trabajador.fecha_Ingreso,
+        trabajador.fecha_Salida
+        FROM persona ,trabajador,seguros ,tipo_seguro,empresa
+        WHERE persona.Trabajador_idTrabajador=trabajador.idTrabajador
+        and trabajador.seguros_idseguros=seguros.idseguros
+        and trabajador.idTipo_Seguros=tipo_seguro.idTipo_seguro
+        and trabajador.idempresa=empresa.idEmpresa
+        and trabajador.Estado_trabajador='Contratado'
+        and persona.idPersona=$id");
         $data=array('segu'=>$seguro,'tipo_segu'=>$tiposeguro,'trabaja'=>$trabaja,'empre'=>$empresa);
 
         return response()->json($data);

@@ -31,6 +31,7 @@ class Renumeraciones extends Model
         'base_calculo',
         'Prima_Seguros_monto',
         'aporte_obligatorio_monto',
+        "aporteObligatorio",
         'comisison_sobre_renumeracion_total',
         'otros',
         'descuento_inasistencia',

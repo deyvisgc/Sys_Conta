@@ -16,7 +16,7 @@ USE Illuminate\Support\Facades\Input;
 class PlanillaController extends Controller
 {
     public function index(Request $request){
-        $planilla=DB::select("SELECT planilla.*,renumeraciones.*,trabajador.*,persona.Dni,CONCAT(persona.nombre_personas,' ',persona.apellidos_Per) as fulname,seguros.nombre_Seguro,tipo_seguro.nombre_tipo FROM planilla ,renumeraciones,trabajador,persona,seguros,tipo_seguro WHERE planilla.idRenumeracion=renumeraciones.idRenumeraciones and planilla.Trabajador_idTrabajador=trabajador.idTrabajador and persona.Trabajador_idTrabajadores=trabajador.idTrabajador and trabajador.seguros_idseguros=seguros.idseguros and trabajador.idTipo_Seguros=tipo_seguro.idTipo_seguro");
+        $planilla=DB::select("SELECT planilla.*,renumeraciones.*,trabajador.*,persona.Dni,CONCAT(persona.nombre_personas,' ',persona.apellidos_Per) as fulname,seguros.nombre_Seguro,tipo_seguro.nombre_tipo FROM planilla ,renumeraciones,trabajador,persona,seguros,tipo_seguro WHERE planilla.idRenumeracion=renumeraciones.idRenumeraciones and planilla.Trabajador_idTrabajador=trabajador.idTrabajador and persona.Trabajador_idTrabajador=trabajador.idTrabajador and trabajador.seguros_idseguros=seguros.idseguros and seguros.Tipo_seguro_idTipo_seguro=tipo_seguro.idTipo_seguro");
         if($request->ajax()){
             return Datatables::of($planilla)->make(true);
         }
@@ -26,15 +26,15 @@ class PlanillaController extends Controller
 
     }
     public function listarBeneficios($id){
-        $planilla=DB::select("SELECT planilla.*,renumeraciones.*,trabajador.*,persona.*,seguros.nombre_Seguro,tipo_seguro.nombre_tipo FROM planilla ,renumeraciones,trabajador,persona,seguros,tipo_seguro WHERE planilla.idRenumeracion=renumeraciones.idRenumeraciones and planilla.Trabajador_idTrabajador=trabajador.idTrabajador and persona.Trabajador_idTrabajadores=trabajador.idTrabajador and trabajador.seguros_idseguros=seguros.idseguros and trabajador.idTipo_Seguros=tipo_seguro.idTipo_seguro AND planilla.idPlanilla=$id");
+        $planilla=DB::select("SELECT planilla.*,renumeraciones.*,trabajador.*,persona.*,seguros.nombre_Seguro,tipo_seguro.nombre_tipo FROM planilla ,renumeraciones,trabajador,persona,seguros,tipo_seguro WHERE planilla.idRenumeracion=renumeraciones.idRenumeraciones and planilla.Trabajador_idTrabajador=trabajador.idTrabajador and persona.Trabajador_idTrabajador=trabajador.idTrabajador and trabajador.seguros_idseguros=seguros.idseguros and seguros.Tipo_seguro_idTipo_seguro=tipo_seguro.idTipo_seguro AND planilla.idPlanilla=$id");
         return Datatables::of($planilla)->make(true);
     }
     public function ListarRetenciones($id){
-        $planilla=DB::select("SELECT planilla.*,renumeraciones.*,trabajador.*,persona.*,seguros.nombre_Seguro,tipo_seguro.nombre_tipo FROM planilla ,renumeraciones,trabajador,persona,seguros,tipo_seguro WHERE planilla.idRenumeracion=renumeraciones.idRenumeraciones and planilla.Trabajador_idTrabajador=trabajador.idTrabajador and persona.Trabajador_idTrabajadores=trabajador.idTrabajador and trabajador.seguros_idseguros=seguros.idseguros and trabajador.idTipo_Seguros=tipo_seguro.idTipo_seguro AND planilla.idPlanilla=$id");
+        $planilla=DB::select("SELECT planilla.*,renumeraciones.*,trabajador.*,persona.*,seguros.nombre_Seguro,tipo_seguro.nombre_tipo FROM planilla ,renumeraciones,trabajador,persona,seguros,tipo_seguro WHERE planilla.idRenumeracion=renumeraciones.idRenumeraciones and planilla.Trabajador_idTrabajador=trabajador.idTrabajador and persona.Trabajador_idTrabajador=trabajador.idTrabajador and trabajador.seguros_idseguros=seguros.idseguros and seguros.Tipo_seguro_idTipo_seguro=tipo_seguro.idTipo_seguro AND planilla.idPlanilla=$id");
         return Datatables::of($planilla)->make(true);
     }
     public function ListarOtros($id){
-        $planilla=DB::select("SELECT planilla.*,renumeraciones.*,trabajador.*,persona.*,seguros.nombre_Seguro,tipo_seguro.nombre_tipo FROM planilla ,renumeraciones,trabajador,persona,seguros,tipo_seguro WHERE planilla.idRenumeracion=renumeraciones.idRenumeraciones and planilla.Trabajador_idTrabajador=trabajador.idTrabajador and persona.Trabajador_idTrabajadores=trabajador.idTrabajador and trabajador.seguros_idseguros=seguros.idseguros and trabajador.idTipo_Seguros=tipo_seguro.idTipo_seguro AND planilla.idPlanilla=$id");
+        $planilla=DB::select("SELECT planilla.*,renumeraciones.*,trabajador.*,persona.*,seguros.nombre_Seguro,tipo_seguro.nombre_tipo FROM planilla ,renumeraciones,trabajador,persona,seguros,tipo_seguro WHERE planilla.idRenumeracion=renumeraciones.idRenumeraciones and planilla.Trabajador_idTrabajador=trabajador.idTrabajador and persona.Trabajador_idTrabajador=trabajador.idTrabajador and trabajador.seguros_idseguros=seguros.idseguros and seguros.Tipo_seguro_idTipo_seguro=tipo_seguro.idTipo_seguro AND planilla.idPlanilla=$id");
         return Datatables::of($planilla)->make(true);
     }
     public function getPlanilla(){
@@ -44,9 +44,9 @@ class PlanillaController extends Controller
     public function search(Request $request){
         $search = $request->get('term');
         $persona=DB::table('persona')
-            ->join('trabajador','Trabajador_idTrabajadores','=','idTrabajador')
+            ->join('trabajador','Trabajador_idTrabajador','=','idTrabajador')
             ->join('seguros','trabajador.seguros_idseguros','=','idseguros')
-            ->join('tipo_seguro','trabajador.idTipo_Seguros','=','idTipo_seguro')
+            ->join('tipo_seguro','seguros.Tipo_seguro_idTipo_seguro','=','idTipo_seguro')
             ->select(DB::raw("CONCAT(persona.nombre_personas,' ',persona.apellidos_Per) as full_name"),'Dni','idseguros'
                 ,'seguros.nombre_Seguro','tipo_seguro.idTipo_seguro','tipo_seguro.nombre_tipo','aporte_obligatorio','Prima_Seguro',
                 'comision_renumeracion','trabajador.*')
@@ -73,7 +73,6 @@ class PlanillaController extends Controller
         } else {
             DB::beginTransaction();
             $renumeracion=new Renumeraciones();
-
             $renumeracion->Movilidad=$request->movilidad;
             $renumeracion->Alimentacion=$request->alimentacion;
             $renumeracion->Horas_Extras_25=$request->horas_extras25;
@@ -136,10 +135,10 @@ class PlanillaController extends Controller
         return response()->json($totales);
     }
     public function Boleta($id){
-        $boleta=DB::select("SELECT persona.*,trabajador.*,planilla.*,seguros.*,tipo_seguro.*,empresa.*, IFNULL(renumeraciones.Prima_Seguros_monto,0.00) as prima, 
+        $boleta=DB::select("SELECT persona.*,trabajador.*,planilla.*,seguros.*,tipo_seguro.*,empresa.*, IFNULL(renumeraciones.Prima_Seguros_monto,0.00) as prima,
                                    IFNULL(renumeraciones.aporte_obligatorio_monto,0.00) as aporte, IFNULL(renumeraciones.comisison_sobre_renumeracion_total,0.00) as comisison_sobre,
-                                    renumeraciones.* FROM persona,trabajador,planilla,seguros,tipo_seguro,renumeraciones,empresa WHERE persona.Trabajador_idTrabajadores=trabajador.idTrabajador and trabajador.idempresa=empresa.idEmpresa 
-                                    and trabajador.seguros_idseguros=seguros.idseguros and trabajador.idTipo_Seguros=tipo_seguro.idTipo_seguro and planilla.Trabajador_idTrabajador=trabajador.idTrabajador
+                                    renumeraciones.* FROM persona,trabajador,planilla,seguros,tipo_seguro,renumeraciones,empresa WHERE persona.Trabajador_idTrabajador=trabajador.idTrabajador and trabajador.idempresa=empresa.idEmpresa
+                                    and trabajador.seguros_idseguros=seguros.idseguros and seguros.Tipo_seguro_idTipo_seguro=tipo_seguro.idTipo_seguro and planilla.Trabajador_idTrabajador=trabajador.idTrabajador
                                    and planilla.idRenumeracion=renumeraciones.idRenumeraciones and planilla.Trabajador_idTrabajador=$id");
         return response()->json($boleta);
     }

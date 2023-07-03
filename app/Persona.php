@@ -15,8 +15,8 @@ class Persona extends Model
      * @var array
      */
     protected $fillable = [
-        'nombre_personas',
-        'apellidos_Per',
+        'nombre',
+        'apellidos',
         'Dni',
         'Care_extranjeria',
         'Telefono',

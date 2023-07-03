@@ -23,8 +23,7 @@ class UsuarioController extends Controller
         if ($request->ajax()){
             return Datatables::of($usuarios)->make(true);
         }
-
-        return view('Administracion.usuario',['roles'=>$rol]);
+        return view('Administracion.usuario', ['roles'=>$rol]);
     }
     public function store(Request $request){
 
@@ -52,7 +51,7 @@ class UsuarioController extends Controller
             $persona->Dni=$request->dni;
             $persona->Care_extranjeria=$request->car_extran;
             $persona->Telefono=$request->phone;
-            $persona->Direccion_Persona=$request->direccion;
+            $persona->Direccion=$request->direccion;
             $persona->Fecha_Nacimiento=$request->fecha_nacimiento;
             $persona->Numero_cuenta=$request->n_cuenta;
             $persona->correo=$request->Correo;
